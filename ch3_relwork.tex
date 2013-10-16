@@ -1,0 +1,129 @@
+\section{Natural Language Generation Systems}
+Two broad categories of
+approaches have been used to attack the general NLG problem. One
+direction can be thought of as ``overgeneration and ranking.'' Here
+some (possibly probabilistic) structure is used to generate multiple
+candidate sentences, which are then ranked according to how well they
+satisfy the generation criteria. This includes work based on chart
+generation and
+parsing~\cite{shieber_uniform_1988,kay_chart_1996}. These generators
+assign semantic meaning to each individual token, then use a set of
+rules to decide if two words can be combined.  Any combination which
+contains a semantic representation equivalent to the desired meaning 
+is a valid output from a chart generation
+system. Another example of this idea is the HALogen/Nitrogen
+family of systems~\cite{langkilde_2002_halogen}. HALogen uses a two-phase
+architecture where first, a ``forest'' data structure that compactly
+summarizes possible expressions is constructed.  The structure allows
+for a more efficient and compact representation compared to lattice
+structures that had been previously used in statistical sentence
+generation approaches.  Using dynamic programming, the highest ranked
+sentence from this structure is then output. Many other systems using
+similar ideas exist, e.g.~\cite{white_2003_ccg,lu2009natural}.
+
+A second line of attack formalizes NLG as an AI planning problem.
+SPUD \cite{stone_2003_spud}, a system for NLG through microplanning,
+considers NLG as a problem which requires realizing a deliberative
+process of goal-directed activity.  Many such NLG-as-planning systems
+use a pipeline architecture, working from their communicative goal
+through a series of processing steps and concluding by outputting the
+final sentence in the desired natural language. This is usually done
+into two parts:
+discourse planning and sentence generation. In
+discourse planning, information to be conveyed is selected and split
+into sentence-sized chunks. These sentence-sized chunks are then sent
+to a {\em sentence generator}, which itself is usually split into two
+tasks, {\em sentence planning} and {\em surface realization}
+\cite{koller_experiences_2011}.  The sentence planner takes in a
+sentence-sized chunk of information to be conveyed and enriches it in
+some way.  This is then used by a {\em surface realization}
+module which encodes the enriched semantic representation into 
+ natural language.  This chain is sometimes referred to as the
+``NLG Pipeline'' \cite{reiter_building_2000}.  Our approach is
+part of this broad category.
+
+Another approach, called {\em integrated generation}, considers both
+sentence generation portions of the pipeline together.
+\cite{koller_sentence_2007}.  This is the approach taken in some
+modern generators like CRISP \cite{koller_sentence_2007} and PCRISP
+\cite{bauer_sentence_2010}.  In these generators, the input semantic
+requirements and grammar are encoded in PDDL~\cite{fox2003pddl2},
+which an off-the-shelf planner such as
+Graphplan~\cite{blum_1997_graphplan} uses to produce a list of
+applications of rules in the grammar.  These generators generate
+parses for the sentence at the same time as the sentence, which keeps
+them from generating realizations that are grammatically incorrect,
+and keeps them from generating grammatical structures that cannot be
+realized properly. PCRISP extends CRISP by adding support for
+probabilistic grammars. However the planner in PCRISP's back end is
+still a standard PDDL planner, so PCRISP transforms the probabilities
+into costs so that a low likelihood transition has a high cost in
+terms of the plan metric.
+
+\section{Grammar Representation}
+
+In the NLG-as-planning framework, the choice of grammar representation
+is crucial in treating NLG as a planning problem; the grammar provides
+the actions that the planner will use to generate a sentence.  Tree
+Adjoining Grammars (TAGs) are a common choice
+\cite{koller_sentence_2007} \cite{bauer_sentence_2010}. TAGs are
+tree-based grammars consisting of two sets of trees, called initial
+trees and auxiliary or adjoining trees.  An entire initial tree can
+replace a leaf node in the sentence tree whose label matches the label
+of the root of the initial tree in a process called ``substitution.''
+Auxiliary trees, on the other hand, encode recursive structures of
+language.  Auxiliary trees have, at a minimum, a root node and a foot
+node whose labels match.  The foot node must be a leaf of the
+auxiliary tree.  These trees are used in a three-step process called
+``adjoining''.  The first step finds an adjoining location by
+searching through our sentence to find any subtree with a root whose
+label matches the root node of the auxiliary tree.  In the second
+step, the target subtree is removed from the sentence tree, and placed
+in the auxiliary tree as a direct replacement for the foot node.
+Finally, the modified auxiliary tree is placed back in the sentence
+tree in the original target location. We use a variation of TAGs in
+our work, called a lexicalized TAG (LTAG), where each tree is
+associated with a lexical item called an anchor.
+
+Though the NLG-as-planning approaches are elegant and appealing, a key
+drawback is the difficulty of handling probabilistic grammars, which
+are readily handled by the overgeneration and ranking
+strategies. Recent approaches such as
+PCRISP~\cite{bauer_sentence_2010} attempt to remedy this, but do so in
+a somewhat ad-hoc way, because they rely on deterministic planning to
+actually realize the output. In this work, we directly confront this
+by switching to a more expressive underlying formalism, a Markov
+decision process (MDP). We show in our experiments that this
+modification has other benefits as well, such as being anytime and an
+ability to handle complex communicative goals beyond those that
+state-of-the-art deterministic planners can currently solve.
+
+We note that though the application of MDPs to NLG appear not to have
+been explored, some preliminary work has explored the application of
+MDPs and the UCT algorithm~\cite{chevelu_introduction_2009} that we
+also use in our work to paraphrasing. Here the algorithm was used to
+search through a paraphrase table to find the best paraphrase solution.
+
+\section{NLG Applications}
+
+The work we describe here addresses the pure NLG problem without
+considering the surrounding context; in practice, such a system would
+be integrated into a larger system, such as one carrying out a
+dialog. However, we note that many dialog systems, such as
+NJFun~\cite{litman_njfun_2000}, model dialog using reinforcement
+learning. While integrating our NLG approach with such a system is a
+direction for future work, the similarity of the formalism indicates
+it should be feasible.
+NLG has many applications, but one which is of particular interest is
+natural language interfaces, or dialog systems.  Recently, such
+systems have generated a good deal of interest in mobile devices,
+though their origin goes back to GUS and similar systems developed at PARC
+in the 1970s \cite{bobrow_gus_1977}.  These systems take input from a user
+in the form of natural-language speech or text, process that information in 
+some way (i.e. running a query against a knowledge base as NJFun does
+\cite{litman_njfun_2000}), then return a response to the user in
+natural English.  This interaction proceeds by turns in much the same way
+as a natural dialog between humans.  The dialog system is responsible
+for managing the state of the dialog.  By the point that an output realizer is 
+needed, the discourse planning step of the NLG pipeline has already been
+completed.
