@@ -1,0 +1,123 @@
+\section{Tree Adjoining Grammars}
+
+TAGs are tree-based grammars consisting of two sets of trees, called initial
+trees and auxiliary or adjoining trees.  These two kinds of trees generally perform
+different roles semantically in addition to their differing syntactic roles.  The former,
+initial trees, are usually for adding new semantic information to the sentence.  They
+add new nodes to the sentence tree.  In a simplified Context Free Grammar of English,
+initial trees contain rules like "Verb Phrases contain a Verb and a Noun", or "VP -> V N".
+A sentence can be made entirely of initial trees, but a sentence must contain at least
+one initial tree.  An example of an initial tree is shown in Figure <SOMETHING>.\\
+(S (NP (D) (N (Cat))) (VP))\\
+This tree has as its root the S node, and this defines how it can interact with other
+trees under a TAG.  Since this is an initial tree, it can only interact with other trees by
+substitution.  That is, this tree is a drop-in replacement for an S node with no children.
+This is how we get from our stub sentence (S) to a complete sentence.
+
+Adjoining trees usually clarify a point in a sentence.  In a simplified CFG of English, adjoining
+trees would contain rules like "a noun can have an adjective placed in front of it," or "N -> A N".
+An example of an adjoining tree is shown in Figure <SOMETHING>.\\
+(N (A (Red)) (N*))\\
+This tree has as its root an N node.  It also has a specially annotated N node elsewhere in the
+tree.  These nodes define its interaction with other trees under a TAG.  Adjoining trees interact
+with other trees only by "adjoining".  In an adjoining action, you select the node
+to adjoin to, which must be of the same label as the root node of the adjoining tree.  You remove
+that node from the other tree and put the adjoining tree in its place.  Then
+you place that original node into the adjoining tree as a substitution for the foot node.
+For example, if we had the trees\\
+(S (NP (D (the)) (N (cat))) (VP))\\
+and we wanted to adjoin the example adjoining tree above, we would first create this intermediate tree:\\
+(S (NP (D (the)) (N (A (red) (N*)))) (VP))\\
+And then perform the substitution:\\
+(S (NP (D (the)) (N (A (red) (N (cat))))) (VP))\\
+Notice that this has the effect, in all cases, of making the tree deeper.
+
+We use a variation of TAGs in our work, called a lexicalized TAG (LTAG), where each tree is
+associated with a lexical item called an anchor.  All examples given above are examples of
+lexicalized trees.  An example of an unlexicalized tree would be (NP (D) (N)), where there
+are no nodes containing lexical tokens.
+
+\section{Grammar Specification}
+
+A grammar, for our purposes, contains a set of trees, divided into two sets (initial and auxiliary).
+These trees need to be annotated with the entities in them.  Entities are defined as any element
+anchored by precisely one node in the tree which can appear in a proposition representing the
+semantic content of the tree.  These trees are uniquely named, and also contain an
+annotation (+) representing the lexicalized node.
+
+\section{Lexicon Specification}
+
+The lexicon that we use is a list of permissible word-tree pairings, annotated with the meaning of
+the pairing.  For instance, if the grammar contained a tree named "a.adj", (N (A+) (N-foot*))
+(an adjoining tree for prepending an adjective to a noun, whose foot node is an entity named "foot"),
+then the lexicon might contain an entry "a.adj: ['red', 'red(foot)]".  That would mean that the overall
+LTAG that we are using contains the tree named "a.adj", lexicalized to 'red', and that when that tree
+is applied to a sentence, the sentence's meaning is adjusted to include red(name of the foot node).
+
+\section{Communicative Goal Specification}
+
+The communicative goal is just a list of propositions with dummy entity names.  Matching entity
+names refer to the same entity; for instance, a communicative goal of 'red(d), dog(d)' would
+match a sentence with the semantic representation 'red(subj), dog(subj), cat(obj), chased(subj, obj)',
+like "The red dog chased the cat", for instance.  As you can see, the communicative goal does
+not have to refer to any "central meaning" of the sentence as a human would select it, but rather
+to propositions which the sentence affirms.
+
+\section{The UCT Algorithm}
+
+UCT(Upper Confidence bound applied to Trees) (Kocsis, Szepesvari 2006) is a planning algorithm that takes
+advantage of Monte-Carlo sampling to narrow down the search space during each iteration as an action is chosen.
+This algorithm provides many benefits in that it can handle large search-spaces, stop at any point and return back
+the best answer based on the Monte-Carlo simulations done till that point, and can have sub-optimal outputs.  The
+last benefit may actually seem like a weakness, however, in natural language generation, it is beneficial to not have
+a guarantee of generating the best sentence each time.  If it were the case that our planner was optimal, the output
+would always be the same given matching inputs which is not a realistic output.
+
+The goal of the UCT algorithm is to select the optimal or near-optimal sequence of actions from the start to end state.
+This is done in an iterative manner with a single action chosen at each iteration.  In this the algorithm, the simulations
+performed in the main loop are used to estimate the value of each action.  These simulations can be broken down into
+4 steps.
+
+\subsection{Tree Policy}
+Starting from the current state, an action will repeatedly be chosen based on a balance of exploration and exploitation,
+until a state with an open action is hit, a leaf is hit, of the depth limit is reached.  The balance between exploration and
+exploitation is maintained by assigning each of the actions a probability based on its expected value as well as how often
+it has been executed for the number of times the current state has been reached.  The exact formula used is the following:
+
+$P(a) = Q(s,a) + c\sqrt{\frac{ln n(s)}{n(s,a)}}$
+
+where s is the current state, a is the action from the current state, c is the exploration constant that must be tuned
+empirically in practice, n(s) is the number of times state s has been encountered, and n(s,a) is the number of times action
+a was taken in state s.
+
+\subsection{State Expansion}
+If there are any open actions for the current state, choose one of the open actions at random.  This will remove the
+chosen action from the open action list for that state.
+
+\subsection{Default Policy}
+Continue to select actions at random until either a terminal state or the depth limit is reached.
+
+\subsection{Reward Assignment}
+Calculate the reward function for the state that results after executing all of the chosen action and push the reward all
+the way back up to the root node representing the current state.
+
+Once sufficient simulations have been run, the action with the largest value expectation is chosen.  The expectation of the
+value of an action $a_i$ is computed by taking the average of all of the values computed for each simulation that began with action $a_i$.
+
+Figure \ref{uct} provides an illustration of the UCT algorithm.  It shows a view of the state search tree at the end of an
+intermediate Monte-Carlo simulation.  The root of this tree represents that current state and its child nodes are the possible
+actions that UCT will be choosing from.  As the figure shows, the tree policy contains all of the node that have been expanded
+at least once.  During the tree policy, we will traverse down the tree until we hit a leaf or a state containing an open actions.
+In this example, the traversal follows the blue line and stops at the white node on the left since it has an open action.  Next, for
+the State Expansion step, an open action is chosen at random and is denoted with the star shape in the figure.  Then, for the
+Default Policy, random actions are taken until the depth limit is reached or there are no more open actions.  Each of the random
+actions taken are denoted with a diamond shape and the terminal node is denoted as a square in the figure.  Once this happens,
+the reward for the square node is calculated(in this case 1) and propagated up to the nodes in the tree policy along the blue line.
+This process is repeated for the number of iterations specified when starting UCT and at each iteration, there is a possibility of adding
+one more state to the tree policy.
+
+The modification made to UCT in this work deals with the available actions to choose from.  In the default policy, instead of choosing
+an action at random from all possible actions, the next action is only chosen from the new actions that resulted from executing the
+previous action.  The motivation for this change is that by limiting the number of actions allowed, the final value computed at the end
+of the action sequence will be a better representation of the value expectation for the first action in the sequence.  This provides the
+added benefit that the algorithm is now selecting from a pruned search space allowing for faster execution.
