@@ -1,0 +1,196 @@
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+executing action:   0
+(S )
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+
+executing action:   0
+(S (NP ) (VP (V likes) (NP )))
+
+executing action:   2
+(S (NP (PN Mary)) (VP (V likes) (NP )))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N ))))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   3
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   14
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N (A foo3) (N rabbit)))))
+
+executing action:   1
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D a) (N (A foo3) (N (A foo4) (N rabbit))))))
+
+executing action:   5
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP (D a) (N (A foo1) (N (A foo3) (N (A foo4) (N rabbit)))))))
+
+executing action:   36
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N (A foo5) (N (A foo1) (N (A foo3) (N (A foo4) (N rabbit))))))))
+
+executing action:   12
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo5)
+        (N
+          (A foo1)
+          (N (A foo3) (N (A foo6) (N (A foo4) (N rabbit)))))))))
+
+executing action:   38
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo5)
+        (N
+          (A foo2)
+          (N
+            (A foo1)
+            (N (A foo3) (N (A foo6) (N (A foo4) (N rabbit))))))))))
+
+executing action:   10
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo5)
+        (N
+          (A foo2)
+          (N
+            (A foo1)
+            (N
+              (A foo8)
+              (N (A foo3) (N (A foo6) (N (A foo4) (N rabbit)))))))))))
+
+executing action:   77
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo5)
+          (N
+            (A foo2)
+            (N
+              (A foo1)
+              (N
+                (A foo8)
+                (N (A foo3) (N (A foo6) (N (A foo4) (N rabbit))))))))))))
+
+executing action:   79
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo5)
+          (N
+            (A foo2)
+            (N
+              (A foo1)
+              (N
+                (A foo8)
+                (N
+                  (A foo3)
+                  (N (A foo6) (N (A foo7) (N (A foo4) (N rabbit)))))))))))))
+
+executing action:   0
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo5)
+          (N
+            (A foo2)
+            (N
+              (A foo1)
+              (N
+                (A foo8)
+                (N
+                  (A foo3)
+                  (N
+                    (A foo6)
+                    (N (A foo9) (N (A foo7) (N (A foo4) (N rabbit))))))))))))))
+
+time available:[(0.5192899703979492, 1477.2727272727273), (0.627269983291626, 2477.2727272727275), (0.7402381896972656, 3477.2727272727275), (0.8853530883789062, 4477.272727272727), (1.0520529747009277, 5477.272727272727), (1.2703449726104736, 6477.272727272727), (1.5788321495056152, 7477.272727272727), (1.9281129837036133, 7480.0), (2.3350021839141846, 7483.333333333333), (2.9874441623687744, 7487.5), (3.3945910930633545, 7492.857142857143), (3.9557831287384033, 7492.857242857143)]
+Mary likes a foo10 foo5 foo2 foo1 foo8 foo3 foo6 foo9 foo7 foo4 rabbit
+7492.85724286
+3.95959877968

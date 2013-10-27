@@ -1,0 +1,78 @@
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+executing action:   0
+[u'like']
+[(u'e', u'm', u'r')]
+
+executing action:   0
+
+executing action:   2
+
+executing action:   0
+
+executing action:   0
+
+executing action:   10
+
+executing action:   27
+
+executing action:   29
+
+executing action:   70
+
+executing action:   101
+
+executing action:   26
+
+executing action:   94
+
+executing action:   166
+
+executing action:   192
+
+executing action:   214
+
+executing action:   0
+
+time available:[(0.493488073348999, 1477.2727272727273), (0.6307260990142822, 1480.0), (0.8197131156921387, 1483.3333333333333), (1.165585994720459, 1487.5), (1.5985970497131348, 1492.857142857143), (2.22324800491333, 1500.0), (2.9432241916656494, 1510.0), (3.7731010913848877, 1525.0), (4.816406011581421, 1550.0), (6.139250040054321, 1600.0), (7.827879190444946, 1900.0), (9.654870986938477, 1900.0001)]
+Mary likes a foo10 foo3 foo6 foo4 foo2 foo1 foo9 foo5 foo8 foo7 rabbit
+1900.0001
+9.65741610527

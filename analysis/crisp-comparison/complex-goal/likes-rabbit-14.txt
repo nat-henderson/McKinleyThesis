@@ -1,0 +1,89 @@
+
+
+
+Found 1 plan(s):
+0: init-nx0Vnx1-likes-1(root,e,r,m)
+1: init-Dn-the-2(obj-1,r)
+2: init-N-rabbit-3(obj-1,r)
+3: aux-An-foo3-4(obj-1,r)
+4: aux-An-foo2-5(obj-1,r)
+5: aux-An-foo13-6(obj-1,r)
+6: aux-An-foo9-7(obj-1,r)
+7: aux-An-foo11-8(obj-1,r)
+8: aux-An-foo4-9(obj-1,r)
+9: aux-An-foo1-10(obj-1,r)
+10: aux-An-foo12-11(obj-1,r)
+11: aux-An-foo8-12(obj-1,r)
+12: aux-An-foo14-13(obj-1,r)
+13: aux-An-foo6-14(obj-1,r)
+14: aux-An-foo7-15(obj-1,r)
+15: aux-An-foo5-16(obj-1,r)
+16: aux-An-foo10-17(obj-1,r)
+17: init-propername-Mary-18(subj-1,m)
+
+
+Built derivation tree:
+(Root
+  (Subst[S, root]
+    (Subst[NP, subj])
+    (Subst[NP, obj]
+      (Subst[N, obj]
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])))))
+
+Built derived tree:
+(ROOTNODE
+  (S
+    (NP
+      (PN type=1 "Mary" "subj"))
+    (VP
+      (V type=1 "likes" "root")
+      (NP
+        (D type=1 "the" "obj")
+        (N
+          (A type=1 "foo3" "obj")
+          (N
+            (A type=1 "foo2" "obj")
+            (N
+              (A type=1 "foo13" "obj")
+              (N
+                (A type=1 "foo9" "obj")
+                (N
+                  (A type=1 "foo11" "obj")
+                  (N
+                    (A type=1 "foo4" "obj")
+                    (N
+                      (A type=1 "foo1" "obj")
+                      (N
+                        (A type=1 "foo12" "obj")
+                        (N
+                          (A type=1 "foo8" "obj")
+                          (N
+                            (A type=1 "foo14" "obj")
+                            (N
+                              (A type=1 "foo6" "obj")
+                              (N
+                                (A type=1 "foo7" "obj")
+                                (N
+                                  (A type=1 "foo5" "obj")
+                                  (N
+                                    (A type=1 "foo10" "obj")
+                                    (N type=1 "rabbit" "obj")))))))))))))))))))
+
+Final sentence:
+Mary likes the foo3 foo2 foo13 foo9 foo11 foo4 foo1 foo12 foo8 foo14 foo6 foo7 foo5 foo10 rabbit 
+  graph computation: 3056 ms
+  search:            1802343 ms
+  total planning:    1805399 ms

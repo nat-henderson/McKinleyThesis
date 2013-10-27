@@ -1,0 +1,198 @@
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+executing action:   0
+(S )
+[u'like']
+[(u'e', u'm', u'r')]
+
+executing action:   0
+(S (NP ) (VP (V likes) (NP )))
+
+executing action:   1
+(S (NP (PN Mary)) (VP (V likes) (NP )))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D the) (N ))))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D the) (N rabbit))))
+
+executing action:   10
+(S (NP (PN Mary)) (VP (V likes) (NP (D the) (N rabbit))))
+
+executing action:   7
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D the) (N (A foo7) (N rabbit)))))
+
+executing action:   31
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D the) (N (A foo4) (N (A foo7) (N rabbit))))))
+
+executing action:   40
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP (D the) (N (A foo4) (N (A foo7) (N (A foo2) (N rabbit)))))))
+
+executing action:   11
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N (A foo4) (N (A foo7) (N (A foo2) (N (A foo1) (N rabbit))))))))
+
+executing action:   26
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N
+        (A foo8)
+        (N
+          (A foo4)
+          (N (A foo7) (N (A foo2) (N (A foo1) (N rabbit)))))))))
+
+executing action:   64
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N
+        (A foo8)
+        (N
+          (A foo10)
+          (N
+            (A foo4)
+            (N (A foo7) (N (A foo2) (N (A foo1) (N rabbit))))))))))
+
+executing action:   48
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N
+        (A foo8)
+        (N
+          (A foo10)
+          (N
+            (A foo4)
+            (N
+              (A foo7)
+              (N (A foo9) (N (A foo2) (N (A foo1) (N rabbit)))))))))))
+
+executing action:   71
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N
+        (A foo8)
+        (N
+          (A foo10)
+          (N
+            (A foo4)
+            (N
+              (A foo6)
+              (N
+                (A foo7)
+                (N (A foo9) (N (A foo2) (N (A foo1) (N rabbit))))))))))))
+
+executing action:   99
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N
+        (A foo8)
+        (N
+          (A foo10)
+          (N
+            (A foo4)
+            (N
+              (A foo6)
+              (N
+                (A foo7)
+                (N
+                  (A foo3)
+                  (N (A foo9) (N (A foo2) (N (A foo1) (N rabbit)))))))))))))
+
+executing action:   0
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D the)
+      (N
+        (A foo8)
+        (N
+          (A foo10)
+          (N
+            (A foo4)
+            (N
+              (A foo6)
+              (N
+                (A foo7)
+                (N
+                  (A foo3)
+                  (N
+                    (A foo9)
+                    (N (A foo5) (N (A foo2) (N (A foo1) (N rabbit))))))))))))))
+
+time available:[(0.4692509174346924, 1477.2727272727273), (0.5770819187164307, 1480.0), (0.7165429592132568, 1483.3333333333333), (0.918734073638916, 1487.5), (1.1985430717468262, 1492.857142857143), (1.5547480583190918, 1500.0), (1.9141380786895752, 1510.0), (2.3873519897460938, 1525.0), (3.134039878845215, 1550.0), (3.6906330585479736, 1600.0), (4.347023010253906, 1900.0), (5.164480924606323, 1900.0001)]
+Mary likes the foo8 foo10 foo4 foo6 foo7 foo3 foo9 foo5 foo2 foo1 rabbit
+1900.0001
+5.16780495644

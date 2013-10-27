@@ -1,0 +1,196 @@
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+executing action:   0
+(S )
+[u'like', u'foo1', u'foo2', u'foo3', u'foo4', u'foo5', u'foo6', u'foo7', u'foo8', u'foo9']
+[(u'e', u'm', u'r'), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',), (u'r',)]
+
+executing action:   0
+(S (NP ) (VP (V likes) (NP )))
+
+executing action:   2
+(S (NP (PN Mary)) (VP (V likes) (NP )))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N ))))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   1
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   9
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N (A foo1) (N rabbit)))))
+
+executing action:   26
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D a) (N (A foo9) (N (A foo1) (N rabbit))))))
+
+executing action:   5
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP (D a) (N (A foo9) (N (A foo1) (N (A foo6) (N rabbit)))))))
+
+executing action:   7
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N (A foo5) (N (A foo9) (N (A foo1) (N (A foo6) (N rabbit))))))))
+
+executing action:   54
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo7)
+        (N
+          (A foo5)
+          (N (A foo9) (N (A foo1) (N (A foo6) (N rabbit)))))))))
+
+executing action:   12
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo7)
+        (N
+          (A foo5)
+          (N
+            (A foo9)
+            (N (A foo1) (N (A foo6) (N (A foo4) (N rabbit))))))))))
+
+executing action:   23
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo7)
+        (N
+          (A foo2)
+          (N
+            (A foo5)
+            (N
+              (A foo9)
+              (N (A foo1) (N (A foo6) (N (A foo4) (N rabbit)))))))))))
+
+executing action:   48
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo7)
+        (N
+          (A foo2)
+          (N
+            (A foo3)
+            (N
+              (A foo5)
+              (N
+                (A foo9)
+                (N (A foo1) (N (A foo6) (N (A foo4) (N rabbit))))))))))))
+
+executing action:   40
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo7)
+        (N
+          (A foo2)
+          (N
+            (A foo3)
+            (N
+              (A foo5)
+              (N
+                (A foo8)
+                (N
+                  (A foo9)
+                  (N (A foo1) (N (A foo6) (N (A foo4) (N rabbit)))))))))))))
+
+executing action:   0
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo7)
+        (N
+          (A foo2)
+          (N
+            (A foo3)
+            (N
+              (A foo10)
+              (N
+                (A foo5)
+                (N
+                  (A foo8)
+                  (N
+                    (A foo9)
+                    (N (A foo1) (N (A foo6) (N (A foo4) (N rabbit))))))))))))))
+
+time available:[(0.5461509227752686, 1477.2727272727273), (0.6454188823699951, 2477.2727272727275), (0.7695159912109375, 3477.2727272727275), (0.9141550064086914, 4477.272727272727), (1.0980520248413086, 5477.272727272727), (1.2985968589782715, 6477.272727272727), (1.617743968963623, 7477.272727272727), (1.9649410247802734, 8477.272727272728), (2.3356659412384033, 9477.272727272728), (2.9521098136901855, 10477.272727272728), (3.380682945251465, 10480.0), (3.9012110233306885, 10480.0001)]
+Mary likes a foo7 foo2 foo3 foo10 foo5 foo8 foo9 foo1 foo6 foo4 rabbit
+10480.0001
+3.9042198658

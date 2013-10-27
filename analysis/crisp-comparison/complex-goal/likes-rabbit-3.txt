@@ -1,0 +1,45 @@
+
+
+
+Found 1 plan(s):
+0: init-nx0Vnx1-likes-1(root,e,r,m)
+1: init-Dn-the-2(obj-1,r)
+2: init-N-rabbit-3(obj-1,r)
+3: aux-An-foo1-4(obj-1,r)
+4: aux-An-foo2-5(obj-1,r)
+5: aux-An-foo3-6(obj-1,r)
+6: init-propername-Mary-7(subj-1,m)
+
+
+Built derivation tree:
+(Root
+  (Subst[S, root]
+    (Subst[NP, subj])
+    (Subst[NP, obj]
+      (Subst[N, obj]
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])))))
+
+Built derived tree:
+(ROOTNODE
+  (S
+    (NP
+      (PN type=1 "Mary" "subj"))
+    (VP
+      (V type=1 "likes" "root")
+      (NP
+        (D type=1 "the" "obj")
+        (N
+          (A type=1 "foo1" "obj")
+          (N
+            (A type=1 "foo2" "obj")
+            (N
+              (A type=1 "foo3" "obj")
+              (N type=1 "rabbit" "obj"))))))))
+
+Final sentence:
+Mary likes the foo1 foo2 foo3 rabbit 
+  graph computation: 979 ms
+  search:            289 ms
+  total planning:    1268 ms

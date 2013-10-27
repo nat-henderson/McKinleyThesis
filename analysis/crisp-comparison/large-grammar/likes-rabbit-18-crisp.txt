@@ -1,0 +1,73 @@
+
+
+
+Found 1 plan(s):
+0: init-nx0Vnx1-likes-1(root,e,r,m)
+1: init-Dn-the-2(obj-1,r)
+2: init-N-rabbit-3(obj-1,r)
+3: aux-An-foo10-4(obj-1,r)
+4: aux-An-foo9-5(obj-1,r)
+5: aux-An-foo7-6(obj-1,r)
+6: aux-An-foo3-7(obj-1,r)
+7: aux-An-foo4-8(obj-1,r)
+8: aux-An-foo1-9(obj-1,r)
+9: aux-An-foo6-10(obj-1,r)
+10: aux-An-foo2-11(obj-1,r)
+11: aux-An-foo8-12(obj-1,r)
+12: aux-An-foo5-13(obj-1,r)
+13: init-propername-Mary-14(subj-1,m)
+
+
+Built derivation tree:
+(Root
+  (Subst[S, root]
+    (Subst[NP, subj])
+    (Subst[NP, obj]
+      (Subst[N, obj]
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])
+        (Adj[N, obj])))))
+
+Built derived tree:
+(ROOTNODE
+  (S
+    (NP
+      (PN type=1 "Mary" "subj"))
+    (VP
+      (V type=1 "likes" "root")
+      (NP
+        (D type=1 "the" "obj")
+        (N
+          (A type=1 "foo10" "obj")
+          (N
+            (A type=1 "foo9" "obj")
+            (N
+              (A type=1 "foo7" "obj")
+              (N
+                (A type=1 "foo3" "obj")
+                (N
+                  (A type=1 "foo4" "obj")
+                  (N
+                    (A type=1 "foo1" "obj")
+                    (N
+                      (A type=1 "foo6" "obj")
+                      (N
+                        (A type=1 "foo2" "obj")
+                        (N
+                          (A type=1 "foo8" "obj")
+                          (N
+                            (A type=1 "foo5" "obj")
+                            (N type=1 "rabbit" "obj")))))))))))))))
+
+Final sentence:
+Mary likes the foo10 foo9 foo7 foo3 foo4 foo1 foo6 foo2 foo8 foo5 rabbit 
+  graph computation: 1333 ms
+  search:            22111 ms
+  total planning:    23444 ms

@@ -1,0 +1,196 @@
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+executing action:   0
+(S )
+[u'like']
+[(u'e', u'm', u'r')]
+
+executing action:   0
+(S (NP ) (VP (V likes) (NP )))
+
+executing action:   2
+(S (NP (PN Mary)) (VP (V likes) (NP )))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N ))))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   10
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   13
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N (A foo8) (N rabbit)))))
+
+executing action:   6
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D a) (N (A foo8) (N (A foo1) (N rabbit))))))
+
+executing action:   28
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP (D a) (N (A foo4) (N (A foo8) (N (A foo1) (N rabbit)))))))
+
+executing action:   31
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N (A foo4) (N (A foo8) (N (A foo2) (N (A foo1) (N rabbit))))))))
+
+executing action:   12
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo8)
+          (N (A foo5) (N (A foo2) (N (A foo1) (N rabbit)))))))))
+
+executing action:   41
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo4)
+          (N
+            (A foo8)
+            (N (A foo5) (N (A foo2) (N (A foo1) (N rabbit))))))))))
+
+executing action:   20
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo4)
+          (N
+            (A foo8)
+            (N
+              (A foo3)
+              (N (A foo5) (N (A foo2) (N (A foo1) (N rabbit)))))))))))
+
+executing action:   69
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo6)
+          (N
+            (A foo4)
+            (N
+              (A foo8)
+              (N
+                (A foo3)
+                (N (A foo5) (N (A foo2) (N (A foo1) (N rabbit))))))))))))
+
+executing action:   95
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo6)
+          (N
+            (A foo4)
+            (N
+              (A foo8)
+              (N
+                (A foo3)
+                (N
+                  (A foo7)
+                  (N (A foo5) (N (A foo2) (N (A foo1) (N rabbit)))))))))))))
+
+executing action:   0
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo6)
+          (N
+            (A foo4)
+            (N
+              (A foo8)
+              (N
+                (A foo3)
+                (N
+                  (A foo7)
+                  (N
+                    (A foo5)
+                    (N (A foo9) (N (A foo2) (N (A foo1) (N rabbit))))))))))))))
+
+time available:[(0.4796910285949707, 1477.2727272727273), (0.5928549766540527, 1480.0), (0.7287309169769287, 1483.3333333333333), (0.8959240913391113, 1487.5), (1.1252360343933105, 1492.857142857143), (1.4206349849700928, 1500.0), (1.75742506980896, 1510.0), (2.1409220695495605, 1525.0), (2.675246000289917, 1550.0), (3.157210111618042, 1600.0), (3.732789993286133, 1900.0), (4.380535125732422, 1900.0001)]
+Mary likes a foo10 foo6 foo4 foo8 foo3 foo7 foo5 foo9 foo2 foo1 rabbit
+1900.0001
+4.38363003731

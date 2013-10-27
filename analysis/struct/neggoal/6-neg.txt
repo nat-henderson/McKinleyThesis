@@ -1,0 +1,196 @@
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+executing action:   0
+(S )
+[u'like']
+[(u'e', u'm', u'r')]
+
+executing action:   0
+(S (NP ) (VP (V likes) (NP )))
+
+executing action:   2
+(S (NP (PN Mary)) (VP (V likes) (NP )))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N ))))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   13
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   15
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N (A foo7) (N rabbit)))))
+
+executing action:   30
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D a) (N (A foo9) (N (A foo7) (N rabbit))))))
+
+executing action:   42
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP (D a) (N (A foo9) (N (A foo8) (N (A foo7) (N rabbit)))))))
+
+executing action:   56
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N (A foo9) (N (A foo8) (N (A foo4) (N (A foo7) (N rabbit))))))))
+
+executing action:   16
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo9)
+        (N
+          (A foo8)
+          (N (A foo4) (N (A foo2) (N (A foo7) (N rabbit)))))))))
+
+executing action:   97
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo9)
+          (N
+            (A foo8)
+            (N (A foo4) (N (A foo2) (N (A foo7) (N rabbit))))))))))
+
+executing action:   92
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo9)
+          (N
+            (A foo8)
+            (N
+              (A foo4)
+              (N (A foo2) (N (A foo7) (N (A foo1) (N rabbit)))))))))))
+
+executing action:   121
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo9)
+          (N
+            (A foo8)
+            (N
+              (A foo4)
+              (N
+                (A foo2)
+                (N (A foo6) (N (A foo7) (N (A foo1) (N rabbit))))))))))))
+
+executing action:   91
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo9)
+          (N
+            (A foo8)
+            (N
+              (A foo4)
+              (N
+                (A foo2)
+                (N
+                  (A foo6)
+                  (N (A foo7) (N (A foo3) (N (A foo1) (N rabbit)))))))))))))
+
+executing action:   0
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo10)
+        (N
+          (A foo9)
+          (N
+            (A foo8)
+            (N
+              (A foo4)
+              (N
+                (A foo2)
+                (N
+                  (A foo5)
+                  (N
+                    (A foo6)
+                    (N (A foo7) (N (A foo3) (N (A foo1) (N rabbit))))))))))))))
+
+time available:[(0.5329878330230713, 1477.2727272727273), (0.6716339588165283, 1480.0), (0.8331799507141113, 1483.3333333333333), (1.0330939292907715, 1487.5), (1.3366878032684326, 1492.857142857143), (1.7105519771575928, 1500.0), (2.1539947986602783, 1510.0), (2.86129093170166, 1525.0), (3.452690839767456, 1550.0), (4.255162954330444, 1600.0), (5.191203832626343, 1900.0), (6.247663974761963, 1900.0001)]
+Mary likes a foo10 foo9 foo8 foo4 foo2 foo5 foo6 foo7 foo3 foo1 rabbit
+1900.0001
+6.2505531311

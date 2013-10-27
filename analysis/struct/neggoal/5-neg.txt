@@ -1,0 +1,196 @@
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+[u'like']
+[(u'e', u'm', u'r')]
+executing action:   0
+(S )
+[u'like']
+[(u'e', u'm', u'r')]
+
+executing action:   0
+(S (NP ) (VP (V likes) (NP )))
+
+executing action:   2
+(S (NP (PN Mary)) (VP (V likes) (NP )))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N ))))
+
+executing action:   0
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   1
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N rabbit))))
+
+executing action:   8
+(S (NP (PN Mary)) (VP (V likes) (NP (D a) (N (A foo1) (N rabbit)))))
+
+executing action:   25
+(S
+  (NP (PN Mary))
+  (VP (V likes) (NP (D a) (N (A foo3) (N (A foo1) (N rabbit))))))
+
+executing action:   9
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP (D a) (N (A foo3) (N (A foo5) (N (A foo1) (N rabbit)))))))
+
+executing action:   30
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N (A foo4) (N (A foo3) (N (A foo5) (N (A foo1) (N rabbit))))))))
+
+executing action:   56
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo10)
+          (N (A foo3) (N (A foo5) (N (A foo1) (N rabbit)))))))))
+
+executing action:   72
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo10)
+          (N
+            (A foo3)
+            (N (A foo6) (N (A foo5) (N (A foo1) (N rabbit))))))))))
+
+executing action:   28
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo10)
+          (N
+            (A foo3)
+            (N
+              (A foo6)
+              (N (A foo7) (N (A foo5) (N (A foo1) (N rabbit)))))))))))
+
+executing action:   74
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo8)
+          (N
+            (A foo10)
+            (N
+              (A foo3)
+              (N
+                (A foo6)
+                (N (A foo7) (N (A foo5) (N (A foo1) (N rabbit))))))))))))
+
+executing action:   37
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo8)
+          (N
+            (A foo10)
+            (N
+              (A foo3)
+              (N
+                (A foo9)
+                (N
+                  (A foo6)
+                  (N (A foo7) (N (A foo5) (N (A foo1) (N rabbit)))))))))))))
+
+executing action:   0
+(S
+  (NP (PN Mary))
+  (VP
+    (V likes)
+    (NP
+      (D a)
+      (N
+        (A foo4)
+        (N
+          (A foo8)
+          (N
+            (A foo2)
+            (N
+              (A foo10)
+              (N
+                (A foo3)
+                (N
+                  (A foo9)
+                  (N
+                    (A foo6)
+                    (N (A foo7) (N (A foo5) (N (A foo1) (N rabbit))))))))))))))
+
+time available:[(0.5286550521850586, 1477.2727272727273), (0.648439884185791, 1480.0), (0.787402868270874, 1483.3333333333333), (1.0214998722076416, 1487.5), (1.2916510105133057, 1492.857142857143), (1.6632418632507324, 1500.0), (2.1015939712524414, 1510.0), (2.8196299076080322, 1525.0), (3.4133050441741943, 1550.0), (4.093220949172974, 1600.0), (4.919831037521362, 1900.0), (5.824372053146362, 1900.0001)]
+Mary likes a foo4 foo8 foo2 foo10 foo3 foo9 foo6 foo7 foo5 foo1 rabbit
+1900.0001
+5.82711791992
