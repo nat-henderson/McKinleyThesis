@@ -1,0 +1,76 @@
+% prelude.tex
+%   - titlepage
+%   - dedication
+%   - acknowledgments
+%   - table of contents, list of tables and list of figures
+%   - nomenclature
+%   - abstract
+%============================================================================
+
+
+\clearpage\pagenumbering{roman}  % This makes the page numbers Roman (i, ii, etc)
+
+
+
+% TITLE PAGE
+%   - define \title{} \author{} \date{}
+\advisorname{Soumya Ray}
+\advisortitle{Professor}
+\title{A Decision Theoretic Approach to Natural Language Generation}
+\author{Nathan McKinley}
+\date{2013}
+%   - The default degree is ``Doctor of Philosophy''
+%     (unless the document style msthesis is specified
+%      and then the default degree is ``Master of Science'')
+%     Degree can be changed using the command \degree{}
+\degree{Master of Science}
+%   - The default is dissertation, unless the document style
+%     msthesis was specified in which case it becomes thesis.
+%     If msthesis is specified for the MS margins, you can
+%     still have a dissertation if you specify \disseration
+%\disseration
+%   - for a masters project report, specify \project
+%\project
+%   - for a preliminary report, specify \prelim
+%\prelim
+%   - for a masters thesis, specify \thesis
+\thesis
+%   - The default department is ``Electrical Engineering''
+%     The department can be changed using the command \department{}
+\department{Electrical Engineering and Computer Science}
+%   - once the above are defined, use \maketitle to generate the titlepage
+\maketitle
+
+% COPYRIGHT PAGE
+%   - To include a copyright page use \copyrightpage
+\copyrightpage
+
+% ACKNOWLEDGMENTS
+\begin{acknowledgments}
+I thank my advisor, Professor Soumya Ray, for his assistance through the entire process of
+developing this idea and creating this thesis.  When I began this program I knew very
+little of the process of research, but Professor Ray guided me through creating my first
+prototype of this system and my first paper for submission to a conference.  From there,
+we ended up here, with the submission of my thesis in order to obtain the degree of
+Master of Science.  I am very thankful to him for all his help, edits, and guidance.\\
+
+I also thank Professor Wyatt Newman for suggesting that I attempt this, my thesis committee
+for reviewing my work, and (some other people).
+\end{acknowledgments}
+
+% CONTENTS, TABLES, FIGURES
+\tableofcontents
+\listoftables
+\listoffigures
+
+% ABSTRACT
+\begin{umiabstract}
+  \input{abstract}
+\end{umiabstract}
+
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+
+
+\clearpage\pagenumbering{arabic} % This makes the page numbers Arabic (1, 2, etc)
