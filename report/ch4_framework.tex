@@ -141,6 +141,37 @@ an anytime algorithm, described further below.
  semantic information.  Figure \ref{example-a} similarly shows an example
  of an adjoining operation.
 
+\section{Specifications of Inputs}
+
+\subsection{Grammar Specification}
+
+A grammar, for our purposes, contains a set of trees, divided into two sets (initial and auxiliary).
+These trees need to be annotated with the entities in them.  Entities are defined as any element
+anchored by precisely one node in the tree which can appear in a proposition representing the
+semantic content of the tree.  These trees are uniquely named, and also contain an
+annotation (+) representing the lexicalized node.  See Appendix A for an example of a combined
+grammar / lexicon.
+
+\subsection{Lexicon Specification}
+
+The lexicon that we use is a list of permissible word-tree pairings, annotated with the meaning of
+the pairing.  For instance, if the grammar contained a tree named "a.adj", (N (A+) (N-foot*))
+(an adjoining tree for prepending an adjective to a noun, whose foot node is an entity named "foot"),
+then the lexicon might contain an entry "a.adj: ['red', 'red(foot)]".  That would mean that the overall
+LTAG that we are using contains the tree named "a.adj", lexicalized to 'red', and that when that tree
+is applied to a sentence, the sentence's meaning is adjusted to include red(name of the foot node).
+Appendix A contains an example of a combined grammar / lexicon.
+
+\subsection{Communicative Goal Specification}
+
+The communicative goal is just a list of propositions with dummy entity names.  Matching entity
+names refer to the same entity; for instance, a communicative goal of 'red(d), dog(d)' would
+match a sentence with the semantic representation 'red(subj), dog(subj), cat(obj), chased(subj, obj)',
+like "The red dog chased the cat", for instance.  As shown here, the communicative goal does
+not have to refer to any "central meaning" of the sentence as a human would select it, but rather
+to propositions which the sentence affirms.  Appendix B contains an example of a communicative
+goal and a number of sentences which satisfy it.
+
 \subsection{Reward Function}
  While the production probabilities in the given PLTAG define the
  global structure of the state space, we use the reward function of

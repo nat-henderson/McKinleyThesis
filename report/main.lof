@@ -1,10 +1,10 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces An example tree substitution operation in STRUCT.}}{17}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces An example tree adjoining operation in STRUCT.}}{17}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The STRUCT Algorithm.}}{20}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental comparison between STRUCT and CRISP. (a) Generation time vs. length of referring expression (b) Score of best solution vs time.}}{27}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{27}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{27}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces (a) Effect of grammar size, (b) Effect of multiple and negated goals, (c) Effect of parameter variations on the STRUCT solution. }}{29}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{29}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{29}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{29}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The STRUCT Algorithm.}}{21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental comparison between STRUCT and CRISP. (a) Generation time vs. length of referring expression (b) Score of best solution vs time.}}{28}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{28}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{28}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces (a) Effect of grammar size, (b) Effect of multiple and negated goals, (c) Effect of parameter variations on the STRUCT solution. }}{30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{30}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{30}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{30}

@@ -1,6 +1,4 @@
-In this chapter, we provide some background on natural language generation,
-grammars which we considered for use in this work, followed by a discussion
-of approaches to Natural Language Generation.
+In this chapter, we provide some background on grammars which we considered for use in this work.
 
 \section{Natural Language Grammars}
 
@@ -10,25 +8,52 @@ create a grammar which can sufficiently define natural language, the XTAG projec
 chiefly among them, but even those projects fail to sufficiently embody the
 constraints that spoken and written English put on word orderings and meaning.
 
+\subsection{Context-Free Grammars}
+
+One of the simplest grammars which can convey relationships between terminals
+and nonterminals is the "Context Free Grammar" (CFG).  A CFG is made up of rules,
+each of which specifies a possible rewrite of a nonterminal into one or more
+terminals or nonterminals.  Once there are no further nonterminals to be rewritten,
+the final state is a series of terminals which is in the language defined by the grammar.
+This language is defined as the set of all possible generated sentences.\\
+
+CFGs are so named because the rules in them are unable to consider the "context" for
+their rewriting.  No rules may condition on the presence or placement of terminals
+or nonterminals other than the single nonterminal to be rewritten.  This is, of course,
+insufficiently expressive to be a grammar for English (or any other natural language).\\
+
+\subsection{Probabilistic CFGs}
+
+One attempt to make CFGs more realistic for parsing or generating natural languages was to
+introduce a probabilistic component.  In a Probabilistic Context Free Grammar (PCFG), CFG
+rules are tagged with probabilities, usually representing the frequency of their appearance in
+an observed corpus.  These probabilities are required to sum to 1 for each nonterminal to
+be rewritten, so that there is a defined probability distribution over the options for each nonterminal.\\
+
+This grammar type does appropriately convey the crucial truth that that not all rules are equal.
+However, it does so in a naive way, unable to express these probabilities in terms of the placement
+of the nonterminal in a sentence, and consequently also unable to successfully express English.
+
 \subsection{Tree Adjoining Grammars}
 
+A Tree Adjoining Grammar (TAG) takes a different approach, differing substantially from CFGs and PCFGs.
 TAGs are tree-based grammars consisting of two sets of trees, called initial
-trees and auxiliary or adjoining trees.  These two kinds of trees generally perform
+trees and adjoining trees (sometimes ``auxiliary trees").  These two kinds of trees tend to perform
 different roles semantically in addition to their differing syntactic roles.  The former,
 initial trees, are usually for adding new semantic information to the sentence.  They
-add new nodes to the sentence tree.  In a simplified Context Free Grammar of English,
-initial trees contain rules like "Verb Phrases contain a Verb and a Noun", or "VP -> V N".
+add new nodes to the sentence tree.  In a simplified TAG of English,
+initial trees contain rules like "Verb Phrases contain a Verb and a Noun", or "VP $->$ V N".
 A sentence can be made entirely of initial trees, but a sentence must contain at least
-one initial tree.  An example of an initial tree is shown in Figure <SOMETHING>.\\
+one initial tree.  An example of an initial tree is shown in Figure $<$SOMETHING$>$.\\
 (S (NP (D) (N (Cat))) (VP))\\
 This tree has as its root the S node, and this defines how it can interact with other
 trees under a TAG.  Since this is an initial tree, it can only interact with other trees by
 substitution.  That is, this tree is a drop-in replacement for an S node with no children.
 This is how we get from our stub sentence (S) to a complete sentence.
 
-Adjoining trees usually clarify a point in a sentence.  In a simplified CFG of English, adjoining
-trees would contain rules like "a noun can have an adjective placed in front of it," or "N -> A N".
-An example of an adjoining tree is shown in Figure <SOMETHING>.\\
+Adjoining trees usually clarify a point in a sentence.  In a simplified TAG of English, adjoining
+trees would contain rules like "a noun can have an adjective placed in front of it," or "N $->$ A N".
+An example of an adjoining tree is shown in Figure $<$SOMETHING$>$.\\
 (N (A (Red)) (N*))\\
 This tree has as its root an N node.  It also has a specially annotated N node elsewhere in the
 tree.  These nodes define its interaction with other trees under a TAG.  Adjoining trees interact
@@ -47,4 +72,12 @@ Notice that this has the effect, in all cases, of making the tree deeper.
 We use a variation of TAGs in our work, called a lexicalized TAG (LTAG), where each tree is
 associated with a lexical item called an anchor.  All examples given above are examples of
 lexicalized trees.  An example of an unlexicalized tree would be (NP (D) (N)), where there
-are no nodes containing lexical tokens.
+are no nodes containing lexical tokens.\\
+
+As with CFGs, an attempt to make TAGs more tractable for generation or parsing was to
+introduce probabilities.  Each tree rule in a TAG must be annotated with a probability, and
+there will be a probability distribution for each nonterminal at the frontier of the tree.
+These probabilistic TAGs, or PTAGs, can be useful if a corpus of text is available.\\
+
+The XTAG project has had some success using LTAGs to model English grammar, 
+so we focus mostly on LTAGs in our work.
