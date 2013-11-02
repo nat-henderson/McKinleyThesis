@@ -3,18 +3,19 @@
 \contentsline {chapter}{\numberline {1}{ {Introduction}}}{1}
 \contentsline {chapter}{\numberline {2}{ {Background}}}{4}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {2.1}Natural Language Grammars}{5}
-\contentsline {subsection}{\numberline {2.1.1}Context-Free Grammars}{5}
-\contentsline {subsection}{\numberline {2.1.2}Probabilistic CFGs}{5}
-\contentsline {subsection}{\numberline {2.1.3}Tree Adjoining Grammars}{6}
-\contentsline {chapter}{\numberline {3}{ {Related Work}}}{8}
+\contentsline {section}{\numberline {2.1}Markov Decision Processes}{5}
+\contentsline {section}{\numberline {2.2}Natural Language Grammars}{6}
+\contentsline {subsection}{\numberline {2.2.1}Context-Free Grammars}{6}
+\contentsline {subsection}{\numberline {2.2.2}Probabilistic CFGs}{6}
+\contentsline {subsection}{\numberline {2.2.3}Tree Adjoining Grammars}{7}
+\contentsline {chapter}{\numberline {3}{ {Related Work}}}{9}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {3.1}Approaches to NLG}{9}
-\contentsline {section}{\numberline {3.2}Grammar Representation}{10}
-\contentsline {section}{\numberline {3.3}NLG Applications}{11}
-\contentsline {chapter}{\numberline {4}{ {Framework}}}{13}
+\contentsline {section}{\numberline {3.1}Approaches to NLG}{10}
+\contentsline {section}{\numberline {3.2}Grammar Representation}{11}
+\contentsline {section}{\numberline {3.3}NLG Applications}{12}
+\contentsline {chapter}{\numberline {4}{ {Framework}}}{14}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {4.1}NLG as planning in an MDP}{14}
+\contentsline {section}{\numberline {4.1}NLG as planning in an MDP}{15}
 \contentsline {section}{\numberline {4.2}The UCT Algorithm}{15}
 \contentsline {section}{\numberline {4.3}STRUCT}{16}
 \contentsline {subsection}{\numberline {4.3.1}Overview}{16}

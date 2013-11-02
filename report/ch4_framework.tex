@@ -1,42 +1,6 @@
 \section{NLG as planning in an MDP}
 We formulate NLG as a planning problem on a Markov decision process
-(MDP)~\cite{puterman_1994_markov}. An MDP is a tuple $(S, A, T, R, \gamma)$ where $S$ is a
-set of states, $A$ is a set of actions available to an agent,
-$T:S\times A\times S \rightarrow (0,1)$ is a possibly stochastic
-function defining the probability $T(s,a,s')$ with which the
-environment transitions to $s'$ when the agent does $a$ in state $s$.
-$R:S\times A \rightarrow \mathbb{R}$ is a real-valued reward function that
-specifies the utility of performing action $a$ in state $s$. Finally,
-$\gamma$ is a discount factor that allows planning over infinite
-horizons to converge. In such an MDP, the agent selects actions at
-each state (a {\em policy}) to optimize the expected long-term
-discounted reward: $\pi^*(s)=\arg \max_a E(\sum_t \gamma^t
-R(s_t,a_t)|s=s_0)$, where the expectation is taken with respect to the
-state transition distribution.
-
-When the MDP model ($T$ and $R$) is
-known, various dynamic programming algorithms such as value
-iteration~\cite{bellman_1957_dynamic} can be used to plan and act in an MDP. When the
-model is unknown, and the task is to formulate a policy, it can be
-solved in a model-free way (i.e. without estimating $T$ and $R$)
-through temporal difference (TD) learning. The key idea in TD-learning
-is to take advantage of Monte Carlo sampling; since the agent visits
-states and transitions with a frequency governed by the unknown
-underlying $T$, simply keeping track of average rewards over time
-yields the expected values required to compute the optimal actions at
-each state.
-
-Determining the optimal policy at {\em every} state using the above
-strategy is polynomial in the size of the state-action
-space~\cite{brafman_2003_rmax}, which is intractable in our case. But for our application, we do not
-need to find the optimal policy. Rather we just need to {\em plan} in
-an MDP to achieve a {\em given} communicative goal. Is it
-possible to do this without exploring the entire state-action space?
-Recent work answers this question affirmatively. New techniques such
-as sparse sampling~\cite{kearns_1999_sparse} and
-UCT~\cite{kocsis_bandit_2006} show how to generate near-optimal plans
-in large MDPs with a time complexity that is independent of the state
-space size. Using such an approach with a suitable defined MDP
+(MDP)  Using such an approach with a suitable defined MDP
 (explained below) allows us to naturally handle
 probabilistic grammars as well as formulate NLG as a planning problem,
 unifying the distinct lines of attack described above. Further, the
