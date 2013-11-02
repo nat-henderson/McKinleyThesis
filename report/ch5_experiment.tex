@@ -13,7 +13,7 @@ goals, negated goals, and nested subclauses.
 Finally, we evaluate the effect on STRUCT's performance 
 of varying key parameters, including grammar size.
 
-\subsection{Comparison to CRISP}
+\section{Comparison to CRISP}
 % Input to STRUCT comes in two parts: a
 % grammar file and a world file. The grammar file contains a list of
 % elementary trees and a lexicon.  The elementary trees may be either
@@ -41,30 +41,31 @@ referents for the argument. Because the reward signal is fine-grained,
  a myopic action selection strategy is
 sufficient for these experiments, and 
 the $d$ parameter is set to zero. The
- number of simulations for STRUCT varies between 20 to 150.
-% that in nearly all cases, a much smaller $n$, under 100, is sufficient
-% to virtually guarantee success.  The exploration constant $c$ in
-% Equation~\ref{eqn:uct} is irrelevant when $n \leq |\bf{A}|$, since it
-% applies only to actions selected after all open actions have already
-% been tried once.
+number of simulations for STRUCT varies between 20 to 150.
+In most cases, a small $n$, under 100, is sufficient
+to guarantee generation success.  The exploration constant $c$ in
+Equation~\ref{eqn:uct} is irrelevant when $n \leq |\bf{A}|$, since it
+applies only to actions selected after all open actions have already
+been tried once.
 
 \begin{figure}
-\subfigure[] {
-\includegraphics[width=0.45 \linewidth ]{../analysis/plots/complex-goal/complex-goal.pdf}
-}
-\subfigure[] {
-\includegraphics[width=0.45 \linewidth ]{../analysis/plots/complex-goal/complex-goal-anytime.pdf}
-}
-\caption{Experimental comparison between STRUCT and  CRISP. (a)
-  Generation time vs. length of referring expression (b) Score of best
-solution vs time.}
-\label{crisp-comparison}
+\includegraphics[width=0.7 \linewidth ]{../analysis/plots/complex-goal/complex-goal.pdf}
+\caption{Experimental comparison between STRUCT and  CRISP: 
+Generation time vs. length of referring expression }
+\label{crisp-comparison-gentime}
 \end{figure}
 
-%\subsubsection{Comparison to CRISP: Referring Expressions}
-{\bf Referring Expressions.} We first evaluate CRISP and STRUCT on their ability to generate
+\begin{figure}
+\includegraphics[width=0.7 \linewidth ]{../analysis/plots/complex-goal/complex-goal-anytime.pdf}
+\caption{Experimental comparison between STRUCT and  CRISP:
+Score of best solution vs time.}
+\label{crisp-comparison-score}
+\end{figure}
+
+\subsection{Comparison to CRISP: Referring Expressions}
+We first evaluate CRISP and STRUCT on their ability to generate
 referring expressions. We follow prior work (\cite{koller_experiences_2011})
-in our experiment design.  We consider a series of sentence
+in our initial experiment design.  We consider a series of sentence
 generation problems which require the planner to generate a sentence
 equivalent to ``The Adj$_1$ Adj$_2$ ... Adj$_k$ dog chased the cat.",
 where the string of adjectives is a string that distinguishes one
@@ -98,25 +99,26 @@ partially solves the communicative goal.
 
 \begin{figure}
 \centering
-\subfigure[] {
-\includegraphics[width=0.45 \linewidth]{../analysis/plots/large-grammar/large-grammar.pdf}
+\includegraphics[width=0.7 \linewidth]{../analysis/plots/large-grammar/large-grammar.pdf}
 \label{graph-large-grammars}
-}
-\subfigure[]{
-\includegraphics[width=0.45 \linewidth]{../analysis/plots/goals/differentgoals.pdf}
+\caption{Effect of grammar size}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.7 \linewidth]{../analysis/plots/goals/differentgoals.pdf}
 \label{chart-different-goals}
-}
-\subfigure[]{
-\includegraphics[width=0.45 \linewidth]{../analysis/plots/params/pltag-n-v-score.pdf}
+\caption{Effect of multiple and negated goals}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=0.7 \linewidth]{../analysis/plots/params/pltag-n-v-score.pdf}
 \label{chart-n-v-score}
-}
-\caption{(a) Effect of grammar size, (b) Effect of multiple and negated
-  goals, (c) Effect of parameter variations on the STRUCT solution. }
+\caption{Effect of parameter variations on the STRUCT solution.}
 \end{figure}
 
 
-%\subsubsection{Comparison to CRISP:  Grammar Size}
-{\bf Grammar Size.} We next evaluate STRUCT and CRISP's ability to
+\subsection{Comparison to CRISP:  Grammar Size}
+We next evaluate STRUCT and CRISP's ability to
 handle larger grammars. This experiment is set up in the same way as
 the one above, with the exception of $l$ ``distracting'' words, words
 which are not useful in the sentence to be generated.  $l$ is defined
@@ -148,12 +150,12 @@ substantially with increases in grammar size.  However, the time to
 improve this solution does. An interesting question for future work is
 how to limit this increase in time complexity in STRUCT. 
 
-\subsection{Evaluation of Complex Communicative Goals}
+\section{Evaluation of Complex Communicative Goals}
 In the next set of experiments, we illustrate that STRUCT can solve
 conjunctions of communicative goals as well as negated communicative goals.
 
-%\subsubsection{Multiple Goals}
-{\bf Multiple Goals.} We next evaluate STRUCT's ability to accomplish
+\subsection{Multiple Goals}
+We next evaluate STRUCT's ability to accomplish
 multiple communicative goals when generating a single sentence.  In this
 experiment, we modify the problem from the 
 previous section.  In that section, the referred-to dog was unique,
@@ -171,17 +173,15 @@ disambiguation.  We find that, universally, these otherwise useless
 adjectives are included in the output of our generator, demonstrating
 that STRUCT is successfully balancing multiple communicative goals.
 As we show in figure \ref{chart-different-goals} (the ``Positive
-Goals'' curve) , the presence of additional satisfiable semantic goals does not substantially affect the time required for generation.  We are able to accomplish this task with the same very high frequency as the CRISP comparisons, as we use the same parameters.
+Goals'' curve) , the presence of additional satisfiable semantic goals does
+not substantially affect the time required for generation.  We are able to
+accomplish this task with the same very high frequency as the CRISP
+comparisons, as we use the same parameters.
 
-%\subsubsection{Negated Goals}
-{\bf Negated Goals.} We now evaluate STRUCT's ability to generate
+\subsection{Negated Goals}
+We now evaluate STRUCT's ability to generate
 sentences given negated communicative goals.  We again modify
 the problem used earlier by 
-%  In that experiment, the referred-to rabbit
-% could be identified uniquely only through the use of many adjectives;
-% the final instance of that problem required a list of 25 adjectives.
-% In this experiment, we demonstrate our generator's ability to avoid
-% using specified actions.  
 adding to our lexicon several new adjectives, each applicable only to
 the target of our referring expression.  Since this entity can now be
 referred to unambiguously using only one adjective, our generator
