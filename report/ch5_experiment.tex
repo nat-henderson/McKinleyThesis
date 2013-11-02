@@ -1,8 +1,8 @@
 In this section, we compare STRUCT to a state-of-the-art NLG system,
 CRISP~\footnote{We considered using the PCRISP system as a
-  baseline~\cite{bauer_sentence_2010}. However, we could not get it to
-  work, and we did not receive a response to our queries, so we were
-  unable to use it.} 
+  baseline~\cite{bauer_sentence_2010}. However, we could not get the system to
+  compile, and we did not receive a response to our queries, so we were
+  unable to use it.}
 and evaluate three hypotheses: (i) STRUCT will be
 comparable in speed and generation quality to CRISP as it generates
 increasingly large referring expressions, (ii) STRUCT will be
@@ -11,7 +11,13 @@ grammar which they use increases, and (iii) STRUCT is capable of
 communicating complex propositions, including multiple concurrent
 goals, negated goals, and nested subclauses.
 Finally, we evaluate the effect on STRUCT's performance 
-of varying key parameters, including grammar size.
+of varying key parameters, including grammar size.\\
+
+We will be comparing CRISP to two different versions of STRUCT.
+As mentioned in the previous chapter, there are two different reward
+functions which we have written and found to be useful in this
+domain.  We compare to both such functions in order to demonstrate
+the performance tradeoffs of a system based on a reward function.
 
 \section{Comparison to CRISP}
 % Input to STRUCT comes in two parts: a

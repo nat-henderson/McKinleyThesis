@@ -3,6 +3,6 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces The STRUCT Algorithm.}}{21}
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental comparison between STRUCT and CRISP: Generation time vs. length of referring expression }}{29}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Experimental comparison between STRUCT and CRISP: Score of best solution vs time.}}{29}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Effect of grammar size}}{30}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Effect of grammar size}}{31}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Effect of multiple and negated goals}}{31}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Effect of parameter variations on the STRUCT solution.}}{31}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Effect of parameter variations on the STRUCT solution.}}{32}

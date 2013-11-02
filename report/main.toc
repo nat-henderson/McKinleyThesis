@@ -38,9 +38,9 @@
 \contentsline {chapter}{\numberline {5}{ {Experiments}}}{27}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
 \contentsline {section}{\numberline {5.1}Comparison to CRISP}{28}
-\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{28}
-\contentsline {subsection}{\numberline {5.1.2}Comparison to CRISP: Grammar Size}{32}
-\contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{32}
+\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{30}
+\contentsline {subsection}{\numberline {5.1.2}Comparison to CRISP: Grammar Size}{30}
+\contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{33}
 \contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{33}
 \contentsline {subsection}{\numberline {5.2.2}Negated Goals}{33}
 \contentsline {subsection}{\numberline {5.2.3}Effect of Parameters}{34}
