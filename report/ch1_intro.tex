@@ -1,36 +1,40 @@
-Visions of future artificial intelligence systems have long included natural
+Artificial Intelligence (A.I.) systems are becoming increasingly prevalent in
+modern consumer products.  Google's ``Google Now" system determines
+what information its user wants to see before they ask for it.  Apple's ``Siri"
+acts as an artificial personal assistant, attempting to respond to queries stated in
+natural language.  Android (which includes Google Now) and iOS (which
+includes Siri) have 85\% market penetration between them, and there are
+over one billion smartphones active.\\
+
+Visions of future A.I. systems have long included natural
 language interfaces.  The ship's computer from Star Trek, the robots from
-the works of Heinlein, Asimov, and Dick, and the droids from Star Wars are
+the works of Heinlein and Asimov, and the droids from Star Wars are
 all capable of human speech, and even those which are not capable of dialogue
 are able to receive orders verbally and respond in kind.  The creation
 of an artificial intelligence like humans have been imagining for many years
 requires as a precondition the creation of a system for understanding and
 creating language.  It is the latter part of this requirement which we attempt to 
-address in this work.
+address in this work.\\
 
-\section{Natural Language Generation Systems}
-Even without these lofty future goals, the increasing frequency of natural language interfaces for consumer
+Consequently, a crucial subcomponent of artificial intelligence is Natural Language Processing (NLP).
+In order to successfully communicate with people, a system which does natural
+language processing (the understanding, analysis and use of language) will need to
+take in language and translate it into a format that computers can work with.  It will also
+need to be able to translate from an internal meaning representation to natural language.
+This latter ability is known as Natural Language Generation.\\
+
+Even without the aforementioned lofty future goals, the increasing frequency of natural language interfaces for consumer
 products means that natural language generation (NLG) is becoming more and more important
-in industry.  Consequently, a consistent and reliable method for creating a natural
+in the world.  Consequently, a consistent and reliable method for creating a natural
 language generation system would be of value, especially if the system's
 computational requirements were small enough that the system could be embedded
-in consumer electronics.  In this work, we propose a system based in statistical
-planning which serves as a general-purpose natural language generation system.
-As a part of this work, we propose a method for specifying a grammar based on
-tree-adjoining grammars using a modified UCT algorithm.
+in consumer electronics.  The main contribution of this thesis is a system based in statistical
+planning which serves as a general-purpose natural language generation system.\\
 
-``Give me a sentence about a cat and a dog.'' Given such a {\em
-communicative goal}, most native English speakers
-can answer a question like this one quite easily.
-They can also usually provide several similar sentences,
-differing in details but all satisfying the general communicative goal,
-and they can usually do this with very little error. Natural language generation (NLG) develops
-techniques to extend similar capabilities to automated systems. 
-Here, we consider the following restricted NLG problem: given a
+In this thesis, we consider the following restricted NLG problem: given a
 grammar, lexicon, and a communicative goal, output a valid English
-sentence that satisfies this goal.
+sentence that satisfies this goal.\\
 
-\section{Contribution}
 We propose an algorithm which is based in Monte-Carlo Tree Search, an increasingly
 popular method for probabilistic planning.  Our algorithm specifically is based in
 UCT, the "Upper Confidence bound applied to Trees" algorithm.  This algorithm gives
@@ -38,4 +42,4 @@ us the ability to efficiently search a large space (all possible natural languag
 one of many valid outputs.  We compare our work to that of previous Natural Language
 Generation systems, including one which uses traditional AI Planning techniques.
 We find that our approach compares favorably in many areas with these state-of-the-art
-NLG systems.
+NLG systems.\\
