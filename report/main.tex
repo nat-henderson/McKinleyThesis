@@ -58,9 +58,10 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{amssymb}
+\usepackage{listings}
 
 \renewcommand{\ttdefault}{cmtt}
-
+\lstset{breaklines=true}
 \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
     \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
     %   Parameters for TEXT pages (not float pages):
@@ -154,7 +155,10 @@
 % appendix
 %\begin{appendices}               % Start of the Appendix Chapters.  If there is only
                                  % one Appendix Chapter, then use \begin{appendix}
-%\include{app1_variables}
+\begin{appendix}
+\chapter{Example Grammars}
+\include{app1_examples}
+\end{appendix}
 %\include{app2_workspace}
 %\include{app3_r2}
 %\include{code}                   % Including computer code listings
@@ -163,7 +167,7 @@
 %\include{acro}                   % A discussion on generating PDF files.
 %\end{appendices}                 % End of the Appendix Chapters.  ibid on \end{appendix}
 
-%\bibliography{thesis_ref}              % Make the bibliography
+\bibliography{thesis_ref}              % Make the bibliography
 
 %\include{vita}                  % Optional Vita, use \begin{vita} vita text \end{vita}
 \end{document}

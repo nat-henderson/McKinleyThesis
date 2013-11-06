@@ -1,0 +1,43 @@
+\section{Basic Experiment}
+
+\begin{figure}[h]
+\caption{Grammar for the basic experiment}
+\begin{lstlisting}
+"grammar" :
+{
+    "i.nvn":    "(S(NP-subj)(VP(V+-self)(NP-obj)))",
+    "i.np":     "(NP(D)(N+-self))",
+    "i.d":      "(D+-self)",
+    "i.cv":     "(V+-self)",
+    "a.ad":     "(N(A+)(N*-self))",
+    "a.sub":    "(N(N*-self)(PP(P+-clause)(VP(V-clauseverb|self,clauseobj)(NP-clauseobj))))"
+}
+\end{lstlisting}
+\end{figure}
+
+\begin{figure}[h]
+\caption{Lexicon for the basic experiment}
+\begin{lstlisting}
+"lexicon":
+{
+    "i.nvn": [{"word" : "chased", "meaning": "chased(subj, obj)"}, {"word":"ate", "meaning":"ate(subj, obj)"}],
+    "i.d":  [{"word":"the","meaning": None}, {"word":"a", "meaning":None}],
+    "i.np":   [{"word":"cat", "meaning":"cat(self)"}, {"word":"dog", "meaning":"dog(self)"}, 
+    {"word":"treat", "meaning":"treat(self)"}],
+    "a.ad":  [],
+    "i.cv": [{"word":"chased", "meaning":"chased(self)"}],
+    "a.sub": [{"word":"which", "meaning":None}]
+}
+\end{lstlisting}
+\end{figure}
+
+\begin{figure}[h]
+\caption{World and Goal for the basic experiment}
+\begin{lstlisting}
+{
+    "world": ["chased(d1, c)", "dog(d1)", "cat(c)"],
+    "goal": "chased(d1, c)"
+}
+\end{lstlisting}
+\end{figure}
+
