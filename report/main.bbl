@@ -1,5 +1,29 @@
 \begin{thebibliography}{10}
 
+\bibitem{puterman_1994_markov}
+M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
+  programming}.
+\newblock John Wiley \& Sons, Inc., 1994.
+
+\bibitem{bellman_1957_dynamic}
+R.~Bellman, {\em Dynamic Programming}.
+\newblock Princeton University Press, Princeton, NJ, 1957.
+
+\bibitem{brafman_2003_rmax}
+R.~Brafman and M.~Tennenholtz, ``R-max-a general polynomial time algorithm for
+  near-optimal reinforcement learning,'' {\em The Journal of Machine Learning
+  Research}, vol.~3, pp.~213--231, 2003.
+
+\bibitem{kearns_1999_sparse}
+M.~Kearns, Y.~Mansour, and A.~Ng, ``A sparse sampling algorithm for
+  near-optimal planning in large markov decision processes,'' in {\em
+  International Joint Conference on Artificial Intelligence}, vol.~16,
+  pp.~1324--1331, LAWRENCE ERLBAUM ASSOCIATES LTD, 1999.
+
+\bibitem{kocsis_bandit_2006}
+L.~Kocsis and C.~Szepesvari, ``Bandit based monte-carlo planning,'' in {\em In:
+  {ECML-06.} Number 4212 in {LNCS}}, p.~282–293, Springer, 2006.
+
 \bibitem{shieber_uniform_1988}
 S.~M. Shieber, ``A uniform architecture for parsing and generation,'' in {\em
   Proceedings of the 12th conference on Computational linguistics - Volume 2},
@@ -76,5 +100,19 @@ D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
 D.~G. Bobrow, R.~M. Kaplan, M.~Kay, D.~A. Norman, H.~Thompson, and T.~Winograd,
   ``Gus, a frame-driven dialog system,'' {\em Artificial intelligence}, vol.~8,
   no.~2, pp.~155--173, 1977.
+
+\bibitem{bauer2009statistical}
+D.~Bauer, ``Statistical natural language generation as planning,'' {\em
+  Proceedings of the 44th annual meeting on Association for Computational
+  Linguistics}, 2009.
+
+\bibitem{hoffmann_ff_2001}
+J.~Hoffmann and B.~Nebel, ``The {FF} planning system: fast plan generation
+  through heuristic search,'' {\em J. Artif. Int. Res.}, vol.~14, p.~253–302,
+  May 2001.
+
+\bibitem{xtag}
+X.~R. Group, ``A lexicalized tree adjoining grammar for english,'' Tech. Rep.
+  IRCS-01-03, IRCS, University of Pennsylvania, 2001.
 
 \end{thebibliography}

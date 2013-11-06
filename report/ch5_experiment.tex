@@ -20,30 +20,12 @@ domain.  We compare to both such functions in order to demonstrate
 the performance tradeoffs of a system based on a reward function.
 
 \section{Comparison to CRISP}
-% Input to STRUCT comes in two parts: a
-% grammar file and a world file. The grammar file contains a list of
-% elementary trees and a lexicon.  The elementary trees may be either
-% initial or adjoining trees, and have semantic roles of arguments
-% clearly marked, while the lexicon entries reference these elementary
-% trees and lexicalize them.  These lexicon entries also refer to the
-% semantic meanings and semantic requirements of the trees which they
-% represent.  All this information is encoded in our grammar (for these
-% experiments, we use a deterministic grammar, as CRISP does). World
-% files also contain a list of communicative goals, which are
-% automatically encoded into a reward function by STRUCT.  Our reward
-% function gives 50 points for using the correct communicative goal, and
-% an additional $10 + \frac{20}{n}$ points for a correct reference to an
-% argument, where $n$ is the number of other entities that are possible
-% referents for the argument.
 
-We first describe experiments comparing STRUCT to CRISP. We used a
+We begin by describing experiments comparing STRUCT to CRISP. We used a
 2010 version of CRISP  which uses a Java-based GraphPlan
 implementation. In these
-experiments, we use a deterministic grammar.  Our reward function
-gives 50 points for using the correct communicative goal, and an
-additional $10 + \frac{20}{R}$ points for a correct reference to an
-argument, where $R$ is the number of other entities that are possible
-referents for the argument. Because the reward signal is fine-grained,
+experiments, we use a deterministic grammar.
+Because the reward signal is fine-grained,
  a myopic action selection strategy is
 sufficient for these experiments, and 
 the $d$ parameter is set to zero. The
@@ -73,31 +55,31 @@ We first evaluate CRISP and STRUCT on their ability to generate
 referring expressions. We follow prior work (\cite{koller_experiences_2011})
 in our initial experiment design.  We consider a series of sentence
 generation problems which require the planner to generate a sentence
-equivalent to ``The Adj$_1$ Adj$_2$ ... Adj$_k$ dog chased the cat.",
+like ``The Adj$_1$ Adj$_2$ ... Adj$_k$ dog chased the cat.",
 where the string of adjectives is a string that distinguishes one
 dog (whose identity is specified in the problem description) from
 all other entities in the world.
 The experiment has two parameters: $j$, the number of adjectives in
 the grammar, and $k$, the number of adjectives necessary to
 distinguish the entity in question from all other entities. We set $j
-= k$ and show the results in Figure~\ref{crisp-comparison} (a).
+= k$ and show the results in Figure~\ref{crisp-comparison-gentime}.
 We observe that CRISP was able to achieve
 sub-second or similar times for all expressions of less than length 5, but its
 generation times increase exponentially past that point, exceeding 100
 seconds for some plans at length 10. At length 15, CRISP failed to
 generate a referring expression; after 90 minutes the Java garbage
-collector terminated the process. STRUCT, performs much better and
+collector terminated the process. STRUCT$_b$, performs much better and
 is able to generate much longer referring expressions without failing.
 Later experiments had successful referring expression generation of lengths
-as high as 25.
+as high as 25.  STRUCT$_a$ performs similarly to CRISP asymptotically.
 
 We can also observe the anytime nature of STRUCT from this experiment,
-shown in Figure~\ref{crisp-comparison} (b).  Here we look at the
+shown in Figure~\ref{crisp-comparison-score}.  Here we look at the
 length of the solution sentence generated as a function of time, for
 $k=8$, a mid-range scenario which both generators are able to solve
 relatively quickly ($< 5s$).  As expected, CRISP produces nothing until
-the end of its run, at which point it returns the solution. STRUCT,
-however, quickly produces a reasonable solution, ``The dog chased the
+the end of its run, at which point it returns the solution. STRUCT (both versions)
+quickly produces a reasonable solution, ``The dog chased the
 cat.''  This is then improved upon by adjoining until the referring
 expression is unambiguous. If at any point the generation process was
 interrupted, STRUCT would be able to return a solution that at least
@@ -137,6 +119,8 @@ on the order of single milliseconds moving from $j = 1$ to $j = 10$.
 We report similar variations in CRISP runtime as $j$ increases from 10
 to 60: runtime increases by approximately 10\% over that range.
 
+\subsubsection{Absent Pruning}
+
 STRUCT's performance with large grammars is similar to CRISP using the
 FF planner \cite{hoffmann_ff_2001}, also profiled in
 \cite{koller_experiences_2011}, which increased from 27 ms to 4.4
@@ -155,6 +139,16 @@ Figure~\ref{graph-large-grammars}).  This value does not change
 substantially with increases in grammar size.  However, the time to
 improve this solution does. An interesting question for future work is
 how to limit this increase in time complexity in STRUCT. 
+
+\subsubsection{With Pruning}
+
+STRUCT's performance with large grammars improves dramatically if
+we allow for pruning (described in Chapter 4).  This experiment involving distracting words
+is a perfect example of a case where pruning will perform optimally.
+When we apply pruning we find that STRUCT is able to completely ignore the effect of
+additionaly distracting words.  Experiments showed roughly constant times for generation
+for $j=1$ through $j=5000$.  Although pruning is $O(n)$ in grammar size, repeated experiments
+failed to show any significant distinction in runtime on very large grammars.
 
 \section{Evaluation of Complex Communicative Goals}
 In the next set of experiments, we illustrate that STRUCT can solve
@@ -189,9 +183,10 @@ We now evaluate STRUCT's ability to generate
 sentences given negated communicative goals.  We again modify
 the problem used earlier by 
 adding to our lexicon several new adjectives, each applicable only to
-the target of our referring expression.  Since this entity can now be
+the target of our referring expression.  Since our target can now be
 referred to unambiguously using only one adjective, our generator
-should just select one of these new adjectives.  We then encode these
+should just select one of these new adjectives (this has been experimentally confirmed).
+We then encode these
 adjectives into negated communicative goals, so that they will not be
 included in the output of the generator, despite allowing a much
 shorter referring expression.  We find that these adjectives which
@@ -204,6 +199,64 @@ impact of negated goals on the time to generation.  Since this
 experiment alters the grammar size, we see the time to final
 generation growing linearly with grammar size.  The increased time to
 generate can be traced directly to this increase in grammar size.
+This is a case where pruning does not help us in reducing the grammar size;
+we cannot optimistically prune out words that we do not plan to use.  Doing
+so might reduce the ability of STRUCT to produce a sentence which partially
+fulfills its goals.
+
+\subsection{Nested subclauses}
+
+Here, we evaluate STRUCT$_a$'s ability to generate sentences with nested
+subclauses.  An example of such a sentence is ``The dog which ate the treat
+chased the cat".  This is a difficult sentence to generate for several reasons.
+The first, and clearest, is that there are words in the sentence which do not
+help to increase the score assigned to the partial sentence.  Notably, we must adjoin
+the word "which" to "the dog" during the portion of generation where the
+sentence reads "the dog chased the cat".  This decision requires us to do planning
+deeper than one level in the future, which massively increases the number of simulations
+STRUCT requires in order to get the best possible result.  The second reason that
+this sentence is a challenge for our generation algorithm is that that adjoinment
+("the dog" $\rightarrow$ "the dog which") corresponds to a tree where the verb
+that will be a child of "which" (in this case, "ate") does not have its argument as a child.
+See Figure \ref{explanation-of-child} for a visual explanation of this.  Consequently,
+we need to introduce indirection.  We add a node to our tree which represents the
+implied subject of the verb "ate".  This is the approach taken by XTAG \cite{xtag} in
+their attempt to create a TAG which appropriately represents the English language.
+See Figure \ref{explanation-of-indirection} for a visual explanation.\\
+
+Despite these troubles, STRUCT is capable of generating these sentences.  As we can
+see in Figure \ref{nested}, STRUCT's time to generate increases with the number of
+nested clauses.  To the best of our knowledge, CRISP is not able to generate sentences
+of this form, and consequently we present our results without baselines.  We present
+results only for STRUCT$_a$ here, since STRUCT$_b$ is not capable of generating
+sentences using indirection.
+
+\subsection{Conjunctions}
+
+Here, we evaluate STRUCT$_b$'s ability to generate sentences including
+conjunctions.  We introduce the conjunction "and", which allows for the
+root nonterminal of a new sentence ('S') to be adjoined to any other sentence.
+We then provide STRUCT with multiple goals.  Given sufficient depth for the
+search ($d=3$ was determined to be sufficient, as our reward signal is fine-grained),
+STRUCT will produce two sentences joined by the conjunction "and".  In this, too,
+we follow prior work in our experiment design \cite{koller_experiences_2011}
+~\footnote{CRISP was shown to be able to do this in \cite{koller_experiences_2011},
+but the grammar that allowed this was never published, and neither was documentation
+describing how to re-create it.  Since our inquiries by email were never answered, we
+were unable to replicate this experiment and present STRUCT's results with no
+baselines}.\\
+
+As we can see in Figure \ref{conjunctions}, STRUCT successfully generates results
+for conjunctions of up to five sentences.  This is not a hard upper bound, but
+generation times begin to be impractically large at that point, and further
+experimentation would be unnecessary.  Fortunately, human language tends toward
+shorter discourse units than these unwieldy (but technically grammatical) sentences.\\
+
+STRUCT increases in generation time both as the number of sentences increases and as
+the number of objects per sentences increases.  We show results for STRUCT$_a$ here,
+as our output should contain only simple sentences without nesting, and because
+STRUCT$_b$ is exponential in number of entities in the sentence, which will cause
+impractically large generation times for this experiment.
 
 \subsection{Effect of Parameters}
 Finally, we study the effect of the number of simulations and

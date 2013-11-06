@@ -349,7 +349,12 @@ searches for statements in the sentence which contradict this assumption.  This
 algorithm obviously runs much faster but has limitations.  One such limitation is
 that such an approach cannot perform an explicit mapping of entities in the sentence
 to entities in the world, which means that some sentences which do not precisely
-match the communicative goal will have a positive result.
+match the communicative goal will have a positive result.\\
+
+We refer to STRUCT using our perfectly correct algorithm as STRUCT$_a$, and STRUCT
+using our more efficient algorithm as STRUCT$_b$.  Our experiments will show that STRUCT$_b$
+has better performance than STRUCT$_a$, but that STRUCT$_a$ generates better
+sentences in some domains.
 
 \subsection{Grammar Pruning}
 

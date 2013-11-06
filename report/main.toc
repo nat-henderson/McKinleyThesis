@@ -1,5 +1,4 @@
 \contentsline {chapter}{LIST OF FIGURES}{iv}
-\contentsline {chapter}{ABSTRACT}{v}
 \contentsline {chapter}{\numberline {1}{ {Introduction}}}{1}
 \contentsline {chapter}{\numberline {2}{ {Background}}}{4}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
@@ -34,14 +33,23 @@
 \contentsline {subsection}{\numberline {4.4.7}Grammar Choice}{23}
 \contentsline {subsection}{\numberline {4.4.8}Action Definition}{24}
 \contentsline {subsection}{\numberline {4.4.9}Reward Function Definition}{24}
-\contentsline {subsection}{\numberline {4.4.10}Grammar Pruning}{25}
+\contentsline {subsection}{\numberline {4.4.10}Grammar Pruning}{26}
 \contentsline {chapter}{\numberline {5}{ {Experiments}}}{27}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
 \contentsline {section}{\numberline {5.1}Comparison to CRISP}{28}
-\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{30}
+\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{28}
 \contentsline {subsection}{\numberline {5.1.2}Comparison to CRISP: Grammar Size}{30}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{32}
+\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{33}
 \contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{33}
 \contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{33}
-\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{33}
-\contentsline {subsection}{\numberline {5.2.3}Effect of Parameters}{34}
-\contentsline {chapter}{\numberline {6}{ {Conclusion}}}{35}
+\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{34}
+\contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{34}
+\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{35}
+\contentsline {subsection}{\numberline {5.2.5}Effect of Parameters}{36}
+\contentsline {chapter}{\numberline {6}{ {Conclusion}}}{37}
+{\setcounter {tocdepth}{0}}
+\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{38}
+{\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
+\contentsline {section}{\numberline {A.1}Basic Experiment}{39}
+\contentsline {chapter}{LIST OF REFERENCES}{41}
