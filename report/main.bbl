@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{litman_njfun_2000}
+D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
+  learning spoken dialogue system,'' in {\em Proceedings of the 2000 ANLP/NAACL
+  Workshop on Conversational systems-Volume 3}, pp.~17--20, Association for
+  Computational Linguistics, 2000.
+
 \bibitem{puterman_1994_markov}
 M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
   programming}.
@@ -8,6 +14,10 @@ M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
 \bibitem{bellman_1957_dynamic}
 R.~Bellman, {\em Dynamic Programming}.
 \newblock Princeton University Press, Princeton, NJ, 1957.
+
+\bibitem{graphplan}
+A.~L. Blum and M.~L. Furst, ``Fast planning through planning graph analysis,''
+  {\em Artificial intelligence}, vol.~90, no.~1, pp.~281--300, 1997.
 
 \bibitem{brafman_2003_rmax}
 R.~Brafman and M.~Tennenholtz, ``R-max-a general polynomial time algorithm for
@@ -89,12 +99,6 @@ A.~Blum and M.~Furst, ``Fast planning through planning graph analysis,'' {\em
 J.~Chevelu, T.~Lavergne, Y.~Lepage, and T.~Moudenc in {\em Introduction of a
   new paraphrase generation tool based on Monte-Carlo sampling}, pp.~249--252,
   Association for Computational Linguistics, 2009.
-
-\bibitem{litman_njfun_2000}
-D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
-  learning spoken dialogue system,'' in {\em Proceedings of the 2000 ANLP/NAACL
-  Workshop on Conversational systems-Volume 3}, pp.~17--20, Association for
-  Computational Linguistics, 2000.
 
 \bibitem{bobrow_gus_1977}
 D.~G. Bobrow, R.~M. Kaplan, M.~Kay, D.~A. Norman, H.~Thompson, and T.~Winograd,
