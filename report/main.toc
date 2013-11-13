@@ -12,45 +12,46 @@
 \contentsline {chapter}{\numberline {3}{ {Related Work}}}{14}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
 \contentsline {section}{\numberline {3.1}Approaches to NLG}{14}
-\contentsline {section}{\numberline {3.2}Grammar Representation}{15}
-\contentsline {section}{\numberline {3.3}NLG Applications}{16}
-\contentsline {chapter}{\numberline {4}{ {Framework}}}{18}
+\contentsline {subsection}{\numberline {3.1.1}Halogen / Nitrogen}{16}
+\contentsline {subsection}{\numberline {3.1.2}CRISP / PCRISP}{17}
+\contentsline {section}{\numberline {3.2}Dialog Systems}{18}
+\contentsline {chapter}{\numberline {4}{ {Framework}}}{20}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {4.1}NLG as planning in an MDP}{18}
-\contentsline {section}{\numberline {4.2}STRUCT}{18}
-\contentsline {subsection}{\numberline {4.2.1}Overview}{18}
-\contentsline {subsection}{\numberline {4.2.2}Grammar Description}{19}
-\contentsline {section}{\numberline {4.3}Specifications of Inputs}{20}
-\contentsline {subsection}{\numberline {4.3.1}Grammar Specification}{20}
-\contentsline {subsection}{\numberline {4.3.2}Lexicon Specification}{21}
-\contentsline {subsection}{\numberline {4.3.3}Communicative Goal Specification}{21}
-\contentsline {subsection}{\numberline {4.3.4}Reward Function}{21}
-\contentsline {subsection}{\numberline {4.3.5}Execution as an Anytime Algorithm}{22}
-\contentsline {subsection}{\numberline {4.3.6}Algorithm Details}{23}
-\contentsline {subsubsection}{\numberline {4.3.6.1}Tree Policy}{25}
-\contentsline {subsubsection}{\numberline {4.3.6.2}State Expansion}{26}
-\contentsline {subsubsection}{\numberline {4.3.6.3}Default Policy}{26}
-\contentsline {subsubsection}{\numberline {4.3.6.4}Reward Assignment}{26}
-\contentsline {subsection}{\numberline {4.3.7}Grammar Choice}{26}
-\contentsline {subsection}{\numberline {4.3.8}Action Definition}{27}
-\contentsline {subsection}{\numberline {4.3.9}Reward Function Definition}{27}
-\contentsline {subsection}{\numberline {4.3.10}Grammar Pruning}{28}
-\contentsline {chapter}{\numberline {5}{ {Experiments}}}{30}
+\contentsline {section}{\numberline {4.1}NLG as planning in an MDP}{20}
+\contentsline {section}{\numberline {4.2}STRUCT}{20}
+\contentsline {subsection}{\numberline {4.2.1}Overview}{20}
+\contentsline {subsection}{\numberline {4.2.2}Grammar Description}{21}
+\contentsline {section}{\numberline {4.3}Specifications of Inputs}{22}
+\contentsline {subsection}{\numberline {4.3.1}Grammar Specification}{22}
+\contentsline {subsection}{\numberline {4.3.2}Lexicon Specification}{23}
+\contentsline {subsection}{\numberline {4.3.3}Communicative Goal Specification}{23}
+\contentsline {subsection}{\numberline {4.3.4}Reward Function}{23}
+\contentsline {subsection}{\numberline {4.3.5}Execution as an Anytime Algorithm}{24}
+\contentsline {subsection}{\numberline {4.3.6}Algorithm Details}{25}
+\contentsline {subsubsection}{\numberline {4.3.6.1}Tree Policy}{27}
+\contentsline {subsubsection}{\numberline {4.3.6.2}State Expansion}{28}
+\contentsline {subsubsection}{\numberline {4.3.6.3}Default Policy}{28}
+\contentsline {subsubsection}{\numberline {4.3.6.4}Reward Assignment}{28}
+\contentsline {subsection}{\numberline {4.3.7}Grammar Choice}{28}
+\contentsline {subsection}{\numberline {4.3.8}Action Definition}{29}
+\contentsline {subsection}{\numberline {4.3.9}Reward Function Definition}{29}
+\contentsline {subsection}{\numberline {4.3.10}Grammar Pruning}{30}
+\contentsline {chapter}{\numberline {5}{ {Experiments}}}{32}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {5.1}Comparison to CRISP}{30}
-\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{32}
-\contentsline {subsection}{\numberline {5.1.2}Comparison to CRISP: Grammar Size}{32}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{34}
-\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{35}
-\contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{35}
-\contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{35}
-\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{36}
-\contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{36}
-\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{37}
-\contentsline {subsection}{\numberline {5.2.5}Effect of Parameters}{38}
-\contentsline {chapter}{\numberline {6}{ {Conclusion}}}{40}
+\contentsline {section}{\numberline {5.1}Comparison to CRISP}{32}
+\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{34}
+\contentsline {subsection}{\numberline {5.1.2}Comparison to CRISP: Grammar Size}{34}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{36}
+\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{37}
+\contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{37}
+\contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{37}
+\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{38}
+\contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{38}
+\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{39}
+\contentsline {subsection}{\numberline {5.2.5}Effect of Parameters}{40}
+\contentsline {chapter}{\numberline {6}{ {Conclusion}}}{42}
 {\setcounter {tocdepth}{0}}
-\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{41}
+\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{43}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {A.1}Basic Experiment}{41}
-\contentsline {chapter}{LIST OF REFERENCES}{43}
+\contentsline {section}{\numberline {A.1}Basic Experiment}{43}
+\contentsline {chapter}{LIST OF REFERENCES}{45}

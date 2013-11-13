@@ -1,3 +1,15 @@
+In this section, we discuss previous approaches to NLG, including
+the two main diverging approaches.  Broadly, these are the
+approaches based in statistical generation and classical planning,
+respectively.  Our work takes an approach which we feel unifies
+these two differing branches, one of statistical planning.
+We discuss these two branches in terms of their
+exemplar systems, Halogen \cite{langkilde_2002_halogen}
+and CRISP \cite{koller_sentence_2007}, respectively.
+We also discuss prior work in dialog systems,
+which represent an application of NLG to
+real-world problems.
+
 \section{Approaches to NLG}
 Two broad categories of
 approaches have been used to attack the general NLG problem. One
@@ -42,13 +54,13 @@ module which encodes the enriched semantic representation into
 ``NLG Pipeline'' \cite{reiter_building_2000}.  Our approach is
 part of this broad category.
 
-Another approach, called {\em integrated generation}, considers both
+A subcategory of this approach, called {\em integrated generation}, considers both
 sentence generation portions of the pipeline together.
 \cite{koller_sentence_2007}.  This is the approach taken in some
 modern generators like CRISP \cite{koller_sentence_2007} and PCRISP
 \cite{bauer_sentence_2010}.  In these generators, the input semantic
 requirements and grammar are encoded in PDDL~\cite{fox2003pddl2},
-which an off-the-shelf planner such as
+which an off-the-shelf classical planner such as
 Graphplan~\cite{blum_1997_graphplan} uses to produce a list of
 applications of rules in the grammar.  These generators generate
 parses for the sentence at the same time as the sentence, which keeps
@@ -60,51 +72,118 @@ still a standard PDDL planner, so PCRISP transforms the probabilities
 into costs so that a low likelihood transition has a high cost in
 terms of the plan metric.
 
-\section{Grammar Representation}
+\subsection{Halogen / Nitrogen}
 
-In the NLG-as-planning framework, the choice of grammar representation
-is crucial in treating NLG as a planning problem; the grammar provides
-the actions that the planner will use to generate a sentence.  Tree
-Adjoining Grammars (TAGs) are a common choice
-\cite{koller_sentence_2007} \cite{bauer_sentence_2010}. TAGs are
-tree-based grammars consisting of two sets of trees, called initial
-trees and auxiliary or adjoining trees.  An entire initial tree can
-replace a leaf node in the sentence tree whose label matches the label
-of the root of the initial tree in a process called ``substitution.''
-Auxiliary trees, on the other hand, encode recursive structures of
-language.  Auxiliary trees have, at a minimum, a root node and a foot
-node whose labels match.  The foot node must be a leaf of the
-auxiliary tree.  These trees are used in a three-step process called
-``adjoining''.  The first step finds an adjoining location by
-searching through our sentence to find any subtree with a root whose
-label matches the root node of the auxiliary tree.  In the second
-step, the target subtree is removed from the sentence tree, and placed
-in the auxiliary tree as a direct replacement for the foot node.
-Finally, the modified auxiliary tree is placed back in the sentence
-tree in the original target location. We use a variation of TAGs in
-our work, called a lexicalized TAG (LTAG), where each tree is
-associated with a lexical item called an anchor.
+The exemplar system for the statistical generation approach is the
+Halogen / Nitrogen family of systems, based on the idea of
+ranking thousands of sentences without comprehending their
+meaning using a special data structure called a "word lattice".
+A word lattice can be thought of as a DAG where each edge is
+labelled with a single word.  The DAG is constructed such that
+any path from a specially labelled start node to a specially labelled
+end node is a valid English sentence (at least on the local level).
+Sentence log likelihoods can be calculated efficiently using this
+data structure, and the many sentences which can be generated
+given syntactic unknowns can be ranked efficiently.
 
-Though the NLG-as-planning approaches are elegant and appealing, a key
-drawback is the difficulty of handling probabilistic grammars, which
-are readily handled by the overgeneration and ranking
-strategies. Recent approaches such as
-PCRISP~\cite{bauer_sentence_2010} attempt to remedy this, but do so in
-a somewhat ad-hoc way, because they rely on deterministic planning to
-actually realize the output. In this work, we directly confront this
-by switching to a more expressive underlying formalism, a Markov
-decision process (MDP). We show in our experiments that this
-modification has other benefits as well, such as being anytime and an
-ability to handle complex communicative goals beyond those that
-state-of-the-art deterministic planners can currently solve.
+Systems like these take a semantic input like that shown in
+the appendix figure \ref{halogen-example}.  This input
+has the advantage of being relatively easy for humans to
+read, but relatively difficult for machines to create.
+However, these systems are very efficient and able
+to produce desirable outputs in many cases.  Due to
+their structure, they are only truly able to consider local
+dependencies of very short length.  In fact, the
+initial version of Halogen worked on a bigram model
+and generated sentences like "I only hires men who is good 
+pilots." \cite{knight_1995_genselect}.  Obviously, the
+linguistic model of combining words and choosing the most likely
+ordering will not always generate sentences which accomplish
+the desired linguistic goal, and requires eliminating all
+sentences which do not accomplish the linguistic goal
+before generation even begins.  Later work on these
+generators included the scoring of the top
+sentences by more expensive and reliable means, which
+improved generation quality substantially at the cost of
+very little time.
 
-We note that though the application of MDPs to NLG appear not to have
-been explored, some preliminary work has explored the application of
-MDPs and the UCT algorithm~\cite{chevelu_introduction_2009} that we
-also use in our work to paraphrasing. Here the algorithm was used to
-search through a paraphrase table to find the best paraphrase solution.
+Fundamentally, these systems have the advantage of
+fast and linguistically plausible generation.  They
+take advantage of Zipf's Law, which causes them
+to be fairly reliable under certain conditions.  When
+those conditions are not met, however, the generators perform
+badly; with no real understanding of their output, they
+cannot adequately correct for bad entries in their word
+lattice.
 
-\section{NLG Applications}
+\subsection{CRISP / PCRISP}
+
+CRISP is the exemplar system of the latter approach to NLG.
+CRISP treats the problem of generation as a classical planning
+problem; the goal state is any state in which the sentence
+currently being generated matches the desired meaning.
+Actions add new words to the sentence, and consequently
+modify CRISP's representation of the meaning of the sentence.
+This means that CRISP needs to keep a representation of the
+way in which every entry in the grammar it uses changes the
+meaning of any sentence in which it is placed.
+CRISP uses LTAGs as its grammar formalism,
+which means that these meanings will be phrased as components
+of tree-rewrite rules.  For example, see Figure \ref{crisp-grammar},
+originally published in \cite{koller_experiences_2011}.
+This can be problematic for some generation problems, but works well
+for simple sentences.
+
+\begin{figure}
+\centering
+\includegraphics{crisp-grammar.png}
+\caption{An example CRISP grammar.  Note the semantic annotations
+beneath each tree.}
+\label{crisp-grammar}
+\end{figure}
+
+CRISP uses graphplan to search for a solution to the planning
+problem which describes its generation problem.  This has
+the advantage of running very quickly on some types of
+sentences.  It also has the advantage of ignoring irrelevant
+pieces of the grammar automatically, reducing the number
+of states that need to be considered substantially.
+It is also a complete search; if a solution to the generation
+problem exists using the grammar and lexicon CRISP is provided,
+CRISP will never fail to find it.
+
+This is also a downside to CRISP; it needs to consider many
+states for each generation and consequently gets very
+slow if many steps are needed to generate the sentence.
+Our experiments show an exponential increase in time to
+generation as the length of the sentence increases.  This makes
+sense, given that graphplan is an exponential time algorithm
+in the length of the plan, and the length of CRISP's plan corresponds
+directly to the length of the generated sentence.
+
+PCRISP \cite{bauer_sentence_2010} is a later improvement to
+CRISP which attempts to address the failure of CRISP to consider
+probabilities in its generation.  PCRISP's core advancement is
+to perform its planning by searching the most probable sentences
+first.  This combines, in some sense, the Halogen / Nitrogen model
+of generation with the classical planning model.  PCRISP accomplishes
+this by introducing costs into the classical planning model.
+CRISP considers all adjoins and substitutions to be equal, and
+will always find the plan which takes the smallest number of actions
+to complete (as is the nature of graphplan).  PCRISP, instead,
+assigns actions a cost of $\frac{1}{P(s,a)}$, which means that
+actions which are probable will be investigated first.  In the
+experiments performed in \cite{bauer2009statistical},
+Bauer found that this decreased the incidence of timeouts and
+increased the speed of generation, but caused an increased instance of
+generation failures.
+
+PCRISP is the system most like the algorithm we propose in this thesis.
+However, we feel that using a true probabilistic planning algorithm
+and working in an MDP rather than including probability in what
+is normally a stochastic planning algorithm gives us some advantages.
+
+\section{Dialog Systems}
 
 The work we describe here addresses the pure NLG problem without
 considering the surrounding context; in practice, such a system would
@@ -114,6 +193,7 @@ NJFun~\cite{litman_njfun_2000}, model dialog using reinforcement
 learning. While integrating our NLG approach with such a system is a
 direction for future work, the similarity of the formalism indicates
 it should be feasible.
+
 NLG has many applications, but one which is of particular interest is
 natural language interfaces, or dialog systems.  Recently, such
 systems have generated a good deal of interest in mobile devices,
