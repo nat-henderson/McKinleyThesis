@@ -1,5 +1,16 @@
 \begin{thebibliography}{10}
 
+\bibitem{knight_1995_genselect}
+K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
+  {\em Proceedings of the 33rd annual meeting on Association for Computational
+  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
+
+\bibitem{litman_njfun_2000}
+D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
+  learning spoken dialogue system,'' in {\em Proceedings of the 2000 ANLP/NAACL
+  Workshop on Conversational systems-Volume 3}, pp.~17--20, Association for
+  Computational Linguistics, 2000.
+
 \bibitem{puterman_1994_markov}
 M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
   programming}.
@@ -8,6 +19,10 @@ M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
 \bibitem{bellman_1957_dynamic}
 R.~Bellman, {\em Dynamic Programming}.
 \newblock Princeton University Press, Princeton, NJ, 1957.
+
+\bibitem{graphplan}
+A.~L. Blum and M.~L. Furst, ``Fast planning through planning graph analysis,''
+  {\em Artificial intelligence}, vol.~90, no.~1, pp.~281--300, 1997.
 
 \bibitem{brafman_2003_rmax}
 R.~Brafman and M.~Tennenholtz, ``R-max-a general polynomial time algorithm for
@@ -24,6 +39,17 @@ M.~Kearns, Y.~Mansour, and A.~Ng, ``A sparse sampling algorithm for
 L.~Kocsis and C.~Szepesvari, ``Bandit based monte-carlo planning,'' in {\em In:
   {ECML-06.} Number 4212 in {LNCS}}, p.~282–293, Springer, 2006.
 
+\bibitem{langkilde_2002_halogen}
+I.~Langkilde-Geary, ``An empirical verification of coverage and correctness for
+  a general-purpose sentence generator,'' in {\em Proceedings of the 12th
+  International Natural Language Generation Workshop}, pp.~17--24, Citeseer,
+  2002.
+
+\bibitem{koller_sentence_2007}
+A.~Koller and M.~Stone, ``Sentence generation as a planning problem,'' in {\em
+  ANNUAL MEETING-ASSOCIATION FOR COMPUTATIONAL LINGUISTICS}, vol.~45, p.~336,
+  2007.
+
 \bibitem{shieber_uniform_1988}
 S.~M. Shieber, ``A uniform architecture for parsing and generation,'' in {\em
   Proceedings of the 12th conference on Computational linguistics - Volume 2},
@@ -34,12 +60,6 @@ S.~M. Shieber, ``A uniform architecture for parsing and generation,'' in {\em
 M.~Kay, ``Chart generation,'' in {\em Proceedings of the 34th annual meeting on
   Association for Computational Linguistics}, {ACL} '96, (Stroudsburg, {PA},
   {USA}), p.~200–204, Association for Computational Linguistics, 1996.
-
-\bibitem{langkilde_2002_halogen}
-I.~Langkilde-Geary, ``An empirical verification of coverage and correctness for
-  a general-purpose sentence generator,'' in {\em Proceedings of the 12th
-  International Natural Language Generation Workshop}, pp.~17--24, Citeseer,
-  2002.
 
 \bibitem{white_2003_ccg}
 M.~White and J.~Baldridge, ``Adapting chart realization to ccg,'' in {\em
@@ -66,11 +86,6 @@ A.~Koller and R.~P.~A. Petrick, ``Experiences with planning for natural
 E.~Reiter and R.~Dale, {\em Building Natural Language Generation Systems}.
 \newblock Cambridge University Press, Jan. 2000.
 
-\bibitem{koller_sentence_2007}
-A.~Koller and M.~Stone, ``Sentence generation as a planning problem,'' in {\em
-  ANNUAL MEETING-ASSOCIATION FOR COMPUTATIONAL LINGUISTICS}, vol.~45, p.~336,
-  2007.
-
 \bibitem{bauer_sentence_2010}
 D.~Bauer and A.~Koller, ``Sentence generation as planning with probabilistic
   {LTAG},'' {\em Proceedings of the 10th International Workshop on Tree
@@ -84,17 +99,6 @@ M.~Fox and D.~Long, ``Pddl2.1: An extension to pddl for expressing temporal
 \bibitem{blum_1997_graphplan}
 A.~Blum and M.~Furst, ``Fast planning through planning graph analysis,'' {\em
   Artificial intelligence}, vol.~90, no.~1, pp.~281--300, 1997.
-
-\bibitem{chevelu_introduction_2009}
-J.~Chevelu, T.~Lavergne, Y.~Lepage, and T.~Moudenc in {\em Introduction of a
-  new paraphrase generation tool based on Monte-Carlo sampling}, pp.~249--252,
-  Association for Computational Linguistics, 2009.
-
-\bibitem{litman_njfun_2000}
-D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
-  learning spoken dialogue system,'' in {\em Proceedings of the 2000 ANLP/NAACL
-  Workshop on Conversational systems-Volume 3}, pp.~17--20, Association for
-  Computational Linguistics, 2000.
 
 \bibitem{bobrow_gus_1977}
 D.~G. Bobrow, R.~M. Kaplan, M.~Kay, D.~A. Norman, H.~Thompson, and T.~Winograd,

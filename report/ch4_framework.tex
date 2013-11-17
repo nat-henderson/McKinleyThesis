@@ -18,38 +18,7 @@ strong theoretical guarantees of UCT translate into fast generation in
 many cases, as we demonstrate in our experiments.
 As the state space size in the language generation MDP is
 very large, we use a variation of the UCT algorithm in our system,
-described below.
-
-
-\section{The UCT Algorithm}
-
-Online planning in MDPs generally follows two steps. From each state
-encountered, a lookahead tree is constructed and used to estimate the
-utility of each action in this state. Then, the best action is taken,
-the system transitions to the next state and the procedure is
-repeated. In order to build a lookahead tree, a ``rollout policy'' is
-used. This policy has two components: if it encounters a state already
-in the tree, it follows a ``tree policy,'' discussed further below. If
-it encounters a new state, the policy reverts to a ``default'' policy
-that typically randomly samples an action. In all cases, any rewards
-received during the rollout search are backed up. Because this is a
-Monte Carlo estimate, typically, several simultaneous trials are run,
-and we keep track of the rewards received by each choice and
-use this to select the best action at the root.
-
-The final detail that UCT specifies is the method for determining the tree policy.
-The tree policy needed by UCT for a state $s$ is the action $a$ in that state which maximizes:
-\begin{equation}
-P(s,a) = Q(s,a) + c\sqrt{\frac{ln N(s)}{N(s,a)}}\label{eqn:uct}
-\end{equation}
-Here $Q(s,a)$ is the estimated value of $a$ as observed in the tree
-search and $N(s)$ and $N(s,a)$ are visit counts for the state and
-state-action pair. Thus the second term is an exploration term that
-biases the algorithm towards visiting actions that have not been
-explored enough. $c$ is a constant that trades off exploration and
-exploitation. This essentially treats each action decision
-as a bandit problem; previous work shows that this approach can
-efficiently select near-optimal actions at each state.
+described in chapter 2.2.
 
 \section{STRUCT}
 \subsection{Overview}
