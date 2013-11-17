@@ -1,3 +1,13 @@
+In this section, we introduce our algorithm for natural language generation,
+entitled ``Sentence Tree Realization using UCT" (STRUCT).  We begin
+by describing how we formalize the problem as an MDP.  We then explain
+the UCT algorithm and the modifications we have made in order to improve
+its applicability in NLG.  We present STRUCT's pseudocode, and describe
+our method of creating reward functions for our MDPs.  Next, We detail enhancements
+to STRUCT external to the MDP planning problem, and conclude by analyzing
+STRUCT's benefits and weaknesses compared to other popular
+NLG algorithms.
+
 \section{NLG as planning in an MDP}
 We formulate NLG as a planning problem on a Markov decision process
 (MDP)  Using such an approach with a suitable defined MDP
@@ -9,6 +19,7 @@ many cases, as we demonstrate in our experiments.
 As the state space size in the language generation MDP is
 very large, we use a variation of the UCT algorithm in our system,
 described below.
+
 
 \section{The UCT Algorithm}
 
