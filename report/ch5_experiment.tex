@@ -99,14 +99,6 @@ partially solves the communicative goal.
 \caption{Effect of multiple and negated goals}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7 \linewidth]{../analysis/plots/params/pltag-n-v-score.pdf}
-\label{chart-n-v-score}
-\caption{Effect of parameter variations on the STRUCT solution.}
-\end{figure}
-
-
 \subsection{Grammar Size}
 We next evaluate STRUCT and CRISP's ability to
 handle larger grammars. This experiment is set up in the same way as
@@ -288,9 +280,10 @@ this is because the search space grows by a factor of the universe size with
 the addition of another entity \cite{koller_experiences_2011}.
 
 \subsection{Effect of Parameters}
+
 Finally, we study the effect of the number of simulations and
 lookahead depth on the performance of STRUCT. We design this
-experiment to require lookahead by using  a sparse
+experiment to require lookahead by using a sparse
 reward function that penalizes a final sentence based on the number of
 adjectives it has. We also use a probabilistic LTAG that has multiple
 actions all relevant to reaching the goal, but that add differing
@@ -314,3 +307,11 @@ It is interesting that even for low numbers of
 simulations $d=4$ is able able to find a reasonably good
 solution. These behaviors are expected and verify 
 that STRUCT does not display any pathologies with respect to its parameters.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7 \linewidth]{../analysis/plots/params/pltag-n-v-score.pdf}
+\label{chart-n-v-score}
+\caption{Effect of parameter variations on the STRUCT solution.}
+\end{figure}
+

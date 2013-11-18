@@ -4,10 +4,8 @@ by describing how we formalize the problem as an MDP.  We then explain
 the modifications we have made to UCT in order to improve
 its applicability in NLG.  We discuss the inputs to STRUCT and explain
 how those can be specified.  We present STRUCT's pseudocode, and describe
-our method of creating reward functions for our MDPs.  Next, We detail enhancements
-to STRUCT external to the MDP planning problem, and conclude by analyzing
-STRUCT's benefits and weaknesses compared to other popular
-NLG algorithms.
+our method of creating reward functions for our MDPs.  We conclude by detailing
+enhancements to STRUCT external to the MDP planning problem.
 
 \section{NLG as planning in an MDP}
 We formulate NLG as a planning problem on a Markov decision process
@@ -367,7 +365,4 @@ meanings transitively related to those entities.  Once we have selected all thes
 we will remove all words from the grammar which have a meaning not contained in this list.
 
 In practice, this means that we often need a very small proportion of the overall language,
-speeding generation significantly.\\
-
-In the next section, we will perform an experimental evaluation of the
-performance of STRUCT as compared to CRISP.
+speeding generation significantly.

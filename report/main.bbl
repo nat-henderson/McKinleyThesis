@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{knight_1995_genselect}
-K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
-  {\em Proceedings of the 33rd annual meeting on Association for Computational
-  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
-
 \bibitem{litman_njfun_2000}
 D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
   learning spoken dialogue system,'' in {\em Proceedings of the 2000 ANLP/NAACL
@@ -99,6 +94,11 @@ M.~Fox and D.~Long, ``Pddl2.1: An extension to pddl for expressing temporal
 \bibitem{blum_1997_graphplan}
 A.~Blum and M.~Furst, ``Fast planning through planning graph analysis,'' {\em
   Artificial intelligence}, vol.~90, no.~1, pp.~281--300, 1997.
+
+\bibitem{knight_1995_genselect}
+K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
+  {\em Proceedings of the 33rd annual meeting on Association for Computational
+  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
 
 \bibitem{bauer2009statistical}
 D.~Bauer, ``Statistical natural language generation as planning,'' {\em

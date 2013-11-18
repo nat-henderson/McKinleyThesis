@@ -32,16 +32,20 @@
 \contentsline {subsection}{\numberline {5.1.1}Referring Expressions}{33}
 \contentsline {subsection}{\numberline {5.1.2}Grammar Size}{33}
 \contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{35}
-\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{36}
+\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{35}
 \contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{36}
 \contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{36}
-\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{37}
+\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{36}
 \contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{37}
 \contentsline {subsection}{\numberline {5.2.4}Conjunctions}{38}
 \contentsline {subsection}{\numberline {5.2.5}Effect of Parameters}{40}
 \contentsline {chapter}{\numberline {6}{ {Conclusion}}}{42}
-{\setcounter {tocdepth}{0}}
-\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{43}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {A.1}Basic Experiment}{43}
-\contentsline {chapter}{LIST OF REFERENCES}{45}
+\contentsline {section}{\numberline {6.1}Comparison to Competing NLG Methods}{42}
+\contentsline {section}{\numberline {6.2}STRUCT: Strengths and Weaknesses}{43}
+\contentsline {section}{\numberline {6.3}Future Work}{44}
+{\setcounter {tocdepth}{0}}
+\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{45}
+{\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
+\contentsline {section}{\numberline {A.1}Basic Experiment}{45}
+\contentsline {chapter}{LIST OF REFERENCES}{47}
