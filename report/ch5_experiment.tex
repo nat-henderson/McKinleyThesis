@@ -237,25 +237,36 @@ sentences using indirection.
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction.pdf}
-\label{graph-conjunction}
-\caption{Time to generate sentences with conjunctions}
+\includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction1.pdf}
+\label{graph-conjunction1}
+\caption{Time to generate sentences with conjunctions with one entitiy ("The man sat and the girl sat and ....")}
 \end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction2.pdf}
+\label{graph-conjunction2}
+\caption{Time to generate sentences with conjunctions with two entities ("The dog chased the cat and ...")}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction3.pdf}
+\label{graph-conjunction3}
+\caption{Time to generate sentences with conjunctions with three entities ("The man gave the girl the book and ....")}
+\end{figure}
+
 
 Here, we evaluate STRUCT$_b$'s ability to generate sentences including
 conjunctions.  We introduce the conjunction "and", which allows for the
 root nonterminal of a new sentence ('S') to be adjoined to any other sentence.
 We then provide STRUCT with multiple goals.  Given sufficient depth for the
 search ($d=3$ was determined to be sufficient, as our reward signal is fine-grained),
-STRUCT will produce two sentences joined by the conjunction "and".  In this, too,
-we follow prior work in our experiment design \cite{koller_experiences_2011}
-~\footnote{CRISP was shown to be able to do this in \cite{koller_experiences_2011},
-but the grammar that allowed this was never published, and neither was documentation
-describing how to re-create it.  Since our inquiries by email were never answered, we
-were unable to replicate this experiment and present STRUCT's results with no
-baselines}.
+STRUCT will produce two sentences joined by the conjunction "and".
+Here, we follow prior work in our experiment design \cite{koller_experiences_2011}.
 
-As we can see in Figure \ref{graph-conjunction}, STRUCT successfully generates results
+As we can see in Figures \ref{graph-conjunction1}, \ref{graph-conjunction2}, and
+\ref{graph-conjunction3}, STRUCT successfully generates results
 for conjunctions of up to five sentences.  This is not a hard upper bound, but
 generation times begin to be impractically large at that point, and further
 experimentation would be unnecessary.  Fortunately, human language tends toward
