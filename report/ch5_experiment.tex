@@ -278,6 +278,15 @@ as our output should contain only simple sentences without nesting, and because
 STRUCT$_b$ is exponential in number of entities in the sentence, which will cause
 impractically large generation times for this experiment.
 
+We also compare our results to those presented in \cite{koller_experiences_2011} for
+CRISP with the FF Planner.  Koller et al attempted to generate sentences with
+three entities and failed to find a result within their 4 GB memory limit.  As you
+can see, CRISP generates a result slightly faster than STRUCT when we are 
+working with a single entity, but works much much slower for two entities
+and cannot generate results for a third entity.  According to Koller's findings,
+this is because the search space grows by a factor of the universe size with
+the addition of another entity \cite{koller_experiences_2011}.
+
 \subsection{Effect of Parameters}
 Finally, we study the effect of the number of simulations and
 lookahead depth on the performance of STRUCT. We design this
