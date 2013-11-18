@@ -11,7 +11,7 @@ grammar which they use increases, and (iii) STRUCT is capable of
 communicating complex propositions, including multiple concurrent
 goals, negated goals, and nested subclauses.
 Finally, we evaluate the effect on STRUCT's performance 
-of varying key parameters, including grammar size.\\
+of varying key parameters, including grammar size.
 
 We will be comparing CRISP to two different versions of STRUCT.
 As mentioned in the previous chapter, there are two different reward
@@ -50,7 +50,7 @@ Score of best solution vs time.}
 \label{crisp-comparison-score}
 \end{figure}
 
-\subsection{Comparison to CRISP: Referring Expressions}
+\subsection{Referring Expressions}
 We first evaluate CRISP and STRUCT on their ability to generate
 referring expressions. We follow prior work (\cite{koller_experiences_2011})
 in our initial experiment design.  We consider a series of sentence
@@ -93,19 +93,21 @@ partially solves the communicative goal.
 \end{figure}
 
 \begin{figure}
+\centering
 \includegraphics[width=0.7 \linewidth]{../analysis/plots/goals/differentgoals.pdf}
 \label{chart-different-goals}
 \caption{Effect of multiple and negated goals}
 \end{figure}
 
 \begin{figure}
+\centering
 \includegraphics[width=0.7 \linewidth]{../analysis/plots/params/pltag-n-v-score.pdf}
 \label{chart-n-v-score}
 \caption{Effect of parameter variations on the STRUCT solution.}
 \end{figure}
 
 
-\subsection{Comparison to CRISP:  Grammar Size}
+\subsection{Grammar Size}
 We next evaluate STRUCT and CRISP's ability to
 handle larger grammars. This experiment is set up in the same way as
 the one above, with the exception of $l$ ``distracting'' words, words
@@ -148,7 +150,7 @@ is a perfect example of a case where pruning will perform optimally.
 When we apply pruning we find that STRUCT is able to completely ignore the effect of
 additionaly distracting words.  Experiments showed roughly constant times for generation
 for $j=1$ through $j=5000$.  Although pruning is $O(n)$ in grammar size, repeated experiments
-failed to show any significant distinction in runtime on very large grammars.
+failed to show any significant distinction in runtime, even on very large grammars.
 
 \section{Evaluation of Complex Communicative Goals}
 In the next set of experiments, we illustrate that STRUCT can solve
@@ -222,7 +224,7 @@ See Figure \ref{explanation-of-child} for a visual explanation of this.  Consequ
 we need to introduce indirection.  We add a node to our tree which represents the
 implied subject of the verb "ate".  This is the approach taken by XTAG \cite{xtag} in
 their attempt to create a TAG which appropriately represents the English language.
-See Figure \ref{explanation-of-indirection} for a visual explanation.\\
+See Figure \ref{explanation-of-indirection} for a visual explanation.
 
 Despite these troubles, STRUCT is capable of generating these sentences.  As we can
 see in Figure \ref{nested}, STRUCT's time to generate increases with the number of
@@ -232,6 +234,13 @@ results only for STRUCT$_a$ here, since STRUCT$_b$ is not capable of generating
 sentences using indirection.
 
 \subsection{Conjunctions}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction.pdf}
+\label{graph-conjunction}
+\caption{Time to generate sentences with conjunctions}
+\end{figure}
 
 Here, we evaluate STRUCT$_b$'s ability to generate sentences including
 conjunctions.  We introduce the conjunction "and", which allows for the
@@ -244,13 +253,13 @@ we follow prior work in our experiment design \cite{koller_experiences_2011}
 but the grammar that allowed this was never published, and neither was documentation
 describing how to re-create it.  Since our inquiries by email were never answered, we
 were unable to replicate this experiment and present STRUCT's results with no
-baselines}.\\
+baselines}.
 
-As we can see in Figure \ref{conjunctions}, STRUCT successfully generates results
+As we can see in Figure \ref{graph-conjunction}, STRUCT successfully generates results
 for conjunctions of up to five sentences.  This is not a hard upper bound, but
 generation times begin to be impractically large at that point, and further
 experimentation would be unnecessary.  Fortunately, human language tends toward
-shorter discourse units than these unwieldy (but technically grammatical) sentences.\\
+shorter discourse units than these unwieldy (but technically grammatical) sentences.
 
 STRUCT increases in generation time both as the number of sentences increases and as
 the number of objects per sentences increases.  We show results for STRUCT$_a$ here,

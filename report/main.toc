@@ -29,15 +29,15 @@
 \contentsline {chapter}{\numberline {5}{ {Experiments}}}{31}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
 \contentsline {section}{\numberline {5.1}Comparison to CRISP}{31}
-\contentsline {subsection}{\numberline {5.1.1}Comparison to CRISP: Referring Expressions}{33}
-\contentsline {subsection}{\numberline {5.1.2}Comparison to CRISP: Grammar Size}{33}
+\contentsline {subsection}{\numberline {5.1.1}Referring Expressions}{33}
+\contentsline {subsection}{\numberline {5.1.2}Grammar Size}{33}
 \contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{35}
 \contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{36}
 \contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{36}
 \contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{36}
 \contentsline {subsection}{\numberline {5.2.2}Negated Goals}{37}
 \contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{37}
-\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{38}
+\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{39}
 \contentsline {subsection}{\numberline {5.2.5}Effect of Parameters}{39}
 \contentsline {chapter}{\numberline {6}{ {Conclusion}}}{41}
 {\setcounter {tocdepth}{0}}
