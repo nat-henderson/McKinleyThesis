@@ -3,6 +3,7 @@ set termoption dash
 set output "conjunction1.pdf"
 set xlabel "Number of Sentences"
 set ylabel "Time to Generate (seconds)"
+set xtics 1
 set key on
 set key inside t l
 
