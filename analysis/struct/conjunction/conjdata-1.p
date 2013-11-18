@@ -1,6 +1,6 @@
 set term pdf font "Times-New-Roman,16"
 set termoption dash
-set output "conjunction.pdf"
+set output "conjunction1.pdf"
 set xlabel "Number of Sentences"
 set ylabel "Time to Generate (seconds)"
 set key on
