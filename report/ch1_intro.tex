@@ -3,17 +3,17 @@ modern consumer products.  Google's ``Google Now" system determines
 what information its user wants to see before they ask for it.  Apple's ``Siri"
 acts as an artificial personal assistant, attempting to respond to queries stated in
 natural language.  Android (which includes Google Now) and iOS (which
-includes Siri) have 85\% market penetration between them, and there are
-over one billion smartphones active.
+includes Siri) have 45\% market penetration between them, and there were
+470 smartphones sold in 2011, with expectations of increase in 2012 and 2013
+ \cite{smartphones}.
 
 Visions of future A.I. systems have long included natural
 language interfaces.  The ship's computer from Star Trek, the robots from
 the works of Heinlein and Asimov, and the droids from Star Wars are
 all capable of human speech, and even those which are not capable of dialogue
-are able to receive orders verbally and respond in kind.  The creation
-of an artificial intelligence like humans have been imagining for many years
-requires as a precondition the creation of a system for understanding and
-creating language.
+are able to receive orders verbally and respond in kind.  A system 
+for understanding and creating language is a fundamental part of
+an artificial intelligence like humans have been imagining for many years.
 
 Consequently, a crucial subcomponent of artificial intelligence is Natural Language Processing (NLP).
 NLP studies the task of interacting with humans using languages which are inherently
@@ -25,8 +25,9 @@ need to be able to translate from an internal meaning representation to natural 
 See Figure \ref{nlp-block} for a visual explanation of this process.
 
 For example, consider a robotic concierge system which takes phone calls from users.
-A system like this has been shown to be practical\cite{litman_njfun_2000}, so it serves
-as a good example of an NLG interaction.  One possible interaction might be the following:
+A system like this has been shown to be practical \cite{litman_njfun_2000}, so it serves
+as a good example of an interaction with a system capable of generating language.
+One possible interaction might be the following:
 
 \begin{verbatim}
 Computer:  How may I help you today?
@@ -38,25 +39,24 @@ a phone line which it will need to decode into human speech.  This is the first 
 in the block diagram of Figure \ref{nlp-block}.  Current-generation speech recognition
 software is highly reliable for most accents, so let us assume that this step proceeds without
 error.  At this point, the computer system will need to attempt to understand the natural
-language input of "I am looking for a place to eat dinner".  There are many approaches
-to this problem, but the previously-mentioned concierge system was able to get by with
-a simple keyword-searching approach.  Such an approach might look for the words "I",
-"place", "eat", and "dinner", and determine that the speaker desires a listing of restaurants that
-are open for dinner.  This is the "NLP Parsing" step of Figure \ref{nlp-block}.  The system would
-then do some internal processing (e.g. database queries), which makes up the "Processing"
+language input of ``I am looking for a place to eat dinner". One very simple possibility is
+a straightforward keyword-searching approach.  Such an approach might look for the words ``I",
+``place", ``eat", and ``dinner", and determine that the speaker desires a listing of restaurants that
+are open for dinner.  This is the ``NLP Parsing" step of Figure \ref{nlp-block}.  The system would
+then do some internal processing (e.g. database queries), which makes up the ``Processing"
 step.  The system may determine that it needs to respond to the user, perhaps to ask a
 clarifying question to narrow the user's search.  This determination will be made in the
-"Response Generation" block.  At this point, the system will have an internal representation
-of the type of question it needs to ask which we call a "communicative goal".  That goal might
+``Response Generation" block.  At this point, the system will have an internal representation
+of the type of question it needs to ask which we call a ``communicative goal".  That goal might
 look something like the following:
 \begin{verbatim}
 question type: clarifying
 question seeks: preferences
-question regards: dinner type.
+question regards: dinner type
 question language: English
 \end{verbatim}
 
-At this point, the computer system needs to translate that into a sentence in its output
+The computer system next needs to translate that into a sentence in its output
 language.  The process of going from this internal representation to text like
 "What type of food do you typically enjoy for dinner?" is called Natural Language Generation,
 and comprises the fifth block of the NLP process.  Finally, this generated text is conveyed to
@@ -74,7 +74,7 @@ in consumer electronics.
 \begin{figure}
 \centering
 \includegraphics[width=0.8 \linewidth]{nlp-block.png}
-\caption{A diagram showing the flow of information through a normal interaction
+\caption{The flow of information through a normal interaction
 with a user in a generalized NLP system}
 \label{nlp-block}
 \end{figure}
@@ -86,9 +86,9 @@ it assumes a level of knowledge about the context in which the generation
 will occur.  In principle, the most general NLG problem is to produce a valid
 sentence in an arbitrary language, using the entire grammar and lexicon available
 in that language, to satisfy an arbitrary communicative goal.  In practice, we
-rarely require this level of generality; it would be unnecessary for the concierge
-program described above to be intimately familiar with the finer points of Klingon grammar.
-In practice, therefore, our restricted problem is a reasonable one.
+rarely require this level of generality; for instance, it would be unnecessary for the concierge
+program described above to be intimately familiar with highly technical jargon.
+We therefore start with this restricted subproblem, and plan to extend it in future work.
 
 Previous work on this problem has taken two broad approaches.  On one hand we have
 the classical planning approaches, which treat the problem of NLG as an AI planning
@@ -96,7 +96,8 @@ problem.  These systems have the advantage of being capable of finding acceptabl
 output in all circumstances where a perfect answer exists, but the disadvantage of
 being unable to handle a probabilistic grammar in a structured way.  They also struggle
 with completing a subset of the communicative goals, when full completion is not
-possible.  On the other hand, there are statistical planners which work by examining the
+possible.  On the other hand, there are statistical techniques which are not goal-directed.
+These techniques work by examining the
 most probable combinations of words and determining if any of those match the
 meaning they are attempting to generate.  These have the advantage of completing
 execution very quickly, and of taking advantage of Zipf's Law, which states broadly that
@@ -115,7 +116,11 @@ at any time and will return a partially-complete result very quickly.
 
 We do this, broadly, by using probabilistic planning rather than classical planning.
 Our algorithm is based in Monte-Carlo Tree Search, an increasingly
-popular method for probabilistic planning.
+popular method for probabilistic planning.  This algorithm performs ``simulations",
+examining different paths that generation could take and iteratively refining
+the search based on how ``good" the outcomes of previous simulations were.
+This ``goodness" is measured by a reward function which returns a numerical
+estimation of the value of the generation.
 
 We believe that if this algorithm were developed further, it could be useful as the
 final step of a dialog system, or useful in generation situations where flexibility of the

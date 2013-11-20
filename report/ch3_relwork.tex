@@ -1,9 +1,7 @@
 In this section, we discuss previous approaches to NLG, including
 the two main diverging approaches.  Broadly, these are the
-approaches based in statistical generation and classical planning,
-respectively.  Our work takes an approach which we feel unifies
-these two differing branches, one of statistical planning.
-We discuss these two branches in terms of their
+approaches utilizing statistical generation and classical planning,
+respectively.  We discuss these two branches in terms of their
 exemplar systems, Halogen \cite{langkilde_2002_halogen}
 and CRISP \cite{koller_sentence_2007}, respectively.
 We also discuss prior work in dialog systems,
@@ -23,18 +21,10 @@ assign semantic meaning to each individual token, then use a set of
 rules to decide if two words can be combined.  Any combination which
 contains a semantic representation equivalent to the desired meaning 
 is a valid output from a chart generation
-system. Another example of this idea is the HALogen/Nitrogen
-family of systems~\cite{langkilde_2002_halogen}. HALogen uses a two-phase
-architecture where first, a ``forest'' data structure that compactly
-summarizes possible expressions is constructed.  The structure allows
-for a more efficient and compact representation compared to lattice
-structures that had been previously used in statistical sentence
-generation approaches.  Using dynamic programming, the highest ranked
-sentence from this structure is then output. Many other systems using
-similar ideas exist, e.g.~\cite{white_2003_ccg,lu2009natural}.
+system.
 
 A second line of attack formalizes NLG as an AI planning problem.
-SPUD \cite{stone_2003_spud}, a system for NLG through microplanning,
+SPUD \cite{stone_2003_spud}, a system for NLG which uses planning,
 considers NLG as a problem which requires realizing a deliberative
 process of goal-directed activity.  Many such NLG-as-planning systems
 use a pipeline architecture, working from their communicative goal
@@ -48,7 +38,8 @@ to a {\em sentence generator}, which itself is usually split into two
 tasks, {\em sentence planning} and {\em surface realization}
 \cite{koller_experiences_2011}.  The sentence planner takes in a
 sentence-sized chunk of information to be conveyed and enriches it in
-some way.  This is then used by a {\em surface realization}
+some way, often by adding semantic annotations.  
+This is then used by a {\em surface realization}
 module which encodes the enriched semantic representation into 
  natural language.  This chain is sometimes referred to as the
 ``NLG Pipeline'' \cite{reiter_building_2000}.  Our approach is
@@ -76,14 +67,16 @@ terms of the plan metric.
 
 The exemplar system for the statistical generation approach is the
 Halogen / Nitrogen family of systems, based on the idea of
-ranking thousands of sentences without comprehending their
-meaning using a special data structure called a "word lattice".
+ranking thousands of sentences based purely on syntactic probability,
+using a special data structure called a "word lattice".
 A word lattice can be thought of as a DAG where each edge is
-labelled with a single word.  The DAG is constructed such that
-any path from a specially labelled start node to a specially labelled
-end node is a valid English sentence (at least on the local level).
-Sentence log likelihoods can be calculated efficiently using this
-data structure, and the many sentences which can be generated
+labeled with a single word.  The DAG is constructed such that
+any path from a specially labeled start node to a specially labeled
+end node is a valid English sentence (at least between adjacent nodes).
+This data structure enables the calculation of sentence likelihoods
+(the probability that an arbitrary sentence chosen from a grammar
+learned from a corpus would match this sentence), and the many
+sentences which can be generated
 given syntactic unknowns can be ranked efficiently.
 
 Systems like these take a semantic input like that shown in
@@ -105,7 +98,7 @@ before generation even begins.  Later work on these
 generators included the scoring of the top
 sentences by more expensive and reliable means, which
 improved generation quality substantially at the cost of
-very little time.
+little time. \cite{langkilde1998generation}
 
 Fundamentally, these systems have the advantage of
 fast and linguistically plausible generation.  They
@@ -118,7 +111,7 @@ lattice.
 
 \subsection{CRISP / PCRISP}
 
-CRISP is the exemplar system of the latter approach to NLG.
+CRISP is the exemplar system of the planning approach to NLG.
 CRISP treats the problem of generation as a classical planning
 problem; the goal state is any state in which the sentence
 currently being generated matches the desired meaning.
@@ -142,7 +135,7 @@ beneath each tree.}
 \label{crisp-grammar}
 \end{figure}
 
-CRISP uses graphplan to search for a solution to the planning
+CRISP uses Graphplan to search for a solution to the planning
 problem which describes its generation problem.  This has
 the advantage of running very quickly on some types of
 sentences.  It also has the advantage of ignoring irrelevant
@@ -152,17 +145,8 @@ It is also a complete search; if a solution to the generation
 problem exists using the grammar and lexicon CRISP is provided,
 CRISP will never fail to find it.
 
-This is also a downside to CRISP; it needs to consider many
-states for each generation and consequently gets very
-slow if many steps are needed to generate the sentence.
-Our experiments show an exponential increase in time to
-generation as the length of the sentence increases.  This makes
-sense, given that graphplan is an exponential time algorithm
-in the length of the plan, and the length of CRISP's plan corresponds
-directly to the length of the generated sentence.
-
 PCRISP \cite{bauer_sentence_2010} is a later improvement to
-CRISP which attempts to address the failure of CRISP to consider
+CRISP which attempts to address the inability of CRISP to consider
 probabilities in its generation.  PCRISP's core advancement is
 to perform its planning by searching the most probable sentences
 first.  This combines, in some sense, the Halogen / Nitrogen model
@@ -170,7 +154,7 @@ of generation with the classical planning model.  PCRISP accomplishes
 this by introducing costs into the classical planning model.
 CRISP considers all adjoins and substitutions to be equal, and
 will always find the plan which takes the smallest number of actions
-to complete (as is the nature of graphplan).  PCRISP, instead,
+to complete (as is the nature of Graphplan).  PCRISP, instead,
 assigns actions a cost of $\frac{1}{P(s,a)}$, which means that
 actions which are probable will be investigated first.  In the
 experiments performed in \cite{bauer2009statistical},

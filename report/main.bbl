@@ -1,5 +1,15 @@
 \begin{thebibliography}{10}
 
+\bibitem{knight_1995_genselect}
+K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
+  {\em Proceedings of the 33rd annual meeting on Association for Computational
+  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
+
+\bibitem{smartphones}
+L.~Goasduff and C.~Pettey, ``Gartner says worldwide smartphone sales soared in
+  fourth quarter of 2011 with 47 percent growth,'' {\em Gartner, Inc}, vol.~15,
+  2012.
+
 \bibitem{litman_njfun_2000}
 D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``Njfun: a reinforcement
   learning spoken dialogue system,'' in {\em Proceedings of the 2000 ANLP/NAACL
@@ -33,6 +43,24 @@ M.~Kearns, Y.~Mansour, and A.~Ng, ``A sparse sampling algorithm for
 \bibitem{kocsis_bandit_2006}
 L.~Kocsis and C.~Szepesvari, ``Bandit based monte-carlo planning,'' in {\em In:
   {ECML-06.} Number 4212 in {LNCS}}, p.~282–293, Springer, 2006.
+
+\bibitem{lojban}
+J.~W. Cowan, {\em The complete Lojban language}.
+\newblock Logical Language Group, 1997.
+
+\bibitem{klein2012context}
+E.~Klein, ``Context free grammars,'' 2012.
+
+\bibitem{jurafsky_textbook}
+D.~Jurafsky, J.~H. Martin, A.~Kehler, K.~Vander~Linden, and N.~Ward, {\em
+  Speech and language processing: An introduction to natural language
+  processing, computational linguistics, and speech recognition}, vol.~2.
+\newblock MIT Press, 2000.
+
+\bibitem{pcfg_textbook}
+F.~Jelinek, J.~D. Lafferty, and R.~L. Mercer, {\em Basic methods of
+  probabilistic context free grammars}.
+\newblock Springer, 1992.
 
 \bibitem{langkilde_2002_halogen}
 I.~Langkilde-Geary, ``An empirical verification of coverage and correctness for
@@ -94,11 +122,6 @@ M.~Fox and D.~Long, ``Pddl2.1: An extension to pddl for expressing temporal
 \bibitem{blum_1997_graphplan}
 A.~Blum and M.~Furst, ``Fast planning through planning graph analysis,'' {\em
   Artificial intelligence}, vol.~90, no.~1, pp.~281--300, 1997.
-
-\bibitem{knight_1995_genselect}
-K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
-  {\em Proceedings of the 33rd annual meeting on Association for Computational
-  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
 
 \bibitem{bauer2009statistical}
 D.~Bauer, ``Statistical natural language generation as planning,'' {\em

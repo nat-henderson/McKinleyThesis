@@ -1,8 +1,8 @@
-\contentsline {figure}{\numberline {1.1}{\ignorespaces A diagram showing the flow of information through a normal interaction with a user in a generalized NLP system}}{3}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces An example of an initial tree}}{11}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of an adjoining tree}}{12}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Partial tree}}{12}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Intermediate tree}}{12}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces The flow of information through a normal interaction with a user in a generalized NLP system}}{3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces An example of an initial tree in a lexicalized tree adjoining grammar}}{12}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of an adjoining tree in a lexicalized tree adjoining grammar}}{12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Partial tree}}{13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Intermediate tree}}{13}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Final tree}}{13}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces An example CRISP grammar. Note the semantic annotations beneath each tree.}}{17}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces An example tree substitution operation in STRUCT.}}{24}

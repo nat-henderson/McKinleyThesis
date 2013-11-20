@@ -7,14 +7,13 @@
 % It is provided without warranty on an AS IS basis.
 
 \noindent       % Don't indent this paragraph.
-  We study the problem of generating an English sentence given an
-  underlying probabilistic grammar, a vocabulary and a communicative
-  goal. We model the generation problem as a Markov decision process
-  with a suitably defined reward function that reflects the
-  communicative goal. We then use probabilistic planning to solve the
-  MDP and generate a sentence that, with high probability,
-  accomplishes the communicative goal. We show empirically that our
-  approach can generate complex sentences with a speed that generally
-  matches or surpasses the state of the art. Further, we show that our
-  approach is anytime and can handle complex communicative goals,
-  including negated goals.
+  We study the problem of generating a single sentence which satisfies
+  a communicative goal, given a grammar which specifies the language.
+  We model the generation process as a Markov Decision Process (MDP),
+  using a reward function which reflects that communicative goal.  We use
+  probabilistic planning to solve the MDP and generate a sentence which
+  satisfies the communicative goal.  We compare our approach to a current
+  state-of-the-art generation system, and find that our system can generally
+  match the state-of-the-art in both performance and generation quality, while
+  offering generation capabilities that exceed those usually found in planning-based
+  generators.

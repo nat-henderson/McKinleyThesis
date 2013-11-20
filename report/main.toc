@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {2.1}Markov Decision Processes}{6}
 \contentsline {section}{\numberline {2.2}Planning}{7}
 \contentsline {subsection}{\numberline {2.2.1}Classical Planning}{7}
-\contentsline {subsection}{\numberline {2.2.2}Probabilistic Planning}{8}
-\contentsline {section}{\numberline {2.3}Natural Language Grammars}{9}
+\contentsline {subsection}{\numberline {2.2.2}Probabilistic Planning and the UCT algorithm}{9}
+\contentsline {section}{\numberline {2.3}Natural Language Grammars}{10}
 \contentsline {subsection}{\numberline {2.3.1}Context-Free Grammars}{10}
 \contentsline {subsection}{\numberline {2.3.2}Tree Adjoining Grammars}{11}
 \contentsline {chapter}{\numberline {3}{ {Related Work}}}{14}

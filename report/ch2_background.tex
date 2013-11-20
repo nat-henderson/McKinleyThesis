@@ -34,7 +34,9 @@ each state.
 
 
 \section{Planning}
-Planning is the problem of creating a policy of action selection which fulfills some goal.
+Given a model of the world, an initial state and a goal state,
+planning is the problem of finding a sequence of actions that gets us 
+from the initial state to the goal state.
 Depending on the environment, actions may be drawn from some distribution
 dependent on the state of the world in which planning is being done.  This
 state may be observable, partially observable, or invisible to the agent doing
@@ -45,21 +47,43 @@ world.
 \subsection{Classical Planning}
 Classical planning is a planning problem with six conditions.  In a classical planning problem,
 there is a single initial state, which is fully known.  Actions are deterministic, can only
-be taken by the single agent which is present in the world, and take no time.  These three
+be taken by the single agent which is present in the world, and take unit time.  These three
 conditions combine to mean that the world does not change without the agent causing the change.
 The goal is one or more states which are reachable from the initial state, and
 Finally, actions are sequential.
 
-Classical planning has been studied extensively, and is widely considered to be the simplest possible
-planning problem.  These problems are usually solved by two broad categories of
-planning system: forward state-space planners and backward planners.  Forward state space planners
+Classical planning has been studied extensively.  These problems are usually solved by two broad categories of
+planning system: state-space planners and plan-space planners.  Forward state space planners
 plan by taking actions from the initial state and examining the state that results from the action.  Since
 actions are deterministic, it is straightforward to see that such a planner would be guaranteed to find
 the goal state by trying every possible combination of actions.  Backward planners plan by working
 backwards from the goal: they maintain a frontier and iteratively check which states in the state space
 can reach the states in the frontier.
 
-One popular backward planning algorithm is Graphplan\cite{graphplan}.  Graphplan works by creating
+Plan-space planners work differently.  For state-space planners, every node in the planning graph
+represents a state of the environment, reached through some list of ordered actions.  For plan-space
+planners, each node in the planning graph represents a partial plan, not necessarily ordered.  These partial plans
+have preconditions and effects; the plan is complete and correct when a node's effects are a superset
+of the goal state and the same node's preconditions are a subset of the initial state.  Plan-space
+planners begin with a node which has the entire goal state as its effects and its preconditions, then
+iteratively refine the plan so that the preconditions become a subset of the initial state.
+
+This iterative refinement is done in two ways: resolving open goals and resolving threats.
+Open goals are preconditions of the plan which we have not yet resolved, and threats are
+actions which are part of the plan whose effects cancel out the
+preconditions of other actions which are part of the plan.  We resolve open goals by finding
+actions whose effects contain the preconditions we seek to establish, then adding them to
+the plan.  We resolve threats by introducing ordering constraints; the action which will
+eliminate a necessary precondition should happen either before that precondition is established
+or after the action which required it.
+
+Plan-space planners can be faster than state-space planners at determining that a plan will be
+impossible if some open goals cannot be resolved, but they can also be much slower if
+continuing to resolve threats causes the plan to balloon in size.  In some domains, one
+failure mode is substantially more likely than the other, and so a choice between the
+two types of planners might be motivated by domain knowledge.
+
+One popular plan-space planning algorithm is Graphplan\cite{graphplan}.  Graphplan works by creating
 a "planning graph" which contains two types of nodes and three types of edges.  The two node types are
 either representing facts in the world or representing actions which can be taken in the world.  The three edge
 types are between a fact node and an action node, between an action node and a fact node, and between two
@@ -71,18 +95,19 @@ simultaneously (due to altering facts which are required preconditions, for inst
 
 Graphplan constructs this graph one level at a time, starting from the goal and working towards a state in which
 all the facts which are true in the initial state are true in the graph.  It then works backwards by picking actions
-that will reach the goal state from the initial state.  Graphplan is, therefore, not a state-space planner, since its
-graph does not have a representation for states specifically.
+that will reach the goal state from the initial state.  This may fail, and in that case the graph will be extended
+another level.
 
-\subsection{Probabilistic Planning}
+
+
+\subsection{Probabilistic Planning and the UCT algorithm}
 
 Probabilistic planning is an alternative to Classical Planning when the preconditions required to solve the
-easier problem do not hold.  Probabilistic planning is done on an MDP, where actions are not required
-to be deterministic and where we attempt to maximize a reward function rather than reach a particular
-state.  PP does require full observability of the state (this was irrelevant during the classical planning
-problem, since exploration with deterministic actions is trivial).  PP does not require that the initial
-state be given or known, which means that it is often described as determining a policy given a current
-state rather than an ordered list of actions to take.
+easier problem do not hold.  Probabilistic planning (PP) is done on an MDP, where actions are not required
+to be deterministic and where we attempt to maximize a reward function.  PP does require
+full observability of the state (this was irrelevant during the classical planning
+problem, since exploration with deterministic actions is trivial).  PP is often described
+as determining a policy given a current state, rather than generating an ordered list of actions to take.
 
 Determining the optimal policy at {\em every} state using the TD
 strategy described in the above MDP discussion is polynomial in the size of the state-action
@@ -121,7 +146,9 @@ state-action pair. Thus the second term is an exploration term that
 biases the algorithm towards visiting actions that have not been
 explored enough. $c$ is a constant that trades off exploration and
 exploitation. This essentially treats each action decision
-as a bandit problem; previous work shows that this approach can
+as a ``bandit problem" where the best action is determined by iteratively
+exploring the branches of the action tree that previous experiments
+have shown to be best.  Previous work \cite{uct-go} shows that this approach can
 efficiently select near-optimal actions at each state.
 
 
@@ -130,15 +157,11 @@ efficiently select near-optimal actions at each state.
 A grammar is a set of rules which define strings that are contained within a language.
 Many artificial languages, especially programming languages like C or Java, have
 grammars which can be expressed concisely and without ambiguity.  Some
-constructed languages, like Lojban, also have this property.
+constructed languages, like Lojban \cite{lojban}, also have this property.
 
 Natural languages (e.g. English), however, are well-known to have grammars which are difficult
-to represent with any single given formalism.  Many attempts have been made to
-create a grammar which can sufficiently define natural language, the XTAG project chiefly
-among them, but even those projects fail to sufficiently embody the
-constraints that spoken and written English put on word orderings and meaning.
-
-There are many possible formalisms which can contain the rules that make up
+to represent with any single given formalism \cite{klein2012context}. There are many possible
+formalisms which can contain the rules that make up
 a grammar.  Most of these formalisms involve a form of "rewriting", which
 is to say, replacing a nonterminal token in a string with a specific set of
 terminals and nonterminals.
@@ -155,16 +178,19 @@ This language is defined as the set of all possible generated sentences.
 CFGs are so named because the rules in them are unable to consider the "context" for
 their rewriting.  No rules may condition on the presence or placement of terminals
 or nonterminals other than the single nonterminal to be rewritten.  This is, of course,
-insufficiently expressive to be a grammar for English (or any other natural language).
+insufficiently expressive to be a grammar for English (or another natural language)\cite{jurafsky_textbook}.
 
 One attempt to make CFGs more realistic for parsing or generating natural languages was to
-introduce a probabilistic component.  In a Probabilistic Context Free Grammar (PCFG), CFG
+introduce a probabilistic component.  This does not make CFGs any more expressive, but it
+does help to cut down on the large number of potential parses for any given sentence
+(English being a highly ambiguous language) by providing some direction as to which constructions
+should be considered first.  In a Probabilistic Context Free Grammar (PCFG) \cite{pcfg_textbook}, CFG
 rules are tagged with probabilities, usually representing the frequency of their appearance in
 an observed corpus.  These probabilities are required to sum to 1 for each nonterminal to
 be rewritten, so that there is a defined probability distribution over the options for each nonterminal.
 
 This grammar type does appropriately convey the crucial truth that that not all rules are equal.
-However, it does so in a naive way, unable to express these probabilities in terms of the placement
+However, it does so in a  na\"{\i}ve way, unable to express these probabilities in terms of the placement
 of the nonterminal in a sentence, and consequently also unable to successfully express English.
 
 \subsection{Tree Adjoining Grammars}
@@ -175,15 +201,25 @@ trees and adjoining trees (sometimes ``auxiliary trees").  These two kinds of tr
 different roles semantically in addition to their differing syntactic roles.  The former,
 initial trees, are usually for adding new semantic information to the sentence.  They
 add new nodes to the sentence tree.  In a simplified TAG of English,
-initial trees contain rules like "Verb Phrases contain a Verb and a Noun", or "VP $->$ V N".
+initial trees contain rules like ``Verb Phrases contain a Verb and a Noun", or ``VP $\rightarrow$ V N".
 A sentence can be made entirely of initial trees, but a sentence must contain at least
 one initial tree.  An example of an initial tree is shown in Figure \ref{initial-tree-example}.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
-\caption{An example of an initial tree}
+\begin{minipage}[b]{0.45\linewidth}
+\centering
 \includegraphics{initial-example.png}
+\caption{An example of an initial tree in a lexicalized tree adjoining grammar}
 \label{initial-tree-example}
+\end{minipage}
+\quad
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+\includegraphics{adjoining-tree-example.png}
+\caption{An example of an adjoining tree in a lexicalized tree adjoining grammar}
+\label{adjoining-tree-example}
+\end{minipage}
 \end{figure}
 
 This tree has as its root the S node, and this defines how it can interact with other
@@ -192,48 +228,39 @@ substitution.  That is, this tree is a drop-in replacement for an S node with no
 This is how we get from our stub sentence (S) to a complete sentence.
 
 Adjoining trees usually clarify a point in a sentence.  In a simplified TAG of English, adjoining
-trees would contain rules like "a noun can have an adjective placed in front of it," or "N $->$ A N".
+trees would contain rules like ``a noun can have an adjective placed in front of it," or ``N $\rightarrow$ A N".
 An example of an adjoining tree is shown in Figure \ref{adjoining-tree-example}.
-
-\begin{figure}
-\centering
-\caption{An example of an adjoining tree}
-\includegraphics{adjoining-tree-example.png}
-\label{adjoining-tree-example}
-\end{figure}
 
 This tree has as its root an N node.  It also has a specially annotated N node elsewhere in the
 tree.  These nodes define its interaction with other trees under a TAG.  Adjoining trees interact
-with other trees only by "adjoining".  In an adjoining action, you select the node
-to adjoin to, which must be of the same label as the root node of the adjoining tree.  You remove
+with other trees only by "adjoining".  In an adjoining action, we select the node
+to adjoin to, which must be of the same label as the root node of the adjoining tree.  We remove
 that node from the other tree and put the adjoining tree in its place.  Then
-you place that original node into the adjoining tree as a substitution for the foot node.
+we place that original node into the adjoining tree as a substitution for the foot node.
 For example, if we had the tree in Figure \ref{tree-1} and we wanted to adjoin the example adjoining tree
 in Figure \ref{adjoining-tree-example}, we would first create the intermediate tree in Figure \ref{tree-2},
 and then perform the substitution and get the tree in Figure \ref{tree-3}.  Notice that this has the effect,
 in all cases, of making the tree deeper.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
-\caption{Partial tree}
+\begin{minipage}[b]{0.3\linewidth}
 \includegraphics{tree-1.png}
+\caption{Partial tree}
 \label{tree-1}
-\end{figure}
-
-\begin{figure}
-\centering
-\caption{Intermediate tree}
+\end{minipage}
+\quad
+\begin{minipage}[b]{0.3\linewidth}
 \includegraphics{tree-2.png}
+\caption{Intermediate tree}
 \label{tree-2}
-\end{figure}
-
-And then perform the substitution:
-
-\begin{figure}
-\centering
-\caption{Final tree}
+\end{minipage}
+\quad
+\begin{minipage}[b]{0.3\linewidth}
 \includegraphics{tree-3.png}
+\caption{Final tree}
 \label{tree-3}
+\end{minipage}
 \end{figure}
 
 We use a variation of TAGs in our work, called a lexicalized TAG (LTAG), where each tree is
@@ -241,10 +268,10 @@ associated with a lexical item called an anchor.  All examples given above are e
 lexicalized trees.  An example of an unlexicalized tree would be (NP (D) (N)), where there
 are no nodes containing lexical tokens.
 
-As with CFGs, an attempt to make TAGs more tractable for generation or parsing was to
+As with CFGs, an attempt to make TAGs easier to use for generation or parsing was to
 introduce probabilities.  Each tree rule in a TAG must be annotated with a probability, and
 there will be a probability distribution for each nonterminal at the frontier of the tree.
 These probabilistic TAGs, or PTAGs, can be useful if a corpus of text is available.
 
-The XTAG project has had some success using LTAGs to model English grammar, 
+The XTAG project has had some success using LTAGs to model English grammar\cite{xtag}, 
 so we focus mostly on LTAGs in our work.
