@@ -1,10 +1,10 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces The flow of information through a normal interaction with a user in a generalized NLP system}}{3}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces The basic UCT algorithm for searching over an MDP. {\rm 2}.1\hbox {} is the UCB algorithm referenced in the child selection step.}}{10}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of an initial tree in a lexicalized tree adjoining grammar}}{12}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of an adjoining tree in a lexicalized tree adjoining grammar}}{12}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Partial tree}}{13}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Intermediate tree}}{13}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Final tree}}{13}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of an initial tree in a lexicalized tree adjoining grammar}}{13}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of an adjoining tree in a lexicalized tree adjoining grammar}}{13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Partial tree}}{14}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Intermediate tree}}{14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Final tree}}{14}
 \contentsline {figure}{\numberline {3.1}{\ignorespaces An example CRISP grammar. Note the semantic annotations beneath each tree.}}{18}
 \contentsline {figure}{\numberline {4.1}{\ignorespaces A tree in a STRUCT grammar, lexicalized and with entity annotations}}{23}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces An example tree substitution operation in STRUCT.}}{29}
