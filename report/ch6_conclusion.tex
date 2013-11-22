@@ -2,17 +2,9 @@ In conclusion, we will compare STRUCT to established NLG methods,
 discuss other strengths and weaknesses of STRUCT, and describe
 directions for future work.
 
-\section{Comparison to Competing NLG Methods}
-
-As discussed in Chapter 3, there are two other popular methods of
-solving the NLG problem.  In the first, the NLG problem is treated as a
-classical planning problem and solved using an off-the-shelf planner.
-In the second, the NLG problem is solved using an overgeneration
-strategy which reduces to a dynamic programming approach.  See
-chapter 3 for a more detailed explanation of these methods.
-
-We believe that we have produced an algorithm which unifies these
-two approaches.  We have fused the probabilistic reasoning and
+We believe that we have produced an algorithm which unifies the
+two approaches to NLG discussed in Chapter 3.  
+We have fused the probabilistic reasoning and
 domain knowledge use from the probabilistic ranking method with
 the planning problem conversion and structured approach to semantics
 from the classical planning approach.  We have the advantage of
@@ -30,8 +22,6 @@ our output as input, which is a problem with probabilistic ranking.
 In short, we have constructed an algorithm with many of the strengths
 of both classical planning and probabilistic ranking, and few of the
 weaknesses of either.
-
-\section{STRUCT: Strengths and Weaknesses}
 
 STRUCT's prime strength is its ability to partially satisfy goals in cases where
 perfectly correct generation is impossible, either because of conflicting
@@ -61,18 +51,26 @@ English).  It is best to build a grammar which undergenerates (the language
 specified by the grammar is a subset of acceptable English), but that can
 be difficult without knowledge of which constructs exactly will be necessary.
 
-\section{Future Work}
-
 Due to some peculiarities of the python interpreter, we were unable to
 efficiently parallelize UCT during the search phase of generation.  This
-would be relatively straightforward using a worker pool solution, and future
-work could easily shrink the amount of time spent in that search drastically.
+would be relatively straightforward using a worker pool solution, and we
+could drastically shrink the amount of time spent in that search.
 
-The dialog system which we have implemented is quite rudimentary
-(simpler even than NJFun \cite{litman_njfun_2000}), and could
-be improved to use more intelligent parsing techniques than simple
-keyword searching.\\
+We may also be able to use STRUCT as the output generator of a dialog system,
+similar to NJFun \cite{litman_njfun_2000}, instead of the template-based generation
+that most such systems employ.  STRUCT would be substantially more flexible in
+its output than a template-based system, which can usually only respond to preprogrammed
+error cases.  STRUCT's ability to partially accomplish communicative goals would be
+valuable in this application.
 
+We are also interested in reward functions.  The reward functions we have created
+are good for generating language based on facts about the world, and would
+serve for goal-directed communication, but those are not the only possible
+goals of natural language generation.  If we could learn a reward function from
+a corpus and attempt to emulate that corpus in our speech, or build a hierarchical
+reward function which could attempt to accomplish secondary or tertiary goals
+in addition to a primary one.  We should explore the possibilities that the
+generality of our architecture afford us.
 
 In conclusion, we have presented an algorithm which performs Natural Language
 Generation in a well-principled way, unifying two popular schools of thought regarding

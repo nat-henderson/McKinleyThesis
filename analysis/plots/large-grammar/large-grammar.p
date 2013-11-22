@@ -13,5 +13,5 @@ set style line 2 lt 1 lc rgb "black" lw 5
 set style line 3 lt 3 lc rgb "black" lw 5
 
 plot "large-grammar.data" using 1:2 title "CRISP" with lines ls 1, \
-     "large-grammar.data" using 1:3 title "STRUCT initial" with lines ls 3, \
-     "large-grammar.data" using 1:4 title "STRUCT final" with lines ls 2
+     "large-grammar.data" using 1:4 title "STRUCT" with lines ls 3, \
+     "large-grammar.data" using 1:5 title "STRUCT (pruning)" with lines ls 2
