@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{knight_1995_genselect}
-K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
-  {\em Proceedings of the 33rd annual meeting on Association for Computational
-  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
-
 \bibitem{smartphones}
 L.~Goasduff and C.~Pettey, ``Gartner says worldwide smartphone sales soared in
   fourth quarter of 2011 with 47 percent growth,'' {\em Gartner, Inc}, vol.~15,
@@ -44,6 +39,10 @@ M.~Kearns, Y.~Mansour, and A.~Ng, ``A sparse sampling algorithm for
 L.~Kocsis and C.~Szepesvari, ``Bandit based monte-carlo planning,'' in {\em In:
   {ECML-06.} Number 4212 in {LNCS}}, p.~282–293, Springer, 2006.
 
+\bibitem{uct-go}
+S.~Gelly and Y.~Wang, ``Exploration exploitation in go: Uct for monte-carlo
+  go,'' 2006.
+
 \bibitem{lojban}
 J.~W. Cowan, {\em The complete Lojban language}.
 \newblock Logical Language Group, 1997.
@@ -61,6 +60,10 @@ D.~Jurafsky, J.~H. Martin, A.~Kehler, K.~Vander~Linden, and N.~Ward, {\em
 F.~Jelinek, J.~D. Lafferty, and R.~L. Mercer, {\em Basic methods of
   probabilistic context free grammars}.
 \newblock Springer, 1992.
+
+\bibitem{xtag}
+X.~R. Group, ``A lexicalized tree adjoining grammar for english,'' Tech. Rep.
+  IRCS-01-03, IRCS, University of Pennsylvania, 2001.
 
 \bibitem{langkilde_2002_halogen}
 I.~Langkilde-Geary, ``An empirical verification of coverage and correctness for
@@ -83,17 +86,6 @@ S.~M. Shieber, ``A uniform architecture for parsing and generation,'' in {\em
 M.~Kay, ``Chart generation,'' in {\em Proceedings of the 34th annual meeting on
   Association for Computational Linguistics}, {ACL} '96, (Stroudsburg, {PA},
   {USA}), p.~200–204, Association for Computational Linguistics, 1996.
-
-\bibitem{white_2003_ccg}
-M.~White and J.~Baldridge, ``Adapting chart realization to ccg,'' in {\em
-  Proceedings of the 9th European Workshop on Natural Language Generation},
-  pp.~119--126, 2003.
-
-\bibitem{lu2009natural}
-W.~Lu, H.~Ng, and W.~Lee, ``Natural language generation with tree conditional
-  random fields,'' in {\em Proceedings of the 2009 Conference on Empirical
-  Methods in Natural Language Processing: Volume 1-Volume 1}, pp.~400--409,
-  Association for Computational Linguistics, 2009.
 
 \bibitem{stone_2003_spud}
 M.~Stone, C.~Doran, B.~Webber, T.~Bleam, and M.~Palmer, ``Microplanning with
@@ -123,23 +115,25 @@ M.~Fox and D.~Long, ``Pddl2.1: An extension to pddl for expressing temporal
 A.~Blum and M.~Furst, ``Fast planning through planning graph analysis,'' {\em
   Artificial intelligence}, vol.~90, no.~1, pp.~281--300, 1997.
 
+\bibitem{knight_1995_genselect}
+K.~Knight and V.~Hatzivassiloglou, ``Two-level, many-paths generation,'' in
+  {\em Proceedings of the 33rd annual meeting on Association for Computational
+  Linguistics}, pp.~252--260, Association for Computational Linguistics, 1995.
+
+\bibitem{langkilde1998generation}
+I.~Langkilde and K.~Knight, ``Generation that exploits corpus-based statistical
+  knowledge,'' in {\em Proceedings of the 17th international conference on
+  Computational linguistics-Volume 1}, pp.~704--710, Association for
+  Computational Linguistics, 1998.
+
 \bibitem{bauer2009statistical}
 D.~Bauer, ``Statistical natural language generation as planning,'' {\em
   Proceedings of the 44th annual meeting on Association for Computational
   Linguistics}, 2009.
 
-\bibitem{bobrow_gus_1977}
-D.~G. Bobrow, R.~M. Kaplan, M.~Kay, D.~A. Norman, H.~Thompson, and T.~Winograd,
-  ``Gus, a frame-driven dialog system,'' {\em Artificial intelligence}, vol.~8,
-  no.~2, pp.~155--173, 1977.
-
 \bibitem{hoffmann_ff_2001}
 J.~Hoffmann and B.~Nebel, ``The {FF} planning system: fast plan generation
   through heuristic search,'' {\em J. Artif. Int. Res.}, vol.~14, p.~253–302,
   May 2001.
-
-\bibitem{xtag}
-X.~R. Group, ``A lexicalized tree adjoining grammar for english,'' Tech. Rep.
-  IRCS-01-03, IRCS, University of Pennsylvania, 2001.
 
 \end{thebibliography}

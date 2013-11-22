@@ -115,11 +115,19 @@ CRISP is the exemplar system of the planning approach to NLG.
 CRISP treats the problem of generation as a classical planning
 problem; the goal state is any state in which the sentence
 currently being generated matches the desired meaning.
+CRISP plans towards a semantic goal,
+expressed in first order logic (e.g. ``chased(cat, dog)").
 Actions add new words to the sentence, and consequently
 modify CRISP's representation of the meaning of the sentence.
 This means that CRISP needs to keep a representation of the
 way in which every entry in the grammar it uses changes the
-meaning of any sentence in which it is placed.
+meaning of any sentence in which it is placed, and it needs to
+do so in the same terms as the semantic goal; first order logic
+functions.
+It treats those changes to the sentence as the effects of the
+actions.  CRISP is able to handle semantic preconditions by
+stating that for an action to be available to the planning algorithm,
+it will need to have those conditions met.
 CRISP uses LTAGs as its grammar formalism,
 which means that these meanings will be phrased as components
 of tree-rewrite rules.  For example, see Figure \ref{crisp-grammar},
@@ -166,28 +174,3 @@ PCRISP is the system most like the algorithm we propose in this thesis.
 However, we feel that using a true probabilistic planning algorithm
 and working in an MDP rather than including probability in what
 is normally a stochastic planning algorithm gives us some advantages.
-
-\section{Dialog Systems}
-
-The work we describe here addresses the pure NLG problem without
-considering the surrounding context; in practice, such a system would
-be integrated into a larger system, such as one carrying out a
-dialog. However, we note that many dialog systems, such as
-NJFun~\cite{litman_njfun_2000}, model dialog using reinforcement
-learning. While integrating our NLG approach with such a system is a
-direction for future work, the similarity of the formalism indicates
-it should be feasible.
-
-NLG has many applications, but one which is of particular interest is
-natural language interfaces, or dialog systems.  Recently, such
-systems have generated a good deal of interest in mobile devices,
-though their origin goes back to GUS and similar systems developed at PARC
-in the 1970s \cite{bobrow_gus_1977}.  These systems take input from a user
-in the form of natural-language speech or text, process that information in 
-some way (i.e. running a query against a knowledge base as NJFun does
-\cite{litman_njfun_2000}), then return a response to the user in
-natural English.  This interaction proceeds by turns in much the same way
-as a natural dialog between humans.  The dialog system is responsible
-for managing the state of the dialog.  By the point that an output realizer is 
-needed, the discourse planning step of the NLG pipeline has already been
-completed.

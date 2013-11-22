@@ -120,7 +120,16 @@ UCT~\cite{kocsis_bandit_2006} show how to generate near-optimal plans
 in large MDPs with a time complexity that is independent of the state
 space size.
 
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{uct.png}
+\caption{The basic UCT algorithm for searching over an MDP.  \ref{eqn:uct} is
+the UCB algorithm referenced in the child selection step.}
+\label{uct-diagram}
+\end{figure}
+
 A recently popular PP algorithm is the Upper Confidence bound applied to Trees (UCT)\cite{kocsis_bandit_2006}.
+This algorithm is detailed in Figure \ref{uct-diagram}.
 Online planning in MDPs generally follows two steps. From each state
 encountered, a lookahead tree is constructed and used to estimate the
 utility of each action in this state. Then, the best action is taken,
