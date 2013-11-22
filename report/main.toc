@@ -37,10 +37,10 @@
 \contentsline {subsection}{\numberline {5.2.2}Negated Goals}{38}
 \contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{38}
 \contentsline {subsection}{\numberline {5.2.4}Conjunctions}{39}
-\contentsline {subsection}{\numberline {5.2.5}Effect of Parameters}{42}
-\contentsline {chapter}{\numberline {6}{ {Conclusion and Future Work}}}{44}
+\contentsline {section}{\numberline {5.3}Summary}{42}
+\contentsline {chapter}{\numberline {6}{ {Conclusion and Future Work}}}{43}
 {\setcounter {tocdepth}{0}}
-\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{47}
+\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{46}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {A.1}Basic Experiment}{47}
-\contentsline {chapter}{LIST OF REFERENCES}{49}
+\contentsline {section}{\numberline {A.1}Basic Experiment}{46}
+\contentsline {chapter}{LIST OF REFERENCES}{48}

@@ -19,6 +19,9 @@ functions which we have written and found to be useful in this
 domain.  We compare to both such functions in order to demonstrate
 the performance tradeoffs of a system based on a reward function.
 
+All of our experiments were run on a 4-core AMD Phenom II X4 995 processor
+clocked at 3.2 GHz.  Both systems were given access to 8 GB of RAM.
+
 \section{Comparison to CRISP}
 
 We begin by describing experiments comparing STRUCT to CRISP. We used a
@@ -295,39 +298,19 @@ and cannot generate results for a third entity.  According to Koller's findings,
 this is because the search space grows by a factor of the universe size with
 the addition of another entity \cite{koller_experiences_2011}.
 
-\subsection{Effect of Parameters}
+\section{Summary}
 
-Finally, we study the effect of the number of simulations and
-lookahead depth on the performance of STRUCT. We design this
-experiment to require lookahead by using a sparse
-reward function that penalizes a final sentence based on the number of
-adjectives it has. We also use a probabilistic LTAG that has multiple
-actions all relevant to reaching the goal, but that add differing
-numbers of adjectives to the sentence. We then run STRUCT on this
-problem with differing parameter values and report the score of the
-best solution found, as measured by our reward function
-(Figure~\ref{chart-n-v-score}). 
+In summary, we have implemented the STRUCT algorithm in Python 2.7 and tested
+it in a variety of situations, including several which are difficult for CRISP and which
+challenge our generator's ability to prune, to generate complex referring expressions,
+to generate nested clauses, and to generate long and very complex sentences.
+In all these cases, STRUCT was able to accomplish the communicative
+goals without trouble, in a reasonable amount of time.  We found that, in general,
+STRUCT's asymptotic behavior is comparable to CRISP's, but in the region
+where most language generation takes place, STRUCT performs approximately as well
+or better.
 
-From the figure, it is clear that as the number of simulations
-increase, the quality of the solution improves for all values of $d$.
-This is likely because increasing simulations means a better estimate
-of the utility of each action. Further, in this particular case,
-increasing the depth of lookahead also yields a benefit, because of
-the structure of our problem. This is especially true if the branching
-factor of the search space is large, which is common in NLG
-applications.  Similarly, the deeper we allow the tree search to continue, the
-better the estimation of the future value of each action,
-especially since actions have far-reaching consequences for the
-meaning of the sentence at its conclusion. 
-It is interesting that even for low numbers of
-simulations $d=4$ is able able to find a reasonably good
-solution. These behaviors are expected and verify 
-that STRUCT does not display any pathologies with respect to its parameters.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.7 \linewidth]{../analysis/plots/params/pltag-n-v-score.pdf}
-\label{chart-n-v-score}
-\caption{Effect of parameter variations on the STRUCT solution.}
-\end{figure}
-
+We have also shown that STRUCT is capable of generating language that CRISP simply
+cannot (referring expression), and that STRUCT is capable of anytime generation.
+These properties make STRUCT a desirable natural language generator, even
+compared to the state-of-the-art generator we used.
