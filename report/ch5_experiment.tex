@@ -18,8 +18,8 @@ As mentioned in the previous chapter, there are two different reward
 functions which we have written and found to be useful in this
 domain.  We compare to both such functions in order to demonstrate
 the performance tradeoffs of a system based on a reward function.
-
-All of our experiments were run on a 4-core AMD Phenom II X4 995 processor
+STRUCT was implemented in Python 2.7, where CRISP was implemented
+in Java.  All of our experiments were run on a 4-core AMD Phenom II X4 995 processor
 clocked at 3.2 GHz.  Both systems were given access to 8 GB of RAM.
 
 \section{Comparison to CRISP}
@@ -90,6 +90,12 @@ cat.''  This is then improved upon by adjoining until the referring
 expression is unambiguous. If at any point the generation process was
 interrupted, STRUCT would be able to return a solution that at least
 partially solves the communicative goal.
+
+In this experiment, $d$ was set equal to 1, since each action taken improved the sentence in
+a way measurable by our reward function.  $n$ was set equal to $k * (k + 1)$, since this is
+the number of adjoining sites available in the final step of generation, times the number
+of potential words to adjoin.  This allows us to ensure successful generation in a single
+loop of the STRUCT algorithm.
 
 \begin{figure}
 \centering
@@ -240,6 +246,11 @@ of this form due to an insufficiency in the way it handles TAGs,
 and consequently we present our results without baselines.  We present
 results only for STRUCT$_a$ here, since STRUCT$_b$ is not capable of generating
 sentences using indirection.
+
+In this case, we require lookahead further into the tree than depth 1.  We need to know
+that using ``which" will allow us to further specify which dog is chasing the cat;
+in order to do this we must use at least $d=3$.  Our reward function will determine this
+with, at a minimum, the actions corresponding to ``which", ``ate", and ``treat".
 
 \subsection{Conjunctions}
 

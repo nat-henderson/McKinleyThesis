@@ -1,24 +1,24 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces The flow of information through a normal interaction with a user in a generalized NLP system}}{3}
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The basic UCT algorithm for searching over an MDP. {\rm 2}.1\hbox {} is the UCB algorithm referenced in the child selection step.}}{10}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of an initial tree in a lexicalized tree adjoining grammar}}{13}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of an adjoining tree in a lexicalized tree adjoining grammar}}{13}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Partial tree}}{14}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Intermediate tree}}{14}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Final tree}}{14}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces An example CRISP grammar. Note the semantic annotations beneath each tree.}}{18}
-\contentsline {figure}{\numberline {4.1}{\ignorespaces A tree in a STRUCT grammar, lexicalized and with entity annotations}}{23}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces An example tree substitution operation in STRUCT.}}{29}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces An example tree adjoining operation in STRUCT.}}{29}
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental comparison between STRUCT and CRISP: Generation time vs. length of referring expression }}{33}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The basic UCT algorithm for searching over an MDP. Equation {\rm 2}.1\hbox {} is the UCB algorithm referenced in the child selection step.}}{10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces An example of an initial tree in a lexicalized tree adjoining grammar}}{12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of an adjoining tree in a lexicalized tree adjoining grammar}}{12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Partial tree}}{13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Intermediate tree}}{13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Final tree}}{13}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces An example CRISP grammar. Note the semantic annotations beneath each tree.}}{17}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A tree in a STRUCT grammar, lexicalized and with entity annotations}}{24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An example tree substitution operation in STRUCT.}}{24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces An example tree adjoining operation in STRUCT.}}{27}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental comparison between STRUCT and CRISP: Generation time vs. length of referring expression }}{32}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Experimental comparison between STRUCT and CRISP: Score of best solution vs time.}}{33}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Effect of grammar size}}{35}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Effect of multiple and negated goals}}{35}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Reward function output over time as STRUCT generates a sentence with a nested subclause}}{39}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Time to generate sentences with conjunctions with one entity ("The man sat and the girl sat and ...."). Note that STRUCT performs slightly worse than CRISP with one entity.}}{40}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Time to generate sentences with conjunctions with two entities ("The dog chased the cat and ..."). Note that STRUCT performs much better than CRISP with two entities.}}{40}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Time to generate sentences with conjunctions with three entities ("The man gave the girl the book and ...."). CRISP cannot generate sentences with conjunctions and three entities; STRUCT is much less sensitive to a change in the number of entities than CRISP.}}{41}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Effect of grammar size}}{34}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Effect of multiple and negated goals}}{34}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Reward function output over time as STRUCT generates a sentence with a nested subclause}}{38}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Time to generate sentences with conjunctions with one entity ("The man sat and the girl sat and ...."). Note that STRUCT performs slightly worse than CRISP with one entity.}}{39}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Time to generate sentences with conjunctions with two entities ("The dog chased the cat and ..."). Note that STRUCT performs much better than CRISP with two entities.}}{39}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Time to generate sentences with conjunctions with three entities ("The man gave the girl the book and ...."). CRISP cannot generate sentences with conjunctions and three entities; STRUCT is much less sensitive to a change in the number of entities than CRISP.}}{40}
  \stepcounter {listofheading} \addvspace {1.0em plus 1pt} \hbox to \hsize {Appendix \hfil } \hbox to \hsize {Figure \hfil }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Grammar for the basic experiment}}{46}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Lexicon for the basic experiment}}{47}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces World and Goal for the basic experiment}}{47}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Example input for Halogen; appears in \cite {knight_1995_genselect}}}{47}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Grammar for the basic experiment}}{45}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Lexicon for the basic experiment}}{46}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces World and Goal for the basic experiment}}{46}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Example input for Halogen; appears in \cite {knight_1995_genselect}}}{46}

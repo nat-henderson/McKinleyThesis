@@ -1,5 +1,5 @@
 In this section, we discuss previous approaches to NLG, including
-the two main diverging approaches.  Broadly, these are the
+the two main approaches.  Broadly, these are the
 approaches utilizing statistical generation and classical planning,
 respectively.  We discuss these two branches in terms of their
 exemplar systems, Halogen \cite{langkilde_2002_halogen}
@@ -88,7 +88,7 @@ to produce desirable outputs in many cases.  Due to
 their structure, they are only truly able to consider local
 dependencies of very short length.  In fact, the
 initial version of Halogen worked on a bigram model
-and generated sentences like "I only hires men who is good 
+and generated sentences like ``I only hires men who is good 
 pilots." \cite{knight_1995_genselect}.  Obviously, the
 linguistic model of combining words and choosing the most likely
 ordering will not always generate sentences which accomplish
@@ -173,4 +173,5 @@ generation failures.
 PCRISP is the system most like the algorithm we propose in this thesis.
 However, we feel that using a true probabilistic planning algorithm
 and working in an MDP rather than including probability in what
-is normally a stochastic planning algorithm gives us some advantages.
+is normally a classical planning algorithm enables us to handle
+the underlying stochasticity in a well-principled way.

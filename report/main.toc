@@ -6,41 +6,35 @@
 \contentsline {section}{\numberline {2.2}Planning}{7}
 \contentsline {subsection}{\numberline {2.2.1}Classical Planning}{7}
 \contentsline {subsection}{\numberline {2.2.2}Probabilistic Planning and the UCT algorithm}{9}
-\contentsline {section}{\numberline {2.3}Natural Language Grammars}{11}
-\contentsline {subsection}{\numberline {2.3.1}Context-Free Grammars}{11}
-\contentsline {subsection}{\numberline {2.3.2}Tree Adjoining Grammars}{12}
-\contentsline {chapter}{\numberline {3}{ {Related Work}}}{15}
+\contentsline {section}{\numberline {2.3}Probabilistic Lexicalized Tree Adjoining Grammars}{11}
+\contentsline {chapter}{\numberline {3}{ {Related Work}}}{14}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {3.1}Approaches to NLG}{15}
-\contentsline {subsection}{\numberline {3.1.1}Halogen / Nitrogen}{16}
-\contentsline {subsection}{\numberline {3.1.2}CRISP / PCRISP}{17}
-\contentsline {chapter}{\numberline {4}{ {The STRUCT Algorithm}}}{20}
+\contentsline {section}{\numberline {3.1}Approaches to NLG}{14}
+\contentsline {subsection}{\numberline {3.1.1}Halogen / Nitrogen}{15}
+\contentsline {subsection}{\numberline {3.1.2}CRISP / PCRISP}{16}
+\contentsline {chapter}{\numberline {4}{ {Natural Language Generation As Probabilistic Planning}}}{19}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {4.1}NLG as planning in an MDP}{20}
-\contentsline {section}{\numberline {4.2}Implementation}{21}
-\contentsline {subsection}{\numberline {4.2.1}Inputs to STRUCT}{21}
-\contentsline {subsection}{\numberline {4.2.2}The STRUCT Algorithm}{22}
-\contentsline {subsection}{\numberline {4.2.3}Reward Function Definition}{23}
-\contentsline {subsection}{\numberline {4.2.4}Modifications to UCT}{27}
-\contentsline {section}{\numberline {4.3}Enhancements External to UCT}{29}
-\contentsline {subsection}{\numberline {4.3.1}Execution as an Anytime Algorithm}{29}
-\contentsline {subsection}{\numberline {4.3.2}Grammar Pruning}{31}
-\contentsline {chapter}{\numberline {5}{ {Empirical Evaluation}}}{32}
+\contentsline {section}{\numberline {4.1}Inputs to STRUCT}{19}
+\contentsline {section}{\numberline {4.2}NLG as planning in an MDP}{20}
+\contentsline {section}{\numberline {4.3}The STRUCT Algorithm}{23}
+\contentsline {subsection}{\numberline {4.3.1}Modifications to UCT}{24}
+\contentsline {subsection}{\numberline {4.3.2}Execution as an Anytime Algorithm}{28}
+\contentsline {chapter}{\numberline {5}{ {Empirical Evaluation}}}{31}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {5.1}Comparison to CRISP}{32}
-\contentsline {subsection}{\numberline {5.1.1}Referring Expressions}{34}
-\contentsline {subsection}{\numberline {5.1.2}Grammar Size}{34}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{36}
-\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{36}
-\contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{37}
-\contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{37}
-\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{38}
-\contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{38}
-\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{39}
-\contentsline {section}{\numberline {5.3}Summary}{42}
-\contentsline {chapter}{\numberline {6}{ {Conclusion and Future Work}}}{43}
+\contentsline {section}{\numberline {5.1}Comparison to CRISP}{31}
+\contentsline {subsection}{\numberline {5.1.1}Referring Expressions}{32}
+\contentsline {subsection}{\numberline {5.1.2}Grammar Size}{35}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Absent Pruning}{35}
+\contentsline {subsubsection}{\numberline {5.1.2.2}With Pruning}{35}
+\contentsline {section}{\numberline {5.2}Evaluation of Complex Communicative Goals}{36}
+\contentsline {subsection}{\numberline {5.2.1}Multiple Goals}{36}
+\contentsline {subsection}{\numberline {5.2.2}Negated Goals}{37}
+\contentsline {subsection}{\numberline {5.2.3}Nested subclauses}{37}
+\contentsline {subsection}{\numberline {5.2.4}Conjunctions}{38}
+\contentsline {section}{\numberline {5.3}Summary}{41}
+\contentsline {chapter}{\numberline {6}{ {Conclusion and Future Work}}}{42}
 {\setcounter {tocdepth}{0}}
-\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{46}
+\contentsline {appendix}{\numberline {APPENDIX}{ {Example Grammars}}}{45}
 {\ifnum \value {tocdepth} > 0 {\vskip 1.0em plus 1pt} \fi }
-\contentsline {section}{\numberline {A.1}Basic Experiment}{46}
-\contentsline {chapter}{LIST OF REFERENCES}{48}
+\contentsline {section}{\numberline {A.1}Basic Experiment}{45}
+\contentsline {chapter}{LIST OF REFERENCES}{47}

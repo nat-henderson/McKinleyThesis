@@ -63,6 +63,19 @@ its output than a template-based system, which can usually only respond to prepr
 error cases.  STRUCT's ability to partially accomplish communicative goals would be
 valuable in this application.
 
+We could consider using an alternative approach to adapting UCT to a DAG.  Instead
+of treating states reached from differing parents as different states, we could keep
+track of how they were reached each time they were reached and update their parent
+states accordingly.  This would allow us to reduce the number of simulations needed
+for high-depth experiments, especially experiments where adjoin operations are
+performed repeatedly.
+
+We could also consider using a different semantic model.  Our choice of first-order logic
+formulas was encouraged by Koller's work, and allowed us to easily compare to CRISP.
+However, other work has suggested a lambda-calculus semantic model \cite{wong2007learning}
+which we feel holds promise.  Initial experimentation has suggested that drastic speed increases
+may result from this choice of semantic representation.
+
 We are also interested in reward functions.  The reward functions we have created
 are good for generating language based on facts about the world, and would
 serve for goal-directed communication, but those are not the only possible

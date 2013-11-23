@@ -96,7 +96,8 @@ simultaneously (due to altering facts which are required preconditions, for inst
 Graphplan constructs this graph one level at a time, starting from the goal and working towards a state in which
 all the facts which are true in the initial state are true in the graph.  It then works backwards by picking actions
 that will reach the goal state from the initial state.  This may fail, and in that case the graph will be extended
-another level.
+another level and the search will be continued.  If the algorithm ever reaches a point where two successive
+layers are identical, the algorithm will be terminated as a failure.
 
 
 
@@ -123,7 +124,7 @@ space size.
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{uct.png}
-\caption{The basic UCT algorithm for searching over an MDP.  \ref{eqn:uct} is
+\caption{The basic UCT algorithm for searching over an MDP. Equation \ref{eqn:uct} is
 the UCB algorithm referenced in the child selection step.}
 \label{uct-diagram}
 \end{figure}
@@ -161,7 +162,7 @@ have shown to be best.  Previous work \cite{uct-go} shows that this approach can
 efficiently select near-optimal actions at each state.
 
 
-\section{Natural Language Grammars}
+\section{Probabilistic Lexicalized Tree Adjoining Grammars}
 
 A grammar is a set of rules which define strings that are contained within a language.
 Many artificial languages, especially programming languages like C or Java, have
@@ -175,57 +176,29 @@ a grammar.  Most of these formalisms involve a form of "rewriting", which
 is to say, replacing a nonterminal token in a string with a specific set of
 terminals and nonterminals.
 
-\subsection{Context-Free Grammars}
-
-One of the simplest grammars which can convey relationships between terminals
-and nonterminals is the "Context Free Grammar" (CFG).  A CFG is made up of rules,
-each of which specifies a possible rewrite of a nonterminal into one or more
-terminals or nonterminals.  Once there are no further nonterminals to be rewritten,
-the final state is a series of terminals which is in the language defined by the grammar.
-This language is defined as the set of all possible generated sentences.
-
-CFGs are so named because the rules in them are unable to consider the "context" for
-their rewriting.  No rules may condition on the presence or placement of terminals
-or nonterminals other than the single nonterminal to be rewritten.  This is, of course,
-insufficiently expressive to be a grammar for English (or another natural language)\cite{jurafsky_textbook}.
-
-One attempt to make CFGs more realistic for parsing or generating natural languages was to
-introduce a probabilistic component.  This does not make CFGs any more expressive, but it
-does help to cut down on the large number of potential parses for any given sentence
-(English being a highly ambiguous language) by providing some direction as to which constructions
-should be considered first.  In a Probabilistic Context Free Grammar (PCFG) \cite{pcfg_textbook}, CFG
-rules are tagged with probabilities, usually representing the frequency of their appearance in
-an observed corpus.  These probabilities are required to sum to 1 for each nonterminal to
-be rewritten, so that there is a defined probability distribution over the options for each nonterminal.
-
-This grammar type does appropriately convey the crucial truth that that not all rules are equal.
-However, it does so in a  na\"{\i}ve way, unable to express these probabilities in terms of the placement
-of the nonterminal in a sentence, and consequently also unable to successfully express English.
-
-\subsection{Tree Adjoining Grammars}
-
-A Tree Adjoining Grammar (TAG) takes a different approach, differing substantially from CFGs and PCFGs.
+A Tree Adjoining Grammar (TAG) takes a different approach, differing substantially from the more
+common CFGs and PCFGs.
 TAGs are tree-based grammars consisting of two sets of trees, called initial
 trees and adjoining trees (sometimes ``auxiliary trees").  These two kinds of trees tend to perform
 different roles semantically in addition to their differing syntactic roles.  The former,
 initial trees, are usually for adding new semantic information to the sentence.  They
 add new nodes to the sentence tree.  In a simplified TAG of English,
 initial trees contain rules like ``Verb Phrases contain a Verb and a Noun", or ``VP $\rightarrow$ V N".
-A sentence can be made entirely of initial trees, but a sentence must contain at least
+A sentence can be made entirely of initial trees, and must contain at least
 one initial tree.  An example of an initial tree is shown in Figure \ref{initial-tree-example}.
 
 \begin{figure}[ht]
 \centering
 \begin{minipage}[b]{0.45\linewidth}
 \centering
-\includegraphics[width=\linewidth]{initial-example.png}
+\includegraphics[width=0.5\linewidth]{initial-example.png}
 \caption{An example of an initial tree in a lexicalized tree adjoining grammar}
 \label{initial-tree-example}
 \end{minipage}
 \quad
 \begin{minipage}[b]{0.45\linewidth}
 \centering
-\includegraphics[width=\linewidth]{adjoining-tree-example.png}
+\includegraphics[width=0.5\linewidth]{adjoining-tree-example.png}
 \caption{An example of an adjoining tree in a lexicalized tree adjoining grammar}
 \label{adjoining-tree-example}
 \end{minipage}
@@ -242,7 +215,7 @@ An example of an adjoining tree is shown in Figure \ref{adjoining-tree-example}.
 
 This tree has as its root an N node.  It also has a specially annotated N node elsewhere in the
 tree.  These nodes define its interaction with other trees under a TAG.  Adjoining trees interact
-with other trees only by "adjoining".  In an adjoining action, we select the node
+with other trees only by ``adjoining".  In an adjoining action, we select the node
 to adjoin to, which must be of the same label as the root node of the adjoining tree.  We remove
 that node from the other tree and put the adjoining tree in its place.  Then
 we place that original node into the adjoining tree as a substitution for the foot node.
@@ -272,15 +245,15 @@ in all cases, of making the tree deeper.
 \end{minipage}
 \end{figure}
 
-We use a variation of TAGs in our work, called a lexicalized TAG (LTAG), where each tree is
+We use a variation of TAGs in our work, called a probabilistic lexicalized TAG (PLTAG), where each tree is
 associated with a lexical item called an anchor.  All examples given above are examples of
 lexicalized trees.  An example of an unlexicalized tree would be (NP (D) (N)), where there
-are no nodes containing lexical tokens.
-
-As with CFGs, an attempt to make TAGs easier to use for generation or parsing was to
-introduce probabilities.  Each tree rule in a TAG must be annotated with a probability, and
-there will be a probability distribution for each nonterminal at the frontier of the tree.
-These probabilistic TAGs, or PTAGs, can be useful if a corpus of text is available.
+are no nodes containing lexical tokens.  The probabilistic component comes into these trees
+as a way to represent the fact that not all trees are equal.  Some trees are more common
+than others, and PLTAGs represent that fact with probabilities assigned to each tree.
+The probabilities of each class of trees (substitution / adjoining) with the same root node
+will sum to 1, in order to ensure that there is a well-defined probability distribution
+over the choices for substitution or adjoining at a single node in a tree.
 
 The XTAG project has had some success using LTAGs to model English grammar\cite{xtag}, 
 so we focus mostly on LTAGs in our work.
