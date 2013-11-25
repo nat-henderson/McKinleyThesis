@@ -56,6 +56,29 @@ efficiently parallelize UCT during the search phase of generation.  This
 would be relatively straightforward using a worker pool solution, and we
 could drastically shrink the amount of time spent in that search.
 
+We considered incremental computation of reward functions in order
+to get around the issue of STRUCT$_a$ being relatively slow.  Since most
+of the computation done in the reward function is repeated between runs,
+we thought that storing the shared computation might increase speed.  In
+our experiments, we discovered that constant factors (time to hash the entire
+partial tree) dominated the saved time.
+
+We also considered caching of reward functions.  Due to the method by
+which STRUCT performs experiments, it often does simulations which result
+in the same partial sentence.  We thought that we could save computations
+by storing the results and looking them up later.  Again, we found that
+constant factors dominated the saved computation.  Both these failures could
+likely be overcome by a different choice of implementation language or
+methodology.
+
+Due to the nature of STRUCT's simulations, it often reaches the same state
+from two different parents.  Because of the way that UCT works, this occurrence is
+treated as reaching two distinct states.  Although there are reasonable gains to be
+made in avoiding duplicated work by saving those states and backing up their rewards to
+all their parent states, again we found that the
+hashing and lookup time dominated the saved computation, and that no notable quality
+gains were made by using this backup methodology.
+
 We may also be able to use STRUCT as the output generator of a dialog system,
 similar to NJFun \cite{litman_njfun_2000}, instead of the template-based generation
 that most such systems employ.  STRUCT would be substantially more flexible in

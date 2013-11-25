@@ -412,7 +412,7 @@ elected to emit the sentence, generation halts.
 \STATE $bestSentence \gets$ empty string
 \STATE $bestScore \gets$ -INF
 \WHILE {Time limit not expired}
-	\STATE $score, sentence \gets STRUCT_SIMULATION(prunedGrammar, w, g)$
+	\STATE $score, sentence \gets STRUCT\_SIMULATION(prunedGrammar, w, g)$
 	\IF {$score > bestScore$}
 		\STATE $bestSentence \gets sentence$
 		\STATE $bestScore \gets score$
