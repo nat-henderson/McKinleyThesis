@@ -83,7 +83,7 @@ M.~Kay, ``Chart generation,'' in {\em Proceedings of the 34th annual meeting on
 
 \bibitem{stone_2003_spud}
 M.~Stone, C.~Doran, B.~Webber, T.~Bleam, and M.~Palmer, ``Microplanning with
-  communicative intentions: The spud system,'' {\em Computational
+  communicative intentions: The {SPUD} system,'' {\em Computational
   Intelligence}, vol.~19, no.~4, pp.~311--381, 2003.
 
 \bibitem{koller_experiences_2011}
@@ -101,9 +101,9 @@ D.~Bauer and A.~Koller, ``Sentence generation as planning with probabilistic
   Adjoining Grammar and Related Formalisms, New Haven, {CT}}, 2010.
 
 \bibitem{fox2003pddl2}
-M.~Fox and D.~Long, ``Pddl2.1: An extension to pddl for expressing temporal
-  planning domains,'' {\em J. Artif. Intell. Res. (JAIR)}, vol.~20,
-  pp.~61--124, 2003.
+M.~Fox and D.~Long, ``{PDDL2.1}: An extension to {PDDL} for expressing temporal
+  planning domains,'' {\em Journal of Artificial Intelligence Research (JAIR)},
+  vol.~20, pp.~61--124, 2003.
 
 \bibitem{blum_1997_graphplan}
 A.~Blum and M.~Furst, ``Fast planning through planning graph analysis,'' {\em
