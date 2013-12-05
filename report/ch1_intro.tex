@@ -4,7 +4,7 @@ what information its user wants to see before they ask for it.  Apple's ``Siri"
 acts as an artificial personal assistant, attempting to respond to queries stated in
 natural language.  Android (which includes Google Now) and iOS (which
 includes Siri) have 45\% market penetration between them, and there were
-470 smartphones sold in 2011, with expectations of increase in 2012 and 2013
+470 million smartphones sold in 2011, with expectations of increase in 2012 and 2013
  \cite{smartphones}.
 
 Visions of future A.I. systems have long included natural
@@ -36,8 +36,7 @@ User    :  I am looking for a place to eat dinner.
 
 Once the user has finished speaking, the computer system has a series of electrical signals on
 a phone line which it will need to decode into human speech.  This is the first step
-in the block diagram of Figure \ref{nlp-block}.  Current-generation speech recognition
-software is highly reliable for most accents, so let us assume that this step proceeds without
+in the block diagram of Figure \ref{nlp-block}.  Let us assume that this step proceeds without
 error.  At this point, the computer system will need to attempt to understand the natural
 language input of ``I am looking for a place to eat dinner". One very simple possibility is
 a straightforward keyword-searching approach.  Such an approach might look for the words ``I",
@@ -58,7 +57,7 @@ question language: English
 
 The computer system next needs to translate that into a sentence in its output
 language.  The process of going from this internal representation to text like
-"What type of food do you typically enjoy for dinner?" is called Natural Language Generation,
+``What type of food do you typically enjoy for dinner?" is called Natural Language Generation,
 and comprises the fifth block of the NLP process.  Finally, this generated text is conveyed to
 the user by encoding it into the data that can travel over a telephone, using a text-to-speech
 program.
@@ -115,7 +114,7 @@ goal, but strive for full completion when it is possible.  We allow for generati
 at any time and will return a partially-complete result very quickly.
 
 We do this, broadly, by using probabilistic planning rather than classical planning.
-Our algorithm is based in Monte-Carlo Tree Search, an increasingly
+Our algorithm is based on Monte-Carlo Tree Search \cite{kocsis_bandit_2006}, an increasingly
 popular method for probabilistic planning.  This algorithm performs ``simulations",
 examining different paths that generation could take and iteratively refining
 the search based on how ``good" the outcomes of previous simulations were.

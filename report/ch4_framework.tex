@@ -23,15 +23,14 @@ Appendix A contains an example of a combined grammar/lexicon.
 STRUCT uses a semantic model which is derived from first-order logic in its communicative
 goal and world specification.  This model describes named ``entities", representing general
 things in the world.  Entities with the same name are considered to be the same entity.
-These entities are then described using first-order logic functions, where the
-name of the function represents a statement of truth about the given entities.  In this
-semantic model, the communicative goal is just a list of these propositions with dummy entity names.
-For instance, a communicative goal of `red(d), dog(d)' (in English, ``there is a dog
+These entities are then described using first-order logic predicates, where the
+name of the predicate represents a statement of truth about the given entities.  In this
+semantic model, the communicative goal is just a list of these propositions with variables used
+for the entity names.
+For instance, a communicative goal of `red(d), dog(d)' (in English, ``say anything about a dog
 which is red.") would match a sentence 
 with the semantic representation `red(subj), dog(subj), cat(obj), chased(subj, obj)',
 like ``The red dog chased the cat", for instance.
-As shown here, the communicative goal does not have to refer to any "central meaning" of the sentence as a human would select it, but rather
-to propositions which the sentence affirms.
 
 A world specification is simply a list of all statements which are true in the world surrounding our generation.
 Matching entity names refer to the same entity.  Since we assume any statement not present
@@ -50,7 +49,7 @@ actions, a transition function, a reward function, and a discount factor.
 In our transformation of the NLG problem into an MDP, we must define
 each of these in such a way that a plan in the MDP becomes a sentence
 in a natural language.  Our set of states, therefore, will be partial
-sentences which are in the language defined by our LTAG input
+sentences which are in the language defined by our LTAG input.
 Each partial sentence possible in the language defined by
 the generation problem's grammar is a state in our MDP.  There are
 an infinite number of these states, since TAG adjoins can be
@@ -90,7 +89,7 @@ problem and guides the search for the correct meaning in the
 given world, we designed a method for automatically constructing
 a reward function which will help to guide the search.
  
-We found two reward functions which will
+We designed two reward functions whichl
  return satisfactory results on a variety of experiments, but have complementary
 properties where they differ.  The first reward function
  which we use (STRUCT$_a$) considers a goal and a
@@ -141,7 +140,7 @@ we return the best reward we have found so far (lines 20-24).
 Our experiments will show that STRUCT$_b$
 has better performance than STRUCT$_a$, but that STRUCT$_a$ generates better
 sentences in some domains.  This is due to the occasions on which
-permutation considerations apply; for instance, we'll need those considerations
+permutation considerations apply; for instance, we will need those considerations
 if we wish to generate sentences like ``The dog which chased the black cat ran
 after the white cat," because STRUCT will need to care about which cat the dog
 chased and which it ran after.  In this domain, STRUCT$_b$ would simply say
@@ -151,6 +150,7 @@ The final component of the MDP is the discount factor.  We use a
 discount factor of 1; this is motivated by our willingness to tolerate
 lengthy sentences in order to ensure we get a generated result
 that matches our goal.  A discount factor of 1 can be problematic
+in general
 since it can cause rewards to diverge, but since there are a finite
 number of terms in our reward function (determined by the communicative
 goal), our rewards are capped.
@@ -301,8 +301,7 @@ also brings up the question of reaching identical states
 from two distinct parents.  STRUCT treats states which are otherwise
 identical which are reached from different parents as different states.
 
-Second, UCT is normally used in an environment where the transition
-function is nondeterministic.  UCT is often used in an adversarial environment,
+Second, UCT is often used in an adversarial environment,
 like chess or Go, and consequently searches for the best average case
 from a given state.  In such cases,
 selecting the absolute best may be risky if the opponent can respond
@@ -314,8 +313,8 @@ Third, UCT normally ends the tree policy phase by selecting an action
 from the unexplored actions list randomly.  In the domain of NLG,
 we know that there is additional information available to our system
 regarding the value of an action, even before we take it. For instance,
-when we are looking for an adjective to adjoin to 'sky', we know that 'blue' is
-much more likely than 'red', even without evaluating our reward function.
+when we are looking for an adjective to adjoin to ``sky", we know that ``blue" is
+much more likely than ``red", even without evaluating our reward function.
 STRUCT allows for a heuristic to order the nodes
 it searches.
 
@@ -326,29 +325,28 @@ it searches.
  the algorithm could terminate (i.e. the sentence has no nonterminals
  yet to be expanded).  If so, we determine if this is the best
  possibly-terminal state we have seen so far.  If so, we store it, and
- continue the generation process. If we reach a state from which we
- cannot continue generating, we begin again from the start state of
+ continue the generation process. If we reach a terminal state,
+ we begin again from the start state of
  the MDP. Because of the structure restriction above (substitution
  before adjoin), STRUCT also generates a valid sentence quickly. These
  modifications enable STRUCT to perform as an anytime algorithm, which
  if interrupted will return the highest-value complete and valid
- sentence.
+ sentence.  This also allows partial completion of communicative goals if
+ not all goals can be achieved simultaneously in the time given.
 
 After this point, any time that there are no substitutions
 available (all nonterminals have at least one child), we record the
 current sentence and its associated reward.  Such a sentence is
-guaranteed to be both grammatical and complete.  If generation is
-interrupted, we return the highest-value complete and valid sentence.
-In this way, our approach functions as an anytime algorithm.
+guaranteed to be both grammatical and complete.
 
-See Algorithm \ref{uct-code} for the algorithm for a single generation.
+See Algorithm \ref{uct-code} for the algorithm for selecting a single action.
 We begin by looping until we have generated a complete sentence
 (line 3).  We run $n$ simulations for each action selected (line 4),
 during which we first apply any unexplored actions (line 7-9).  If
 we still have available depth remaining after this (line 11), we will
 apply actions as selected by PLTAG probability (line 12) until we
 do not have any remaining allowable depth.  Afterwards, we will
-calculate the reward for the state we've reached and propagate it
+calculate the reward for the state we have reached and propagate it
 up the tree to the first action selected.  If the sentence is complete
 (has no nonterminals without children), we will consider it as a candidate
 for best anytime generation.  Then we will begin another
@@ -391,6 +389,10 @@ elected to emit the sentence, generation halts.
 \RETURN $bestSentence$
 \end{algorithmic}
 \end{algorithm}
+
+Finally, Algorithm \ref{struct-alg} describes the outer loop of STRUCT.  Lines 1-12 perform the
+grammar pruning described earlier in this chapter.  Lines 15 - 21 call Algorithm \ref{uct-code}
+repeatedly, storing the best output it finds within the time limit.
 
 \begin{algorithm}
 \caption{STRUCT Algorithm.} \label{struct-alg}

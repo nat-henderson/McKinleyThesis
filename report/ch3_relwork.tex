@@ -88,7 +88,7 @@ to produce desirable outputs in many cases.  Due to
 their structure, they are only truly able to consider local
 dependencies of very short length.  In fact, the
 initial version of Halogen worked on a bigram model
-and generated sentences like ``I only hires men who is good 
+and generated sentences like ``I only hire men who is good 
 pilots." \cite{knight_1995_genselect}.  Obviously, the
 linguistic model of combining words and choosing the most likely
 ordering will not always generate sentences which accomplish
@@ -97,8 +97,7 @@ sentences which do not accomplish the linguistic goal
 before generation even begins.  Later work on these
 generators included the scoring of the top
 sentences by more expensive and reliable means, which
-improved generation quality substantially at the cost of
-little time. \cite{langkilde1998generation}
+improved generation quality substantially. \cite{langkilde1998generation}
 
 Fundamentally, these systems have the advantage of
 fast and linguistically plausible generation.  They
@@ -123,7 +122,7 @@ This means that CRISP needs to keep a representation of the
 way in which every entry in the grammar it uses changes the
 meaning of any sentence in which it is placed, and it needs to
 do so in the same terms as the semantic goal; first order logic
-functions.
+predicates.
 It treats those changes to the sentence as the effects of the
 actions.  CRISP is able to handle semantic preconditions by
 stating that for an action to be available to the planning algorithm,

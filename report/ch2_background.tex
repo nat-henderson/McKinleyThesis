@@ -1,6 +1,6 @@
 In this chapter, we provide some background on the algorithms
 and underlying formalism which we build on in this work.  We explain
-Markov Decision Processes, classical AI planning, probabilistic planning,
+Markov Decision Processes, two approaches to AI planning,
 natural language grammars, and Monte Carlo Tree Search, each of which
 is an important component in our algorithm.
 
@@ -8,7 +8,7 @@ is an important component in our algorithm.
 A Markov Decision Process (MDP)~\cite{puterman_1994_markov}
 is a tuple $(S, A, T, R, \gamma)$ where $S$ is a
 set of states, $A$ is a set of actions available to an agent,
-$T:S\times A\times S \rightarrow (0,1)$ is a possibly stochastic
+$T:S\times A\times S \rightarrow [0,1]$ is a possibly stochastic
 function defining the probability $T(s,a,s')$ with which the
 environment transitions to $s'$ when the agent does $a$ in state $s$.
 $R:S\times A \rightarrow \mathbb{R}$ is a real-valued reward function that
@@ -25,7 +25,8 @@ known, various dynamic programming algorithms such as value
 iteration~\cite{bellman_1957_dynamic} can be used to plan and act in an MDP. When the
 model is unknown, and the task is to formulate a policy, it can be
 solved in a model-free way (i.e. without estimating $T$ and $R$)
-through temporal difference (TD) learning. The key idea in TD-learning
+through temporal difference (TD) learning \cite{sutton1998reinforcement}. 
+The key idea in TD-learning
 is to take advantage of Monte Carlo sampling; since the agent visits
 states and transitions with a frequency governed by the unknown
 underlying $T$, simply keeping track of average rewards over time
@@ -39,33 +40,30 @@ planning is the problem of finding a sequence of actions that gets us
 from the initial state to the goal state.
 Depending on the environment, actions may be drawn from some distribution
 dependent on the state of the world in which planning is being done.  This
-state may be observable, partially observable, or invisible to the agent doing
+state may be observable or partially observable to the agent doing
 the planning.  The actions that the agent takes usually transform the state of
 the world in some way, and the goal is defined in terms of the state of the
 world.
 
 \subsection{Classical Planning}
-Classical planning is a planning problem with six conditions.  In a classical planning problem,
+Classical planning is a planning problem with five conditions.  In a classical planning problem,
 there is a single initial state, which is fully known.  Actions are deterministic, can only
 be taken by the single agent which is present in the world, and take unit time.  These three
 conditions combine to mean that the world does not change without the agent causing the change.
-The goal is one or more states which are reachable from the initial state, and
 Finally, actions are sequential.
 
-Classical planning has been studied extensively.  These problems are usually solved by two broad categories of
+Classical planning has been studied extensively \cite{ghallab2004automated}.  These problems are usually solved by two broad categories of
 planning system: state-space planners and plan-space planners.  Forward state space planners
 plan by taking actions from the initial state and examining the state that results from the action.  Since
 actions are deterministic, it is straightforward to see that such a planner would be guaranteed to find
-the goal state by trying every possible combination of actions.  Backward planners plan by working
-backwards from the goal: they maintain a frontier and iteratively check which states in the state space
-can reach the states in the frontier.
+any reachable goal state, simply by trying every possible combination of actions.
 
 Plan-space planners work differently.  For state-space planners, every node in the planning graph
-represents a state of the environment, reached through some list of ordered actions.  For plan-space
+represents a state of the environment, reached through some list of totally ordered actions.  For plan-space
 planners, each node in the planning graph represents a partial plan, not necessarily ordered.  These partial plans
 have preconditions and effects; the plan is complete and correct when a node's effects are a superset
 of the goal state and the same node's preconditions are a subset of the initial state.  Plan-space
-planners begin with a node which has the entire goal state as its effects and its preconditions, then
+planners begin with an empty plan, then
 iteratively refine the plan so that the preconditions become a subset of the initial state.
 
 This iterative refinement is done in two ways: resolving open goals and resolving threats.
@@ -79,11 +77,11 @@ or after the action which required it.
 
 Plan-space planners can be faster than state-space planners at determining that a plan will be
 impossible if some open goals cannot be resolved, but they can also be much slower if
-continuing to resolve threats causes the plan to balloon in size.  In some domains, one
-failure mode is substantially more likely than the other, and so a choice between the
+continuing to resolve threats causes the plan to balloon in size.  In some domains, one of
+these weaknesses could be substantially more problematic than the other, and so a choice between the
 two types of planners might be motivated by domain knowledge.
 
-One popular plan-space planning algorithm is Graphplan\cite{graphplan}.  Graphplan works by creating
+One popular plan-space planning algorithm is Graphplan \cite{graphplan}.  Graphplan works by creating
 a "planning graph" which contains two types of nodes and three types of edges.  The two node types are
 either representing facts in the world or representing actions which can be taken in the world.  The three edge
 types are between a fact node and an action node, between an action node and a fact node, and between two
@@ -97,7 +95,7 @@ Graphplan constructs this graph one level at a time, starting from the goal and 
 all the facts which are true in the initial state are true in the graph.  It then works backwards by picking actions
 that will reach the goal state from the initial state.  This may fail, and in that case the graph will be extended
 another level and the search will be continued.  If the algorithm ever reaches a point where two successive
-layers are identical, the algorithm will be terminated as a failure.
+layers are identical, the algorithm will report that no plan exists, and terminate.
 
 
 
@@ -106,8 +104,7 @@ layers are identical, the algorithm will be terminated as a failure.
 Probabilistic planning is an alternative to Classical Planning when the preconditions required to solve the
 easier problem do not hold.  Probabilistic planning (PP) is done on an MDP, where actions are not required
 to be deterministic and where we attempt to maximize a reward function.  PP does require
-full observability of the state (this was irrelevant during the classical planning
-problem, since exploration with deterministic actions is trivial).  PP is often described
+full observability of the state.  PP is often described
 as determining a policy given a current state, rather than generating an ordered list of actions to take.
 
 Determining the optimal policy at {\em every} state using the TD
@@ -115,7 +112,7 @@ strategy described in the above MDP discussion is polynomial in the size of the 
 space~\cite{brafman_2003_rmax}, which is often intractable.
 But for many applications, we do not
 need to find the optimal policy in all states; rather we just need to {\em plan} in
-an MDP from an initial state to achieve a single communicative goal. New techniques such
+an MDP from a given initial state in order to achieve some goal. New techniques such
 as sparse sampling~\cite{kearns_1999_sparse} and
 UCT~\cite{kocsis_bandit_2006} show how to generate near-optimal plans
 in large MDPs with a time complexity that is independent of the state
@@ -172,12 +169,10 @@ constructed languages, like Lojban \cite{lojban}, also have this property.
 Natural languages (e.g. English), however, are well-known to have grammars which are difficult
 to represent with any single given formalism \cite{klein2012context}. There are many possible
 formalisms which can contain the rules that make up
-a grammar.  Most of these formalisms involve a form of "rewriting", which
+a grammar.  Most of these formalisms involve a form of ``rewriting", which
 is to say, replacing a nonterminal token in a string with a specific set of
 terminals and nonterminals.
 
-A Tree Adjoining Grammar (TAG) takes a different approach, differing substantially from the more
-common CFGs and PCFGs.
 TAGs are tree-based grammars consisting of two sets of trees, called initial
 trees and adjoining trees (sometimes ``auxiliary trees").  These two kinds of trees tend to perform
 different roles semantically in addition to their differing syntactic roles.  The former,
@@ -185,7 +180,7 @@ initial trees, are usually for adding new semantic information to the sentence. 
 add new nodes to the sentence tree.  In a simplified TAG of English,
 initial trees contain rules like ``Verb Phrases contain a Verb and a Noun", or ``VP $\rightarrow$ V N".
 A sentence can be made entirely of initial trees, and must contain at least
-one initial tree.  An example of an initial tree is shown in Figure \ref{initial-tree-example}.
+one initial tree.
 
 \begin{figure}[ht]
 \centering
@@ -204,6 +199,7 @@ one initial tree.  An example of an initial tree is shown in Figure \ref{initial
 \end{minipage}
 \end{figure}
 
+An example of an initial tree is shown in Figure \ref{initial-tree-example}.
 This tree has as its root the S node, and this defines how it can interact with other
 trees under a TAG.  Since this is an initial tree, it can only interact with other trees by
 substitution.  That is, this tree is a drop-in replacement for an S node with no children.
@@ -247,13 +243,10 @@ in all cases, of making the tree deeper.
 
 We use a variation of TAGs in our work, called a probabilistic lexicalized TAG (PLTAG), where each tree is
 associated with a lexical item called an anchor.  All examples given above are examples of
-lexicalized trees.  An example of an unlexicalized tree would be (NP (D) (N)), where there
+lexicalized trees.  An example of an unlexicalized tree would be $NP \rightarrow D N$, where there
 are no nodes containing lexical tokens.  The probabilistic component comes into these trees
-as a way to represent the fact that not all trees are equal.  Some trees are more common
-than others, and PLTAGs represent that fact with probabilities assigned to each tree.
+as a way to represent the fact that not all trees are equally likely to occur in human-generated speech.
+PLTAGs represent that fact with probabilities assigned to each tree.
 The probabilities of each class of trees (substitution / adjoining) with the same root node
 will sum to 1, in order to ensure that there is a well-defined probability distribution
 over the choices for substitution or adjoining at a single node in a tree.
-
-The XTAG project has had some success using LTAGs to model English grammar\cite{xtag}, 
-so we focus mostly on LTAGs in our work.

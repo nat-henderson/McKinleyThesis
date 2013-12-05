@@ -16,6 +16,10 @@ D.~Litman, S.~Singh, M.~Kearns, and M.~Walker, ``{NJFun}: a reinforcement
   Workshop on Conversational systems-Volume 3}, pp.~17--20, Association for
   Computational Linguistics, 2000.
 
+\bibitem{kocsis_bandit_2006}
+L.~Kocsis and C.~Szepesvari, ``Bandit based {Monte-Carlo} planning,'' in {\em
+  In: {ECML-06.} Number 4212 in {LNCS}}, p.~282–293, Springer, 2006.
+
 \bibitem{puterman_1994_markov}
 M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
   programming}.
@@ -24,6 +28,16 @@ M.~Puterman, {\em Markov decision processes: Discrete stochastic dynamic
 \bibitem{bellman_1957_dynamic}
 R.~Bellman, {\em Dynamic Programming}.
 \newblock Princeton University Press, Princeton, NJ, 1957.
+
+\bibitem{sutton1998reinforcement}
+R.~S. Sutton and A.~G. Barto, {\em Reinforcement learning: An introduction},
+  vol.~1.
+\newblock Cambridge Univ Press, 1998.
+
+\bibitem{ghallab2004automated}
+M.~Ghallab, D.~Nau, and P.~Traverso, {\em Automated planning: theory \&
+  practice}.
+\newblock Access Online via Elsevier, 2004.
 
 \bibitem{graphplan}
 A.~L. Blum and M.~L. Furst, ``Fast planning through planning graph analysis,''
@@ -40,10 +54,6 @@ M.~Kearns, Y.~Mansour, and A.~Ng, ``A sparse sampling algorithm for
   International Joint Conference on Artificial Intelligence}, vol.~16,
   pp.~1324--1331, LAWRENCE ERLBAUM ASSOCIATES LTD, 1999.
 
-\bibitem{kocsis_bandit_2006}
-L.~Kocsis and C.~Szepesvari, ``Bandit based {Monte-Carlo} planning,'' in {\em
-  In: {ECML-06.} Number 4212 in {LNCS}}, p.~282–293, Springer, 2006.
-
 \bibitem{uct-go}
 S.~Gelly and Y.~Wang, ``Exploration exploitation in {Go}: {UCT for Monte-Carlo
   Go},'' 2006.
@@ -54,10 +64,6 @@ J.~W. Cowan, {\em The complete Lojban language}.
 
 \bibitem{klein2012context}
 ``Context free grammars.''
-
-\bibitem{xtag}
-X.~R. Group, ``A lexicalized tree adjoining grammar for english,'' Tech. Rep.
-  IRCS-01-03, IRCS, University of Pennsylvania, 2001.
 
 \bibitem{langkilde_2002_halogen}
 I.~Langkilde-Geary, ``An empirical verification of coverage and correctness for

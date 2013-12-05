@@ -1,5 +1,5 @@
-In conclusion, we will compare STRUCT to established NLG methods,
-discuss other strengths and weaknesses of STRUCT, and describe
+In conclusion, we will discuss some of the
+strengths and weaknesses of STRUCT, and describe
 directions for future work.
 
 We believe that we have produced an algorithm which unifies the
@@ -79,13 +79,6 @@ all their parent states, again we found that the
 hashing and lookup time dominated the saved computation, and that no notable quality
 gains were made by using this backup methodology.
 
-We may also be able to use STRUCT as the output generator of a dialog system,
-similar to NJFun \cite{litman_njfun_2000}, instead of the template-based generation
-that most such systems employ.  STRUCT would be substantially more flexible in
-its output than a template-based system, which can usually only respond to preprogrammed
-error cases.  STRUCT's ability to partially accomplish communicative goals would be
-valuable in this application.
-
 We could consider using an alternative approach to adapting UCT to a DAG.  Instead
 of treating states reached from differing parents as different states, we could keep
 track of how they were reached each time they were reached and update their parent
@@ -93,8 +86,15 @@ states accordingly.  This would allow us to reduce the number of simulations nee
 for high-depth experiments, especially experiments where adjoin operations are
 performed repeatedly.
 
-We could also consider using a different semantic model.  Our choice of first-order logic
-formulas was encouraged by Koller's work, and allowed us to easily compare to CRISP.
+We may also be able to use STRUCT as the output generator of a dialog system,
+similar to NJFun \cite{litman_njfun_2000}, instead of the template-based generation
+that most such systems employ.  STRUCT would be substantially more flexible in
+its output than a template-based system, which can usually only respond to preprogrammed
+error cases.  STRUCT's ability to partially accomplish communicative goals would be
+valuable in this application.
+
+We could also consider using a different semantic language.  Our choice of first-order logic
+predicates was made following Koller's work, and allowed us to easily compare to CRISP.
 However, other work has suggested a lambda-calculus semantic model \cite{wong2007learning}
 which we feel holds promise.  Initial experimentation has suggested that drastic speed increases
 may result from this choice of semantic representation.

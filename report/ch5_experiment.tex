@@ -92,26 +92,26 @@ interrupted, STRUCT would be able to return a solution that at least
 partially solves the communicative goal.
 
 In this experiment, $d$ was set equal to 1, since each action taken improved the sentence in
-a way measurable by our reward function.  $n$ was set equal to $k * (k + 1)$, since this is
+a way measurable by our reward function.  $n$ was set equal to $k(k + 1)$, since this is
 the number of adjoining sites available in the final step of generation, times the number
 of potential words to adjoin.  This allows us to ensure successful generation in a single
 loop of the STRUCT algorithm.
 
+\subsection{Grammar Size}
 \begin{figure}
 \centering
 \includegraphics[width=0.7 \linewidth]{../analysis/plots/large-grammar/large-grammar.pdf}
-\label{graph-large-grammars}
 \caption{Effect of grammar size}
+\label{graph-large-grammars}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7 \linewidth]{../analysis/plots/goals/differentgoals.pdf}
-\label{chart-different-goals}
 \caption{Effect of multiple and negated goals}
+\label{chart-different-goals}
 \end{figure}
 
-\subsection{Grammar Size}
 We next evaluate STRUCT and CRISP's ability to
 handle larger grammars. This experiment is set up in the same way as
 the one above, with the exception of $l$ ``distracting'' words, words
@@ -125,7 +125,7 @@ on the order of single milliseconds moving from $j = 1$ to $j = 10$.
 We report similar variations in CRISP runtime as $j$ increases from 10
 to 60: runtime increases by approximately 10\% over that range.
 
-\subsubsection{Absent Pruning}
+\subsubsection{Without Pruning}
 
 STRUCT's performance with large grammars is similar to CRISP using the
 FF planner \cite{hoffmann_ff_2001}, also profiled in
@@ -153,7 +153,9 @@ is a perfect example of a case where pruning will perform well.
 When we apply pruning we find that STRUCT is able to completely ignore the effect of
 additional distracting words.  Experiments showed roughly constant times for generation
 for $j=1$ through $j=5000$.  Although pruning is $O(n)$ in grammar size, repeated experiments
-failed to show any significant distinction in runtime, even on very large grammars.
+failed to show any significant distinction in runtime, even on very large grammars.  The time
+taken by this algorithm depends on the complexity of the world and of the goals, and is independent
+of grammar size.
 
 \section{Evaluation of Complex Communicative Goals}
 In the next set of experiments, we illustrate that STRUCT can solve
@@ -225,7 +227,9 @@ fulfills its goals.
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{../analysis/struct/nested/nested.pdf}
-\caption{Reward function output over time as STRUCT generates a sentence with a nested subclause}
+\caption{Reward function output over time as STRUCT generates a sentence with a nested subclause.
+Decreases in reward after t=4 and t=12 are the STRUCT algorithm choosing a plan which is locally suboptimal
+but which it suspects is globally optimal (in this case, adding the word `which' to the sentence).}
 \label{nested}
 \end{figure}
 
@@ -234,8 +238,8 @@ subclauses.  An example of such a sentence is ``The dog which ate the treat
 chased the cat".  This is a difficult sentence to generate for several reasons.
 The first, and clearest, is that there are words in the sentence which do not
 help to increase the score assigned to the partial sentence.  Notably, we must adjoin
-the word "which" to "the dog" during the portion of generation where the
-sentence reads "the dog chased the cat".  This decision requires us to do planning
+the word ``which" to ``the dog" during the portion of generation where the
+sentence reads ``the dog chased the cat".  This decision requires us to do planning
 deeper than one level in the MDP, which increases by $O(N^d)$ the number of simulations
 STRUCT requires in order to get the best possible result.
 
@@ -257,34 +261,34 @@ with, at a minimum, the actions corresponding to ``which", ``ate", and ``treat".
 \begin{figure}
 \centering
 \includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction1.pdf}
-\label{graph-conjunction1}
-\caption{Time to generate sentences with conjunctions with one entity ("The man sat and the girl sat and ....").
+\caption{Time to generate sentences with conjunctions with one entity (``The man sat and the girl sat and ....").
 Note that STRUCT performs slightly worse than CRISP with one entity.}
+\label{graph-conjunction1}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction2.pdf}
-\label{graph-conjunction2}
-\caption{Time to generate sentences with conjunctions with two entities ("The dog chased the cat and ...").  Note that
+\caption{Time to generate sentences with conjunctions with two entities (``The dog chased the cat and ...").  Note that
 STRUCT performs much better than CRISP with two entities.}
+\label{graph-conjunction2}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7 \linewidth]{../analysis/struct/conjunction/conjunction3.pdf}
-\label{graph-conjunction3}
-\caption{Time to generate sentences with conjunctions with three entities ("The man gave the girl the book and ....").
+\caption{Time to generate sentences with conjunctions with three entities (``The man gave the girl the book and ....").
 CRISP cannot generate sentences with conjunctions and three entities; STRUCT is much less sensitive to a change
 in the number of entities than CRISP.}
+\label{graph-conjunction3}
 \end{figure}
 
 Here, we evaluate STRUCT$_b$'s ability to generate sentences including
-conjunctions.  We introduce the conjunction "and", which allows for the
-root nonterminal of a new sentence ('S') to be adjoined to any other sentence.
+conjunctions.  We introduce the conjunction ``and", which allows for the
+root nonterminal of a new sentence (`S') to be adjoined to any other sentence.
 We then provide STRUCT with multiple goals.  Given sufficient depth for the
 search ($d=3$ was determined to be sufficient, as our reward signal is fine-grained),
-STRUCT will produce two sentences joined by the conjunction "and".
+STRUCT will produce two sentences joined by the conjunction ``and".
 Here, we follow prior work in our experiment design \cite{koller_experiences_2011}.
 
 As we can see in Figures \ref{graph-conjunction1}, \ref{graph-conjunction2}, and
